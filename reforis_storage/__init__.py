@@ -4,13 +4,8 @@
 #  See /LICENSE for more information.
 
 from pathlib import Path
-from http import HTTPStatus
 
 from flask import Blueprint, current_app, jsonify, request
-from flask_babel import gettext as _
-
-from reforis.foris_controller_api import APIError
-from reforis.foris_controller_api.utils import log_error, validate_json
 
 # pylint: disable=invalid-name
 blueprint = Blueprint(
@@ -31,17 +26,28 @@ storage = {
 }
 
 
-@blueprint.route('/example', methods=['GET'])
-def get_example():
-    return jsonify(current_app.backend.perform('example_module', 'example_action'))
+@blueprint.route('/state', methods=['GET'])
+def state():
+    return jsonify(current_app.backend.perform('storage', 'get_state'))
 
 
-@blueprint.route('/example', methods=['POST'])
-def post_example():
-    validate_json(request.json, {'modules': list})
+@blueprint.route('/settings', methods=['GET'])
+def settings():
+    return jsonify(current_app.backend.perform('storage', 'get_settings'))
 
-    response = current_app.backend.perform('example_module', 'example_action', request.json)
-    if response.get('result') is not True:
-        raise APIError(_('Cannot create entity'), HTTPStatus.INTERNAL_SERVER_ERROR)
 
-    return jsonify(response), HTTPStatus.CREATED
+@blueprint.route('/drives', methods=['GET'])
+def drives():
+    return jsonify(current_app.backend.perform('storage', 'get_drives'))
+
+
+@blueprint.route('/prepare-srv', methods=['POST'])
+def prepare_srv():
+    data = request.json
+    return jsonify(current_app.backend.perform('storage', 'prepare_srv_drive', data))
+
+
+@blueprint.route('/update-srv', methods=['POST'])
+def update_srv():
+    data = request.json
+    return jsonify(current_app.backend.perform('storage', 'update_srv', data))
