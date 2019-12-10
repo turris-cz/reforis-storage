@@ -6,6 +6,7 @@
 from pathlib import Path
 
 from flask import Blueprint, current_app, jsonify, request
+from reforis.foris_controller_api.utils import validate_json
 
 # pylint: disable=invalid-name
 blueprint = Blueprint(
@@ -44,10 +45,12 @@ def drives():
 @blueprint.route('/prepare-srv', methods=['POST'])
 def prepare_srv():
     data = request.json
+    validate_json(data, {'drives': list, 'raid': str})
     return jsonify(current_app.backend.perform('storage', 'prepare_srv_drive', data))
 
 
 @blueprint.route('/update-srv', methods=['POST'])
 def update_srv():
     data = request.json
+    validate_json(data, {'uuid': str})
     return jsonify(current_app.backend.perform('storage', 'update_srv', data))
