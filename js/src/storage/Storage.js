@@ -13,7 +13,7 @@ import {
 import API_URLs from "../API";
 
 import Drives from "./Drives/Drives";
-import CurrentState from "./CurrentState";
+import CurrentState from "./currentState/CurrentState";
 import useStorageState from "./hooks";
 import UUIDs from "./UUIDs/UUIDs";
 import { PENDING_STORAGE_STATES } from "./constants";

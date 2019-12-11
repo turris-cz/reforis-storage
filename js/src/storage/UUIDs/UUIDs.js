@@ -5,17 +5,24 @@
  * See /LICENSE for more information.
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {
+    Button, useAlert, useAPIPost, API_STATE,
+} from "foris";
 
-import { Button, useAPIPost } from "foris";
 import { filterNonBTRFS, groupDrivesByUUIDs } from "../utils";
 import API_URLs from "../../API";
 import UUIDsTable from "./UUIDsTable";
 
 export default function UUIDs({ drives, currentUUID, storageIsPending }) {
     const [selectedUUID, setSelectedUUID] = useState(currentUUID);
-
     const [postUpdateSrvStatus, postUpdateSrv] = useAPIPost(API_URLs.updateSrv);
+    const [setAlert] = useAlert();
+    useEffect(() => {
+        if (postUpdateSrvStatus.state === API_STATE.ERROR) {
+            setAlert(_("UUID selection was failed."));
+        }
+    }, [postUpdateSrvStatus.state, setAlert]);
 
     function updateSrv(e) {
         e.preventDefault();
