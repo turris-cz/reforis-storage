@@ -6,17 +6,21 @@
  */
 
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import {
     API_STATE, ErrorMessage, Spinner, useAPIGet,
 } from "foris";
 
 import API_URLs from "../API";
-
 import Drives from "./Drives/Drives";
 import CurrentState from "./currentState/CurrentState";
 import useStorageState from "./hooks";
 import UUIDs from "./UUIDs/UUIDs";
 import { PENDING_STORAGE_STATES } from "./constants";
+
+Storage.propTypes = {
+    ws: PropTypes.object.isRequired,
+};
 
 const HELP_TEXT = _(`
 Here you can set up where your persistent data should be stored. If you want to use Nextcloud, LXC or other IO-intensive

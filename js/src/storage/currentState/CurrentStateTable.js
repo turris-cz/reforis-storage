@@ -1,8 +1,27 @@
+/*
+ * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See /LICENSE for more information.
+ */
+
 import React from "react";
 import { SpinnerElement } from "foris";
+import PropTypes from "prop-types";
+
 import { NOT_PENDING_STORAGE_STATES, STORAGE_STATES } from "../constants";
 
-export default function CurrentStateTable({state, old_device_desc, uuid, raid, storageIsPending}) {
+CurrentStateTable.propTypes = {
+    state: PropTypes.string.isRequired,
+    raid: PropTypes.string.isRequired,
+    uuid: PropTypes.string.isRequired,
+    old_device_desc: PropTypes.string.isRequired,
+    storageIsPending: PropTypes.bool.isRequired,
+};
+
+export default function CurrentStateTable({
+    state, old_device_desc, uuid, raid, storageIsPending,
+}) {
     return (
         <table className="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12">
             <tbody>

@@ -6,8 +6,23 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { formFieldsSize } from "foris";
-import { DriveTableRow } from "./DrivesTableRow";
+
+import DriveTableRow from "./DrivesTableRow";
+
+DrivesTable.propTypes = {
+    drives: PropTypes.arrayOf(PropTypes.shape({
+        dev: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        fs: PropTypes.string.isRequired,
+        uuid: PropTypes.string.isRequired,
+    })).isRequired,
+    selectedDrives: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelectedDrives: PropTypes.func.isRequired,
+    currentUUID: PropTypes.string.isRequired,
+    storageIsPending: PropTypes.bool.isRequired,
+};
 
 export default function DrivesTable({
     drives, selectedDrives, setSelectedDrives, currentUUID, storageIsPending,

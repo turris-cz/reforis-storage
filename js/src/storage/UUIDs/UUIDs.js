@@ -6,6 +6,7 @@
  */
 
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import {
     Button, useAlert, useAPIPost, API_STATE,
 } from "foris";
@@ -13,6 +14,21 @@ import {
 import { filterNonBTRFS, groupDrivesByUUIDs } from "../utils";
 import API_URLs from "../../API";
 import UUIDsTable from "./UUIDsTable";
+
+UUIDs.propTypes = {
+    drives: PropTypes.arrayOf(PropTypes.shape({
+        dev: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        fs: PropTypes.string.isRequired,
+        uuid: PropTypes.string.isRequired,
+    })).isRequired,
+    currentUUID: PropTypes.string.isRequired,
+    storageIsPending: PropTypes.bool.isRequired,
+};
+
+UUIDs.defaultProps = {
+    storageIsPending: false,
+};
 
 export default function UUIDs({ drives, currentUUID, storageIsPending }) {
     const [selectedUUID, setSelectedUUID] = useState(currentUUID);

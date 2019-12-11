@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import {
     API_STATE, Button, Select, useAlert, useAPIPost,
 } from "foris";
+import PropTypes from "prop-types";
 
 import DrivesTable from "./DrivesTable";
 import API_URLs from "../../API";
@@ -17,6 +18,21 @@ const RAID_CHOICES = {
     custom: _("Custom"),
     single: _("JBOD"),
     raid1: _("RAID1"),
+};
+
+Drives.propTypes = {
+    drives: PropTypes.arrayOf(PropTypes.shape({
+        dev: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        fs: PropTypes.string.isRequired,
+        uuid: PropTypes.string.isRequired,
+    })).isRequired,
+    currentUUID: PropTypes.string.isRequired,
+    storageIsPending: PropTypes.bool.isRequired,
+};
+
+Drives.defaultProps = {
+    storageIsPending: false,
 };
 
 export default function Drives({ drives, currentUUID, storageIsPending }) {
