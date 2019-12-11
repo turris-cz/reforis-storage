@@ -7,6 +7,7 @@
 
 import React from "react";
 import {render, wait} from "foris/testUtils/customTestRender";
+import { WebSockets } from "foris";
 
 import Storage from "../Storage";
 import mockAxios from 'jest-mock-axios';
@@ -20,7 +21,8 @@ describe("<Storage />", () => {
     let getAllByLabelText;
 
     beforeEach(() => {
-        ({container, getByText, getByLabelText, getAllByLabelText} = render(<Storage/>));
+        const ws = new WebSockets();
+        ({container, getByText, getByLabelText, getAllByLabelText} = render(<Storage ws={ws}/>));
     });
 
     it("should render", async () => {

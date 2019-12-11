@@ -31,6 +31,7 @@ export default function CurrentStateTable({
                         <td style={{ display: "flex", flexDirection: "row" }}>
                             {storageIsPending ? (
                                 <SpinnerElement small>
+                                    &nbsp;
                                     {STORAGE_STATES[state]}
                                 </SpinnerElement>
                             ) : STORAGE_STATES[state]}

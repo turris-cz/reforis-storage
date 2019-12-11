@@ -42,7 +42,7 @@ export default function UUIDs({ drives, currentUUID, storageIsPending }) {
 
     function updateSrv(e) {
         e.preventDefault();
-        postUpdateSrv({ uuid: selectedUUID });
+        postUpdateSrv({ data: { uuid: selectedUUID } });
     }
 
     const drivesByUUIDs = groupDrivesByUUIDs(filterNonBTRFS(drives));

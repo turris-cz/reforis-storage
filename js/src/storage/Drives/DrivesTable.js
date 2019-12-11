@@ -44,7 +44,7 @@ export default function DrivesTable({
                         drive={drive}
                         isSelected={selectedDrives.includes(drive.dev)}
                         setSelectedDrives={setSelectedDrives}
-                        active={currentUUID && currentUUID === drive.uuid}
+                        active={!!currentUUID && currentUUID === drive.uuid}
                         disabled={storageIsPending}
                     />
                 ))}

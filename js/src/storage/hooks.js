@@ -28,7 +28,6 @@ export default function useStorageState(ws, onStateChange) {
             return;
         }
         setStorageState(storageStateGetStatus);
-        storageStateGet();
     }, [setAlert, storageStateGet, storageStateGetStatus]);
 
     const [storageStateWS] = useWSForisModule(ws, "storage", "state");
@@ -45,7 +44,7 @@ export default function useStorageState(ws, onStateChange) {
             }
             onStateChange();
         }
-    }, [setAlert, storageStateGet, storageStateWS]);
+    }, [onStateChange, setAlert, storageStateGet, storageStateWS]);
 
     return storageState;
 }

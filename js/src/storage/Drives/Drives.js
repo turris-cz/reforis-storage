@@ -7,18 +7,14 @@
 
 import React, { useEffect, useState } from "react";
 import {
-    API_STATE, Button, Select, useAlert, useAPIPost,
+    API_STATE, Button, useAlert, useAPIPost,
 } from "foris";
 import PropTypes from "prop-types";
 
 import DrivesTable from "./DrivesTable";
 import API_URLs from "../../API";
-
-const RAID_CHOICES = {
-    custom: _("Custom"),
-    single: _("JBOD"),
-    raid1: _("RAID1"),
-};
+import { RAID_CHOICES, RAIDSelect } from "./RAID";
+import ConfirmationModal from "./ConfirmationModal";
 
 Drives.propTypes = {
     drives: PropTypes.arrayOf(PropTypes.shape({
@@ -38,22 +34,24 @@ Drives.defaultProps = {
 export default function Drives({ drives, currentUUID, storageIsPending }) {
     const [selectedDrives, setSelectedDrives] = useState([]);
     const [selectedRAID, setSelectedRAID] = useState(Object.keys(RAID_CHOICES)[0]);
+    const [confirmationModalShown, setConfirmationModalShown] = useState(false);
 
-    // TODO: Add modal warning.
     // The modal message is depend if uuid is selected or not.
-    const [prepareSrvRequestStatus, prepareSrvRequest] = useAPIPost(API_URLs.prepareSrv);
+    const [prepareSrvPostStatus, prepareSrvPost] = useAPIPost(API_URLs.prepareSrv);
     const [setAlert] = useAlert();
     useEffect(() => {
-        if (prepareSrvRequestStatus.state === API_STATE.ERROR) {
+        if (prepareSrvPostStatus.state === API_STATE.ERROR) {
             setAlert(_("Device preparing was failed."));
         }
-    }, [prepareSrvRequestStatus.state, setAlert]);
+    }, [prepareSrvPostStatus.state, setAlert]);
 
     function prepareSrv(event) {
         event.preventDefault();
-        prepareSrvRequest({
-            drives: selectedDrives,
-            raid: selectedRAID,
+        prepareSrvPost({
+            data: {
+                drives: selectedDrives,
+                raid: selectedRAID,
+            },
         });
     }
 
@@ -64,7 +62,14 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
     );
 
     return (
-        <form onSubmit={prepareSrv}>
+        <>
+            <ConfirmationModal
+                shown={confirmationModalShown}
+                setShown={setConfirmationModalShown}
+                onConfirm={prepareSrv}
+
+                isFirstDrive={currentUUID === "rootfs"}
+            />
             <RAIDSelect
                 selectedRAID={selectedRAID}
                 setSelectedRAID={setSelectedRAID}
@@ -78,58 +83,12 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 storageIsPending={storageIsPending}
             />
             <Button
-                type="submit"
                 forisFormSize
+                onClick={() => setConfirmationModalShown(true)}
                 disabled={buttonIsDisabled}
             >
                 {_("Format&Set")}
             </Button>
-        </form>
-    );
-}
-
-const RAID_HELP_TEXTS = {
-    custom: _(`
-Don't change the RAID level, keeps everything set the way it was. Useful if you have a really custom setup of your RAID
-we don't support and want to just add/remove some disks.
-    `),
-    JBOD: _(`
-No redundancy, if one drive fails, you loose your data. On the other hand, provides the most space - sum of the space
-available on all included drives.
-    `),
-    RAID1: _(`
-Everything is redundant and stored at two distinct drives. If you loose one drive, you can easily replace it without
-loosing any data. On the other hand, you have a half of the disk space you would have with JBOD.
-        `),
-};
-
-function RAIDHelpTexts() {
-    return (
-        <>
-            <h5>{_("Custom")}</h5>
-            <p>{RAID_HELP_TEXTS.custom}</p>
-            <h5>{_("JBOD")}</h5>
-            <p>{RAID_HELP_TEXTS.JBOD}</p>
-            <h5>{_("RAID1")}</h5>
-            <p>{RAID_HELP_TEXTS.RAID1}</p>
-        </>
-    );
-}
-
-function RAIDSelect({ selectedRAID, setSelectedRAID, storageIsPending }) {
-    return (
-        <>
-            <RAIDHelpTexts />
-            <Select
-                label={_("RAID")}
-                choices={RAID_CHOICES}
-                value={selectedRAID}
-                onChange={(e) => {
-                    setSelectedRAID(e.target.value);
-                }}
-
-                disabled={storageIsPending}
-            />
         </>
     );
 }
