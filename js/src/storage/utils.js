@@ -5,8 +5,6 @@
  * See /LICENSE for more information.
  */
 
-import React from "react";
-
 export function filterNonBTRFS(drives) {
     return drives.filter((drive) => drive.fs === "btrfs");
 }
