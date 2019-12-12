@@ -21,7 +21,6 @@ UUIDsTable.propTypes = {
 export default function UUIDsTable({
     drivesByUUIDs, selectedUUID, setSelectedUUID, storageIsPending,
 }) {
-    // TODO: Add possibility to choose empty UUID
     return (
         <table className={`table table-hover ${formFieldsSize}`}>
             <thead>

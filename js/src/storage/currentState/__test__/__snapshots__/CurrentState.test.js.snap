@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CurrentState /> should render 1`] = `
+<div>
+  <table
+    class="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12"
+  >
+    <tbody>
+      <tr>
+        <th
+          scope="row"
+        >
+          Device
+        </th>
+        <td>
+          /dev/sdb
+        </td>
+      </tr>
+      <tr>
+        <th
+          scope="row"
+        >
+          UUID
+        </th>
+        <td>
+          1234-1234-1234-1234-1234
+        </td>
+      </tr>
+      <tr>
+        <th
+          scope="row"
+        >
+          RAID
+        </th>
+        <td>
+          single
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

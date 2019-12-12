@@ -40,9 +40,12 @@ export default function UUIDs({ drives, currentUUID, storageIsPending }) {
         }
     }, [postUpdateSrvStatus.state, setAlert]);
 
-    function updateSrv(e) {
-        e.preventDefault();
+    function onUpdateSrv() {
         postUpdateSrv({ data: { uuid: selectedUUID } });
+    }
+
+    function onUnselectSrv() {
+        postUpdateSrv({ data: { uuid: "" } });
     }
 
     const drivesByUUIDs = groupDrivesByUUIDs(filterNonBTRFS(drives));
@@ -52,7 +55,7 @@ export default function UUIDs({ drives, currentUUID, storageIsPending }) {
     }
 
     return (
-        <form onSubmit={updateSrv}>
+        <>
             <UUIDsTable
                 drivesByUUIDs={drivesByUUIDs}
                 selectedUUID={selectedUUID}
@@ -60,12 +63,19 @@ export default function UUIDs({ drives, currentUUID, storageIsPending }) {
                 storageIsPending={storageIsPending}
             />
             <Button
-                type="submit"
-                forisFormSize
+                className="btn-primary offset-lg-1 col-lg-4 col-sm-12"
                 disabled={storageIsPending}
+                onClick={onUnselectSrv}
             >
-                {_("Select UUID")}
+                {_("Unset UUID")}
             </Button>
-        </form>
+            <Button
+                className="btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
+                disabled={storageIsPending}
+                onClick={onUpdateSrv}
+            >
+                {_("Set UUID")}
+            </Button>
+        </>
     );
 }

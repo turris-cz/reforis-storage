@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import PendingMigration from "./PendingMigration";
+import PendingMigrationAlert from "./PendingMigrationAlert";
 import BrokenSetupAlert from "./BrokenSetupAlert";
 import CurrentStateTable from "./CurrentStateTable";
 
@@ -32,7 +32,7 @@ export default function CurrentState({
     const brokenSetup = old_uuid === "broken";
     return (
         <>
-            {!brokenSetup && pendingMigration && <PendingMigration />}
+            {!brokenSetup && pendingMigration && <PendingMigrationAlert />}
 
             {brokenSetup && <BrokenSetupAlert />}
 

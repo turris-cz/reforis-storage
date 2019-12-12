@@ -1,10 +1,10 @@
 export default function state(blocked = false) {
     return {
         "blocked": blocked,
-        "old_device_desc": "/dev/mmcblk0p1",
-        "old_uuid": "rootfs",
-        "raid": "custom",
+        "old_device_desc": "/dev/sdb",
+        "old_uuid": "1234-1234-1234-1234-1234",
+        "raid": "single",
         "state": blocked ? "formatting" : "none",
-        "uuid": ""
+        "uuid": "1234-1234-1234-1234-1234",
     }
 };

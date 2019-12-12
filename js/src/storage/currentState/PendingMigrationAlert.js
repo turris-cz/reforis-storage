@@ -14,7 +14,7 @@ restart your router <b>as soon as possible</b> but bear in mind that the next re
 to be migrated.
 `);
 
-export default function PendingMigration() {
+export default function PendingMigrationAlert() {
     return (
         <Alert type={ALERT_TYPES.WARNING}>
             <p dangerouslySetInnerHTML={{ __html: PENDING_MIGRATION_TEXT }} />
