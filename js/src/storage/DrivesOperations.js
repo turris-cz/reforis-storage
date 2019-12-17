@@ -20,6 +20,7 @@ DrivesOperations.propTypes = {
     })).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
+    updateUUIDCallback: PropTypes.func.isRequired,
 };
 
 DrivesOperations.defaultProps = {
@@ -27,18 +28,20 @@ DrivesOperations.defaultProps = {
 };
 
 export default function DrivesOperations(props) {
-    const { drives } = props;
+    const { updateUUIDCallback, drives } = props;
     if (drives.length === 0) {
         return <p>{_("No drives connected, please connect a drive and refresh the page.")}</p>;
     }
-
     return (
         <>
             <h3>{_("Prepare drives")}</h3>
             <Drives {...props} />
 
             <h3>{_("Use prepared storage")}</h3>
-            <UUIDs {...props} />
+            <UUIDs
+                updateUUIDCallback={updateUUIDCallback}
+                {...props}
+            />
         </>
     );
 }

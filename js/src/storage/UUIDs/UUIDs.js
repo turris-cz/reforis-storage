@@ -5,15 +5,14 @@
  * See /LICENSE for more information.
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import {
-    Button, useAlert, useAPIPost, API_STATE,
-} from "foris";
+import { API_STATE, useAlert, useAPIPost } from "foris";
 
-import { filterNonBTRFS, groupDrivesByUUIDs } from "../utils";
 import API_URLs from "../../API";
+import { filterNonBTRFS, groupDrivesByUUIDs } from "../utils";
 import UUIDsTable from "./UUIDsTable";
+import UUIDsActionButtons from "./UUIDsActionButtons";
 
 UUIDs.propTypes = {
     drives: PropTypes.arrayOf(PropTypes.shape({
@@ -24,28 +23,33 @@ UUIDs.propTypes = {
     })).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
+    updateUUIDCallback: PropTypes.func.isRequired,
 };
 
 UUIDs.defaultProps = {
     storageIsPending: false,
 };
 
-export default function UUIDs({ drives, currentUUID, storageIsPending }) {
+export default function UUIDs({
+    drives, currentUUID, storageIsPending, updateUUIDCallback,
+}) {
     const [selectedUUID, setSelectedUUID] = useState(currentUUID);
     const [postUpdateSrvStatus, postUpdateSrv] = useAPIPost(API_URLs.updateSrv);
     const [setAlert] = useAlert();
     useEffect(() => {
         if (postUpdateSrvStatus.state === API_STATE.ERROR) {
-            setAlert(_("UUID selection was failed."));
+            setAlert(_("UUID selection failed."));
+        } else if (postUpdateSrvStatus.state === API_STATE.SUCCESS) {
+            updateUUIDCallback();
         }
-    }, [postUpdateSrvStatus.state, setAlert]);
-
-    function onUpdateSrv() {
-        postUpdateSrv({ data: { uuid: selectedUUID } });
-    }
+    }, [postUpdateSrvStatus.state, setAlert, updateUUIDCallback]);
 
     function onUnselectSrv() {
         postUpdateSrv({ data: { uuid: "" } });
+    }
+
+    function onUpdateSrv() {
+        postUpdateSrv({ data: { uuid: selectedUUID } });
     }
 
     const drivesByUUIDs = groupDrivesByUUIDs(filterNonBTRFS(drives));
@@ -62,20 +66,11 @@ export default function UUIDs({ drives, currentUUID, storageIsPending }) {
                 setSelectedUUID={setSelectedUUID}
                 storageIsPending={storageIsPending}
             />
-            <Button
-                className="btn-primary offset-lg-1 col-lg-4 col-sm-12"
-                disabled={storageIsPending}
-                onClick={onUnselectSrv}
-            >
-                {_("Unset UUID")}
-            </Button>
-            <Button
-                className="btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-                disabled={storageIsPending}
-                onClick={onUpdateSrv}
-            >
-                {_("Set UUID")}
-            </Button>
+            <UUIDsActionButtons
+                onUnselectSrv={onUnselectSrv}
+                onUpdateSrv={onUpdateSrv}
+                storageIsPending={storageIsPending}
+            />
         </>
     );
 }

@@ -32,7 +32,7 @@ IO-intensive applications should reside) will get moved to this new drive.
 
 export default function Storage({ ws }) {
     const [getDrivesResponse, getDrives] = useAPIGet(API_URLs.drives);
-    const storageState = useStorageState(ws, getDrives);
+    const [storageState, getStorageState] = useStorageState(ws, getDrives);
     useEffect(() => {
         getDrives();
     }, [getDrives]);
@@ -47,6 +47,11 @@ export default function Storage({ ws }) {
 
     const storageIsPending = Object.keys(PENDING_STORAGE_STATES).includes(storageState.data.state)
         || storageState.data.blocking;
+
+    function updateUUIDCallback() {
+        getDrives();
+        getStorageState();
+    }
 
     return (
         <>
@@ -63,6 +68,7 @@ export default function Storage({ ws }) {
                 drives={getDrivesResponse.data.drives}
                 currentUUID={storageState.data.uuid}
                 storageIsPending={storageIsPending}
+                updateUUIDCallback={updateUUIDCallback}
             />
         </>
     );
