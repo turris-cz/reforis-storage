@@ -36,12 +36,11 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
     const [selectedRAID, setSelectedRAID] = useState(Object.keys(RAID_CHOICES)[0]);
     const [confirmationModalShown, setConfirmationModalShown] = useState(false);
 
-    // The modal message is depend if uuid is selected or not.
     const [prepareSrvPostStatus, prepareSrvPost] = useAPIPost(API_URLs.prepareSrv);
     const [setAlert] = useAlert();
     useEffect(() => {
         if (prepareSrvPostStatus.state === API_STATE.ERROR) {
-            setAlert(_("Device preparing was failed."));
+            setAlert(_("Device preparation failed."));
         }
     }, [prepareSrvPostStatus.state, setAlert]);
 
@@ -67,7 +66,6 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 shown={confirmationModalShown}
                 setShown={setConfirmationModalShown}
                 onConfirm={prepareSrv}
-
                 isFirstDrive={currentUUID === "rootfs"}
             />
             <RAIDSelect
@@ -87,7 +85,7 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 onClick={() => setConfirmationModalShown(true)}
                 disabled={buttonIsDisabled}
             >
-                {_("Format&Set")}
+                {_("Format & Set")}
             </Button>
         </>
     );

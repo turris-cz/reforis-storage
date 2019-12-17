@@ -34,45 +34,45 @@ describe("<Drives />", () => {
         ));
     });
 
-    it("should render", () => {
+    it("Should render.", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("button should be disabled when nothing is selected", () => {
-        expect(getByText(container, "Format&Set").disabled).toBeTruthy();
+    it("Button should be disabled when nothing is selected.", () => {
+        expect(getByText(container, "Format & Set").disabled).toBeTruthy();
     });
 
-    it("button should be enabled when some disk is selected", () => {
+    it("Button should be enabled when some disk is selected.", () => {
         fireEvent.click(getByLabelText(container, "sdb"));
-        expect(getByText(container, "Format&Set").disabled).toBeFalsy();
+        expect(getByText(container, "Format & Set").disabled).toBeFalsy();
     });
 
-    it("button should be disabled when RAID1 and less that two disks are selected", () => {
+    it("Button should be disabled when RAID1 and less that two disks are selected.", () => {
         fireEvent.change(getByLabelText(container, "RAID"), { target: { value: "raid1" } });
         fireEvent.click(getByLabelText(container, "sdb"));
-        expect(getByText(container, "Format&Set").disabled).toBeTruthy();
+        expect(getByText(container, "Format & Set").disabled).toBeTruthy();
 
         fireEvent.click(getByLabelText(container, "sdc"));
-        expect(getByText(container, "Format&Set").disabled).toBeFalsy();
+        expect(getByText(container, "Format & Set").disabled).toBeFalsy();
     });
 
-    it("should render modal on Format&Set click", () => {
+    it("Should render modal on Format&Set click.", () => {
         fireEvent.change(getByLabelText(container, "RAID"), { target: { value: "single" } });
         fireEvent.click(getByLabelText(container, "sdb"));
         fireEvent.click(getByLabelText(container, "sdc"));
         const firstRender = asFragment();
 
-        fireEvent.click(getByText(container, "Format&Set"));
+        fireEvent.click(getByText(container, "Format & Set"));
         getByText(container, "Continue");
 
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });
 
-    it("should post on 'Continue' button click", () => {
+    it("Should post on 'Continue' button click.", () => {
         fireEvent.change(getByLabelText(container, "RAID"), { target: { value: "single" } });
         fireEvent.click(getByLabelText(container, "sdb"));
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Format&Set"));
+        fireEvent.click(getByText(container, "Format & Set"));
         fireEvent.click(getByText(container, "Continue"));
 
         const data = {
@@ -83,11 +83,11 @@ describe("<Drives />", () => {
             .toHaveBeenCalledWith("/reforis/storage/api/prepare-srv", data, expect.anything());
     });
 
-    it("should hold post error", async () => {
+    it("Should handle post error.", async () => {
         fireEvent.click(getByLabelText(container, "sdb"));
-        fireEvent.click(getByText(container, "Format&Set"));
+        fireEvent.click(getByText(container, "Format & Set"));
         fireEvent.click(getByText(container, "Continue"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Device preparing was failed."));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("Device preparation failed."));
     });
 });

@@ -35,6 +35,7 @@ export default function UUIDsTable({
                         key={uuid}
                         uuid={uuid}
                         drives={drivesByUUIDs[uuid]}
+                        // uuid can be empty, it means nothing is selected.
                         selected={uuid && uuid === selectedUUID}
                         setSelectedUUID={setSelectedUUID}
                         disabled={storageIsPending}

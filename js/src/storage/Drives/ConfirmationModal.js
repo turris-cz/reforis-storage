@@ -30,7 +30,7 @@ moved from old drive to the new one. This can take some time so your next reboot
 export default function ConfirmationModal({
     shown, setShown, onConfirm, isFirstDrive,
 }) {
-    const firstDirveMessage = isFirstDrive ? FIRST_DRIVE_MESSAGE : "";
+    const firstDriveMessage = isFirstDrive ? FIRST_DRIVE_MESSAGE : "";
     return (
         <Modal shown={shown} setShown={setShown}>
             <ModalHeader setShown={setShown} title={_("Reboot confirmation")} />
@@ -38,7 +38,7 @@ export default function ConfirmationModal({
                 <p>
                     {_(`
 Are you sure you want to proceed? Newly selected drive(s) will be formatted and you will loose all the data on it.
-${firstDirveMessage}
+${firstDriveMessage}
 Are you sure you want to continue?
                     `)}
                 </p>

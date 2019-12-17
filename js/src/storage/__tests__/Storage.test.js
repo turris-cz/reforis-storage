@@ -7,7 +7,7 @@
 
 import React from "react";
 import {render, wait} from "foris/testUtils/customTestRender";
-import { WebSockets } from "foris";
+import {WebSockets} from "foris";
 
 import Storage from "../Storage";
 import mockAxios from 'jest-mock-axios';
@@ -25,7 +25,7 @@ describe("<Storage />", () => {
         ({container, getByText, getByLabelText, getAllByLabelText} = render(<Storage ws={ws}/>));
     });
 
-    it("should render", async () => {
+    it("Should render.", async () => {
         mockAxios.mockResponse({data: state()});
         mockAxios.mockResponse({data: drives});
 
@@ -33,12 +33,14 @@ describe("<Storage />", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should hold pending states", async () => {
+    it("Should handle pending states.", async () => {
         mockAxios.mockResponse({data: state(true)});
         mockAxios.mockResponse({data: drives});
         await wait(() => getByText("Formatting"));
         expect(getByLabelText("RAID").disabled).toBeTruthy();
         expect(getByLabelText("sdc1").disabled).toBeTruthy();
         expect(getAllByLabelText("sdc")[1].disabled).toBeTruthy();
+        expect(getByText("Set UUID").disabled).toBeTruthy();
+        expect(getByText("Unset UUID").disabled).toBeTruthy();
     });
 });

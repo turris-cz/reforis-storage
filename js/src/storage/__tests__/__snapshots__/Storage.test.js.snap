@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Storage /> should render 1`] = `
+exports[`<Storage /> Should render. 1`] = `
 <div>
   <h1>
     Storage
@@ -287,7 +287,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
   >
      
      
-    Format&Set
+    Format & Set
   </button>
   <h3>
     Use prepared storage
@@ -315,7 +315,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
       >
         <td>
           <div
-            class="custom-control custom-radio"
+            class="custom-control custom-radio custom-control-inline"
           >
             <input
               class="custom-control-input"

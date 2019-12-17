@@ -11,8 +11,8 @@ import {
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 
-import {mockJSONError} from "foris/testUtils/network";
-import {mockSetAlert} from "foris/testUtils/alertContextMock";
+import { mockJSONError } from "foris/testUtils/network";
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import drives from "../../__tests__/__fixtures__/drives";
 import UUIDs from "../UUIDs";
 
@@ -20,7 +20,7 @@ describe("<UUIDs />", () => {
     let container;
     const updateUUIDCallback = jest.fn();
     beforeEach(() => {
-        ({container} = render(
+        ({ container } = render(
             <UUIDs
                 currentUUID=""
                 storageIsPending={false}
@@ -30,11 +30,11 @@ describe("<UUIDs />", () => {
         ));
     });
 
-    it("should render", () => {
+    it("Should render.", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should post on 'Set UUID' button click", () => {
+    it("Should post on 'Set UUID' button click.", () => {
         fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Set UUID"));
 
@@ -43,7 +43,7 @@ describe("<UUIDs />", () => {
             .toHaveBeenCalledWith("/reforis/storage/api/update-srv", data, expect.anything());
     });
 
-    it("should post on 'Unset UUID' button click", async () => {
+    it("Should post on 'Unset UUID' button click.", async () => {
         fireEvent.click(getByText(container, "Unset UUID"));
 
         const data = { uuid: "" };
@@ -51,29 +51,29 @@ describe("<UUIDs />", () => {
             .toHaveBeenCalledWith("/reforis/storage/api/update-srv", data, expect.anything());
     });
 
-    it("should call updateUUIDCallback when 'Unset UUID' button click", async () => {
+    it("Should call updateUUIDCallback when 'Unset UUID' button click.", async () => {
         expect(updateUUIDCallback).not.toBeCalled();
         fireEvent.click(getByText(container, "Unset UUID"));
-        mockAxios.mockResponse({result: true});
+        mockAxios.mockResponse({ result: true });
         await wait(() => expect(updateUUIDCallback).toBeCalled());
     });
 
-    it("should call updateUUIDCallback when 'Set UUID' button click", async () => {
+    it("Should call updateUUIDCallback when 'Set UUID' button click.", async () => {
         expect(updateUUIDCallback).not.toBeCalled();
         fireEvent.click(getByText(container, "Set UUID"));
-        mockAxios.mockResponse({result: true});
+        mockAxios.mockResponse({ result: true });
         await wait(() => expect(updateUUIDCallback).toBeCalled());
     });
 
-    it("should handle set UUID post error", async () => {
+    it("Should handle set UUID post error.", async () => {
         fireEvent.click(getByText(container, "Set UUID"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("UUID selection was failed."));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("UUID selection failed."));
     });
 
-    it("should hold unset UUID post error", async () => {
+    it("Should handle unset UUID post error.", async () => {
         fireEvent.click(getByText(container, "Unset UUID"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("UUID selection was failed."));
+        await wait(() => expect(mockSetAlert).toBeCalledWith("UUID selection failed."));
     });
 });

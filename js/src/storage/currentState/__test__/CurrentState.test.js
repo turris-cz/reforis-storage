@@ -19,11 +19,11 @@ describe("<CurrentState />", () => {
         ({ container, rerender } = render(<CurrentState storageIsPending={false} {...state()} />));
     });
 
-    it("should render", () => {
+    it("Should render.", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should render <PendingMigration/> on differnet uuid and old_uuid", () => {
+    it("Should render <PendingMigration/> on differnet uuid and old_uuid.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
@@ -35,7 +35,7 @@ describe("<CurrentState />", () => {
         getByText(container, /waiting for restart/);
     });
 
-    it("should render <BrokenSetupAlert/> old_uuid broken", () => {
+    it("Should render <BrokenSetupAlert/> old_uuid broken.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}

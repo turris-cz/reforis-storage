@@ -14,6 +14,10 @@ import {
 import API_URLs from "../API";
 import { NOT_PENDING_STORAGE_STATES } from "./constants";
 
+/**
+ * The useStorageState hook gets initial storage state and keeps it updated via WebSockets.
+ * It uses `state` action of `storage` module of foris-controller.
+ */
 export default function useStorageState(ws, onStateChange) {
     const [setAlert] = useAlert();
     const [storageState, setStorageState] = useState({ state: API_STATE.INIT });
@@ -24,10 +28,9 @@ export default function useStorageState(ws, onStateChange) {
     }, [storageStateGet]);
 
     useEffect(() => {
-        if ([API_STATE.INIT, API_STATE.SENDING].includes(storageStateGetStatus.state)) {
-            return;
+        if ([API_STATE.SUCCESS, API_STATE.ERROR].includes(storageStateGetStatus.state)) {
+            setStorageState(storageStateGetStatus);
         }
-        setStorageState(storageStateGetStatus);
     }, [setAlert, storageStateGet, storageStateGetStatus]);
 
     const [storageStateWS] = useWSForisModule(ws, "storage", "state");
@@ -38,7 +41,7 @@ export default function useStorageState(ws, onStateChange) {
                 { data: { state: { $set: storageStateWS.current } } },
             ));
             if (storageStateWS.current === NOT_PENDING_STORAGE_STATES.failed) {
-                setAlert("Device preparing was failed. Check notifications for more info.");
+                setAlert("Device preparation failed. Check notifications for more information.");
             } else if (storageStateWS.current === NOT_PENDING_STORAGE_STATES.done) {
                 storageStateGet();
             }

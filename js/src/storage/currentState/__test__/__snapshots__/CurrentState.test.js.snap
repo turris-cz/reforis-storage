@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CurrentState /> should render 1`] = `
+exports[`<CurrentState /> Should render. 1`] = `
 <div>
   <table
     class="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12"
