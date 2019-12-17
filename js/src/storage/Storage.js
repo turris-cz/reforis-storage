@@ -12,11 +12,10 @@ import {
 } from "foris";
 
 import API_URLs from "../API";
-import Drives from "./Drives/Drives";
 import CurrentState from "./currentState/CurrentState";
 import useStorageState from "./hooks";
-import UUIDs from "./UUIDs/UUIDs";
 import { PENDING_STORAGE_STATES } from "./constants";
+import DrivesOperations from "./DrivesOperations";
 
 Storage.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -32,16 +31,17 @@ IO-intensive applications should reside) will get moved to this new drive.
 `);
 
 export default function Storage({ ws }) {
-    const [getDrivesStatus, getDrives] = useAPIGet(API_URLs.drives);
+    const [getDrivesResponse, getDrives] = useAPIGet(API_URLs.drives);
     const storageState = useStorageState(ws, getDrives);
     useEffect(() => {
         getDrives();
     }, [getDrives]);
 
-    if (storageState.state === API_STATE.ERROR || getDrivesStatus.state === API_STATE.ERROR) {
+    if (storageState.state === API_STATE.ERROR || getDrivesResponse.state === API_STATE.ERROR) {
         return <ErrorMessage />;
     }
-    if (storageState.state !== API_STATE.SUCCESS || getDrivesStatus.state !== API_STATE.SUCCESS) {
+
+    if (storageState.state !== API_STATE.SUCCESS || getDrivesResponse.state !== API_STATE.SUCCESS) {
         return <Spinner />;
     }
 
@@ -59,25 +59,11 @@ export default function Storage({ ws }) {
                 {...storageState.data}
             />
 
-            {getDrivesStatus.data.drives.length === 0
-                ? (<p>{_("No drives connected, please connect a drive and refresh the page.")}</p>)
-                : (
-                    <>
-                        <h3>{_("Prepare drives")}</h3>
-                        <Drives
-                            drives={getDrivesStatus.data.drives}
-                            currentUUID={storageState.data.uuid}
-                            storageIsPending={storageIsPending}
-                        />
-
-                        <h3>{_("Use prepared storage")}</h3>
-                        <UUIDs
-                            drives={getDrivesStatus.data.drives}
-                            currentUUID={storageState.data.uuid}
-                            storageIsPending={storageIsPending}
-                        />
-                    </>
-                )}
+            <DrivesOperations
+                drives={getDrivesResponse.data.drives}
+                currentUUID={storageState.data.uuid}
+                storageIsPending={storageIsPending}
+            />
         </>
     );
 }
