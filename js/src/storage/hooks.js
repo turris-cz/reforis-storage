@@ -49,5 +49,5 @@ export default function useStorageState(ws, onStateChange) {
         }
     }, [onStateChange, setAlert, storageStateGet, storageStateWS]);
 
-    return storageState;
+    return [storageState, storageStateGet];
 }

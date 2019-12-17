@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Drives /> should render 1`] = `
+exports[`<Drives /> Should render modal on Format&Set click. 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -1,11 +1,11 @@
+  <DocumentFragment>
+    <div
+      id=\\"modal-container\\"
+    >
+      <div
+-       class=\\"modal fade \\"
++       class=\\"modal fade show\\"
+        role=\\"dialog\\"
+      >
+        <div
+          class=\\"modal-dialog modal-dialog-centered\\"
+          role=\\"document\\""
+`;
+
+exports[`<Drives /> Should render. 1`] = `
 <div>
   <div
     id="modal-container"
@@ -232,27 +252,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
   >
      
      
-    Format&Set
+    Format & Set
   </button>
 </div>
-`;
-
-exports[`<Drives /> should render modal on Format&Set click 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -1,11 +1,11 @@
-  <DocumentFragment>
-    <div
-      id=\\"modal-container\\"
-    >
-      <div
--       class=\\"modal fade \\"
-+       class=\\"modal fade show\\"
-        role=\\"dialog\\"
-      >
-        <div
-          class=\\"modal-dialog modal-dialog-centered\\"
-          role=\\"document\\""
 `;
