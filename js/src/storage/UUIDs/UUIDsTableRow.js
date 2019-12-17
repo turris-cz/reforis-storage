@@ -8,6 +8,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Radio } from "foris";
+
 UUIDsTableRow.propTypes = {
     drives: PropTypes.arrayOf(
         PropTypes.shape({
@@ -31,23 +33,17 @@ export default function UUIDsTableRow({
     return (
         <tr className={selected ? "table-active" : ""}>
             <td>
-                <div className="custom-control custom-radio">
-                    <input
-                        checked={selected}
-                        type="radio"
-                        id={uuid}
-                        value={uuid}
-                        name="uuids"
-                        className="custom-control-input"
-                        onChange={() => {
-                            setSelectedUUID(uuid);
-                        }}
-                        disabled={disabled}
-                    />
-                    <label className="custom-control-label" htmlFor={uuid}>
-                        {devices}
-                    </label>
-                </div>
+                <Radio
+                    label={devices}
+                    id={uuid}
+                    name="uuids"
+                    value={uuid}
+                    checked={selected}
+                    onChange={() => {
+                        setSelectedUUID(uuid);
+                    }}
+                    disabled={disabled}
+                />
             </td>
             <td>
                 {uuid}
