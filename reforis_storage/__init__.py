@@ -3,10 +3,12 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
+from http import HTTPStatus
 from pathlib import Path
-
 from flask import Blueprint, current_app, jsonify, request
-from reforis.foris_controller_api.utils import validate_json
+from flask_babel import gettext as _
+
+from reforis.foris_controller_api.utils import APIError, validate_json
 
 # pylint: disable=invalid-name
 blueprint = Blueprint(
@@ -46,11 +48,17 @@ def drives():
 def prepare_srv():
     data = request.json
     validate_json(data, {'drives': list, 'raid': str})
-    return jsonify(current_app.backend.perform('storage', 'prepare_srv_drive', data))
+    response = current_app.backend.perform('storage', 'prepare_srv_drive', data)
+    if response.get('result') is not True:
+        raise APIError(_('Device preparation failed.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+    return '', HTTPStatus.OK
 
 
 @blueprint.route('/update-srv', methods=['POST'])
 def update_srv():
     data = request.json
     validate_json(data, {'uuid': str})
-    return jsonify(current_app.backend.perform('storage', 'update_srv', data))
+    response = current_app.backend.perform('storage', 'update_srv', data)
+    if response.get('result') is not True:
+        raise APIError(_('UUID set failed.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+    return '', HTTPStatus.OK
