@@ -1,44 +1,39 @@
+#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#
+#  This is free software, licensed under the GNU General Public License v3.
+#  See /LICENSE for more information.
+
 from http import HTTPStatus
-
 import pytest
-from flask import current_app
 
-from enum import Enum, auto
-
-
-class Method(Enum):
-    GET = auto()
-    POST = auto()
+from reforis.test_utils import _test_api_endpoint_foris_controller_call, mock_backend_response
 
 
 @pytest.mark.parametrize(
-    'endpoint, module, action, method, data', [
-        ('state', 'storage', 'get_state', Method.GET, {}),
-        ('settings', 'storage', 'get_settings', Method.GET, {}),
-        ('drives', 'storage', 'get_drives', Method.GET, {}),
-        ('prepare-srv', 'storage', 'prepare_srv_drive', Method.POST, {'drives': [], 'raid': ''}),
-        ('update-srv', 'storage', 'update_srv', Method.POST, {'uuid': ''}),
+    'endpoint, module, action', [
+        ('state', 'storage', 'get_state'),
+        ('settings', 'storage', 'get_settings'),
+        ('drives', 'storage', 'get_drives'),
     ]
 )
-def test_api_endpoints_exist(client, endpoint, module, action, method, data):
-    url = f'/storage/api/{endpoint}'
-
-    response = None
-    if method == Method.GET:
-        response = client.get(url)
-    if method == Method.POST:
-        response = client.post(url, json=data)
-
-    assert response.status_code == 200
-
-    _check_called_foris_controller_module(current_app.backend._instance, module, action)
+def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, action):
+    _test_api_endpoint_foris_controller_call(client, f'storage/api/{endpoint}', 'get', module, action)
 
 
-def _check_called_foris_controller_module(sender_mock, module, action):
-    modules = [call[1][0] for call in sender_mock.send.mock_calls]
-    actions = [call[1][1] for call in sender_mock.send.mock_calls]
-    assert module in modules
-    assert action in actions
+@pytest.mark.parametrize(
+    'endpoint, module, action, request_data, response_data', [
+        ('prepare-srv', 'storage', 'prepare_srv_drive', {'drives': [], 'raid': ''}, {'result': True}),
+        ('update-srv', 'storage', 'update_srv', {'uuid': ''}, {'result': True}),
+    ]
+)
+def test_api_post_endpoint_foris_controller_calls(client, endpoint, module, action, request_data, response_data):
+    _test_api_endpoint_foris_controller_call(
+        client,
+        f'storage/api/{endpoint}', 'post',
+        module, action,
+        request_data=request_data,
+        response_data=response_data,
+    )
 
 
 @pytest.mark.parametrize(
@@ -54,9 +49,16 @@ def test_prepare_srv_post_invalid_data(client, data, message):
     assert response.json == message
 
 
+@mock_backend_response({'storage': {'prepare_srv_drive': {'result': True}}})
 def test_prepare_srv_post_valid_data(client):
     response = client.post('/storage/api/prepare-srv', json={'drives': [], 'raid': ''})
     assert response.status_code == HTTPStatus.OK
+
+
+@mock_backend_response({'storage': {'prepare_srv_drive': {'result': False}}})
+def test_prepare_srv_post_fail(client):
+    response = client.post('/storage/api/prepare-srv', json={'drives': [], 'raid': ''})
+    assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 @pytest.mark.parametrize(
@@ -71,6 +73,13 @@ def test_update_srv_post_invalid_data(client, data, message):
     assert response.json == message
 
 
+@mock_backend_response({'storage': {'update_srv': {'result': True}}})
 def test_update_srv_post_valid_data(client):
-    response = client.post('/storage/api/update-srv', json={'uuid': ""})
+    response = client.post('/storage/api/update-srv', json={'uuid': ''})
     assert response.status_code == HTTPStatus.OK
+
+
+@mock_backend_response({'storage': {'update_srv': {'result': False}}})
+def test_update_srv_post_fail(client):
+    response = client.post('/storage/api/update-srv', json={'uuid': ''})
+    assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR

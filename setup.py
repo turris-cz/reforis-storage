@@ -51,7 +51,9 @@ setuptools.setup(
             'pylint==2.3.1',
             'pylint-quotes==0.2.1',
             'pycodestyle==2.5.0',
-            'reforis @ git+https://gitlab.labs.nic.cz/turris/reforis/reforis@master#egg=reforis',
+            'reforis @ git+https://gitlab.labs.nic.cz/turris/reforis/reforis@improve-python-tests#egg=reforis',
+            'foris-client @ git+https://gitlab.labs.nic.cz/turris/foris-controller/foris-client@master#egg=foris-client',
+            'paho-mqtt==1.5.0',
         ],
     },
     setup_requires=[
