@@ -43,4 +43,10 @@ describe("<Storage />", () => {
         expect(getByText("Set UUID").disabled).toBeTruthy();
         expect(getByText("Unset UUID").disabled).toBeTruthy();
     });
+
+    it("Should handle empty drives list.", async () => {
+        mockAxios.mockResponse({data: state()});
+        mockAxios.mockResponse({data: {drives:[]}});
+        await wait(() => getByText(/No drives connected/));
+    });
 });
