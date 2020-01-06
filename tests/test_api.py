@@ -59,6 +59,7 @@ def test_prepare_srv_post_valid_data(client):
 def test_prepare_srv_post_fail(client):
     response = client.post('/storage/api/prepare-srv', json={'drives': [], 'raid': ''})
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
+    assert 'Device preparation failed.' == response.json
 
 
 @pytest.mark.parametrize(
@@ -83,3 +84,4 @@ def test_update_srv_post_valid_data(client):
 def test_update_srv_post_fail(client):
     response = client.post('/storage/api/update-srv', json={'uuid': ''})
     assert response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
+    assert 'UUID set failed.' == response.json

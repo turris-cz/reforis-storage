@@ -9,7 +9,7 @@ import React from "react";
 import { render } from "foris/testUtils/customTestRender";
 
 import diffSnapshot from "snapshot-diff";
-import state from "../../__tests__/__fixtures__/state";
+import getStateFixture from "../../__tests__/__fixtures__/getStateFixture";
 import CurrentStateTable from "../CurrentStateTable";
 
 describe("<CurrentStateTable />", () => {
@@ -20,7 +20,7 @@ describe("<CurrentStateTable />", () => {
     beforeEach(() => {
         ({ rerender, asFragment } = render(<CurrentStateTable
             storageIsPending={false}
-            {...state()}
+            {...getStateFixture()}
         />));
         firstRender = asFragment();
     });
@@ -32,7 +32,7 @@ describe("<CurrentStateTable />", () => {
     it("Should render spinner when storage is pending.", () => {
         rerender(
             <CurrentStateTable
-                {...state()}
+                {...getStateFixture()}
                 state="formatting"
                 storageIsPending
             />,
@@ -44,7 +44,7 @@ describe("<CurrentStateTable />", () => {
     it("Should hide device if no device selected.", () => {
         rerender(
             <CurrentStateTable
-                {...state()}
+                {...getStateFixture()}
                 old_device_desc=""
                 storageIsPending={false}
                 old_uuid="broken"

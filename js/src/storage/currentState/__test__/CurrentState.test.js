@@ -9,14 +9,16 @@ import React from "react";
 import { render, getByText } from "foris/testUtils/customTestRender";
 
 import CurrentState from "../CurrentState";
-import state from "../../__tests__/__fixtures__/state";
+import getStateFixture from "../../__tests__/__fixtures__/getStateFixture";
 
 describe("<CurrentState />", () => {
     let container;
     let rerender;
 
     beforeEach(() => {
-        ({ container, rerender } = render(<CurrentState storageIsPending={false} {...state()} />));
+        ({ container, rerender } = render(
+            <CurrentState storageIsPending={false} {...getStateFixture()} />,
+        ));
     });
 
     it("Should render.", () => {
@@ -27,7 +29,7 @@ describe("<CurrentState />", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
-                {...state()}
+                {...getStateFixture()}
                 uuid="111"
                 old_uuid="222"
             />,
@@ -39,7 +41,7 @@ describe("<CurrentState />", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
-                {...state()}
+                {...getStateFixture()}
                 old_uuid="broken"
             />,
         );

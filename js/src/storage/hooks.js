@@ -22,16 +22,16 @@ export default function useStorageState(ws, onStateChange) {
     const [setAlert] = useAlert();
     const [storageState, setStorageState] = useState({ state: API_STATE.INIT });
 
-    const [storageStateGetStatus, storageStateGet] = useAPIGet(API_URLs.state);
+    const [getStorageStateResponse, getStorageState] = useAPIGet(API_URLs.state);
     useEffect(() => {
-        storageStateGet();
-    }, [storageStateGet]);
+        getStorageState();
+    }, [getStorageState]);
 
     useEffect(() => {
-        if ([API_STATE.SUCCESS, API_STATE.ERROR].includes(storageStateGetStatus.state)) {
-            setStorageState(storageStateGetStatus);
+        if ([API_STATE.SUCCESS, API_STATE.ERROR].includes(getStorageStateResponse.state)) {
+            setStorageState(getStorageStateResponse);
         }
-    }, [setAlert, storageStateGet, storageStateGetStatus]);
+    }, [setAlert, getStorageState, getStorageStateResponse]);
 
     const [storageStateWS] = useWSForisModule(ws, "storage", "state");
     useEffect(() => {
@@ -43,11 +43,11 @@ export default function useStorageState(ws, onStateChange) {
             if (storageStateWS.current === NOT_PENDING_STORAGE_STATES.failed) {
                 setAlert("Device preparation failed. Check notifications for more information.");
             } else if (storageStateWS.current === NOT_PENDING_STORAGE_STATES.done) {
-                storageStateGet();
+                getStorageState();
             }
             onStateChange();
         }
-    }, [onStateChange, setAlert, storageStateGet, storageStateWS]);
+    }, [onStateChange, setAlert, getStorageState, storageStateWS]);
 
-    return [storageState, storageStateGet];
+    return [storageState, getStorageState];
 }

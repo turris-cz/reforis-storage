@@ -12,7 +12,7 @@ import {WebSockets} from "foris";
 import Storage from "../Storage";
 import mockAxios from 'jest-mock-axios';
 import drives from './__fixtures__/drives';
-import state from './__fixtures__/state';
+import getStateFixture from './__fixtures__/getStateFixture';
 
 describe("<Storage />", () => {
     let container;
@@ -26,7 +26,7 @@ describe("<Storage />", () => {
     });
 
     it("Should render.", async () => {
-        mockAxios.mockResponse({data: state()});
+        mockAxios.mockResponse({data: getStateFixture()});
         mockAxios.mockResponse({data: drives});
 
         await wait(() => getByText("Storage"));
@@ -34,7 +34,7 @@ describe("<Storage />", () => {
     });
 
     it("Should handle pending states.", async () => {
-        mockAxios.mockResponse({data: state(true)});
+        mockAxios.mockResponse({data: getStateFixture(true)});
         mockAxios.mockResponse({data: drives});
         await wait(() => getByText("Formatting"));
         expect(getByLabelText("RAID").disabled).toBeTruthy();
@@ -45,7 +45,7 @@ describe("<Storage />", () => {
     });
 
     it("Should handle empty drives list.", async () => {
-        mockAxios.mockResponse({data: state()});
+        mockAxios.mockResponse({data: getStateFixture()});
         mockAxios.mockResponse({data: {drives:[]}});
         await wait(() => getByText(/No drives connected/));
     });

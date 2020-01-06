@@ -46,6 +46,10 @@ def drives():
 
 @blueprint.route('/prepare-srv', methods=['POST'])
 def prepare_srv():
+    """
+    Format specified disks to btrfs with specified RAID.
+    Request data example: {"disks": ["sda", "sdb", "sdc"], "raid": "raid1"}.
+    """
     data = request.json
     validate_json(data, {'drives': list, 'raid': str})
     response = current_app.backend.perform('storage', 'prepare_srv_drive', data)
@@ -56,6 +60,10 @@ def prepare_srv():
 
 @blueprint.route('/update-srv', methods=['POST'])
 def update_srv():
+    """
+    Select active disk (the one that is mounted on /srv path). Disk is specified by its UUID (in request body).
+    Request data example: {"uuid": "1234"}.
+    """
     data = request.json
     validate_json(data, {'uuid': str})
     response = current_app.backend.perform('storage', 'update_srv', data)

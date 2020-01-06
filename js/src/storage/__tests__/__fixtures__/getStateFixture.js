@@ -5,7 +5,7 @@
  * See /LICENSE for more information.
  */
 
-export default function state(blocked = false) {
+export default function getStateFixture(blocked = false) {
     return {
         "blocked": blocked,
         "old_device_desc": "/dev/sdb",
