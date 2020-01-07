@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Drives /> Should render modal on Format&Set click. 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -1,11 +1,11 @@
+  <DocumentFragment>
+    <div
+      id=\\"modal-container\\"
+    >
+      <div
+-       class=\\"modal fade \\"
++       class=\\"modal fade show\\"
+        role=\\"dialog\\"
+      >
+        <div
+          class=\\"modal-dialog modal-dialog-centered\\"
+          role=\\"document\\""
+`;
+
+exports[`<Drives /> Should render. 1`] = `
+<div>
+  <div
+    id="modal-container"
+  />
+  <h5>
+    Custom
+  </h5>
+  <p>
+    
+Don't change the RAID level, keeps everything set the way it was. Useful if you have a really custom setup of your RAID
+we don't support and want to just add/remove some disks.
+
+  </p>
+  <h5>
+    JBOD
+  </h5>
+  <p>
+    
+No redundancy, if one drive fails, you loose your data. On the other hand, provides the most space - sum of the space
+available on all included drives.
+
+  </p>
+  <h5>
+    RAID1
+  </h5>
+  <p>
+    
+Everything is redundant and stored at two distinct drives. If you loose one drive, you can easily replace it without
+loosing any data. On the other hand, you have a half of the disk space you would have with JBOD.
+
+  </p>
+  <div
+    class="form-group col-sm-12 offset-lg-1 col-lg-10"
+  >
+    <label
+      for="1"
+    >
+      RAID
+    </label>
+    <select
+      class="custom-select"
+      id="1"
+    >
+      <option
+        value="custom"
+      >
+        Custom
+      </option>
+      <option
+        value="single"
+      >
+        JBOD
+      </option>
+      <option
+        value="raid1"
+      >
+        RAID1
+      </option>
+    </select>
+  </div>
+  <table
+    class="table table-hover col-sm-12 offset-lg-1 col-lg-10"
+  >
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          Device
+        </th>
+        <th
+          scope="col"
+        >
+          Description
+        </th>
+        <th
+          scope="col"
+        >
+          Filesystem
+        </th>
+        <th
+          scope="col"
+        >
+          UUID
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class=""
+      >
+        <td>
+          <div
+            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+          >
+            <div
+              class="custom-control custom-checkbox "
+            >
+              <input
+                class="custom-control-input"
+                id="2"
+                type="checkbox"
+              />
+              <label
+                class="custom-control-label"
+                for="2"
+              >
+                sdb
+              </label>
+            </div>
+          </div>
+        </td>
+        <td>
+          USB DISK 2.0 (7.2 GiB)
+        </td>
+        <td />
+        <td>
+          1111
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <td>
+          <div
+            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+          >
+            <div
+              class="custom-control custom-checkbox "
+            >
+              <input
+                class="custom-control-input"
+                id="3"
+                type="checkbox"
+              />
+              <label
+                class="custom-control-label"
+                for="3"
+              >
+                sdc1
+              </label>
+            </div>
+          </div>
+        </td>
+        <td>
+          USB DISK (3.6 GiB)
+        </td>
+        <td>
+          vfat
+        </td>
+        <td>
+          2222
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <td>
+          <div
+            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+          >
+            <div
+              class="custom-control custom-checkbox "
+            >
+              <input
+                class="custom-control-input"
+                id="4"
+                type="checkbox"
+              />
+              <label
+                class="custom-control-label"
+                for="4"
+              >
+                sdb1
+              </label>
+            </div>
+          </div>
+        </td>
+        <td>
+          USB DISK (7.2 GiB)
+        </td>
+        <td>
+          ext4
+        </td>
+        <td>
+          3333
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <td>
+          <div
+            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+          >
+            <div
+              class="custom-control custom-checkbox "
+            >
+              <input
+                class="custom-control-input"
+                id="5"
+                type="checkbox"
+              />
+              <label
+                class="custom-control-label"
+                for="5"
+              >
+                sdc
+              </label>
+            </div>
+          </div>
+        </td>
+        <td>
+          USB DISK 2.0 (3.6 GiB)
+        </td>
+        <td>
+          btrfs
+        </td>
+        <td>
+          4444
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    disabled=""
+    type="button"
+  >
+     
+     
+    Format & Set
+  </button>
+</div>
+`;

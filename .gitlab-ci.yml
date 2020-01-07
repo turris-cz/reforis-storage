@@ -5,7 +5,7 @@ stages:
 
 before_script:
   - apt-get update && apt-get -y install sudo make curl git
-  - make prepare-dev
+  - make prepare-env && make prepare-dev
 
 test:
   stage: test

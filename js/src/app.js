@@ -9,9 +9,9 @@ import Storage from "./storage/Storage";
 
 const StoragePlugin = {
     name: _("Storage"),
-    submenuId: "administration",
-    weight: 100,
+    weight: 75,
     path: "/storage",
+    icon: "hdd",
     component: Storage,
 };
 

@@ -3,14 +3,12 @@
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
 
-from pathlib import Path
 from http import HTTPStatus
-
+from pathlib import Path
 from flask import Blueprint, current_app, jsonify, request
 from flask_babel import gettext as _
 
-from reforis.foris_controller_api import APIError
-from reforis.foris_controller_api.utils import log_error, validate_json
+from reforis.foris_controller_api.utils import APIError, validate_json
 
 # pylint: disable=invalid-name
 blueprint = Blueprint(
@@ -31,17 +29,44 @@ storage = {
 }
 
 
-@blueprint.route('/example', methods=['GET'])
-def get_example():
-    return jsonify(current_app.backend.perform('example_module', 'example_action'))
+@blueprint.route('/state', methods=['GET'])
+def state():
+    return jsonify(current_app.backend.perform('storage', 'get_state'))
 
 
-@blueprint.route('/example', methods=['POST'])
-def post_example():
-    validate_json(request.json, {'modules': list})
+@blueprint.route('/settings', methods=['GET'])
+def settings():
+    return jsonify(current_app.backend.perform('storage', 'get_settings'))
 
-    response = current_app.backend.perform('example_module', 'example_action', request.json)
+
+@blueprint.route('/drives', methods=['GET'])
+def drives():
+    return jsonify(current_app.backend.perform('storage', 'get_drives'))
+
+
+@blueprint.route('/prepare-srv', methods=['POST'])
+def prepare_srv():
+    """
+    Format specified disks to btrfs with specified RAID.
+    Request data example: {"disks": ["sda", "sdb", "sdc"], "raid": "raid1"}.
+    """
+    data = request.json
+    validate_json(data, {'drives': list, 'raid': str})
+    response = current_app.backend.perform('storage', 'prepare_srv_drive', data)
     if response.get('result') is not True:
-        raise APIError(_('Cannot create entity'), HTTPStatus.INTERNAL_SERVER_ERROR)
+        raise APIError(_('Device preparation failed.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+    return '', HTTPStatus.OK
 
-    return jsonify(response), HTTPStatus.CREATED
+
+@blueprint.route('/update-srv', methods=['POST'])
+def update_srv():
+    """
+    Select active disk (the one that is mounted on /srv path). Disk is specified by its UUID (in request body).
+    Request data example: {"uuid": "1234"}.
+    """
+    data = request.json
+    validate_json(data, {'uuid': str})
+    response = current_app.backend.perform('storage', 'update_srv', data)
+    if response.get('result') is not True:
+        raise APIError(_('UUID set failed.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+    return '', HTTPStatus.OK
