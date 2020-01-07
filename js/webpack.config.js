@@ -19,14 +19,14 @@ module.exports = () => ({
     resolve: {
         modules: [
             path.resolve(__dirname, "./src"),
-            path.resolve(__dirname, "./node_modules")
-        ]
+            path.resolve(__dirname, "./node_modules"),
+        ],
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!foris)/,
                 loader: "babel-loader",
             },
             {
