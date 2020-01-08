@@ -53,7 +53,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
 
   </p>
   <div
-    class="form-group col-sm-12 offset-lg-1 col-lg-10"
+    class="form-group"
   >
     <label
       for="1"
@@ -82,7 +82,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
     </select>
   </div>
   <table
-    class="table table-hover col-sm-12 offset-lg-1 col-lg-10"
+    class="table table-hover col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <thead>
       <tr>
@@ -114,7 +114,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
       >
         <td>
           <div
-            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+            class="form-group"
           >
             <div
               class="custom-control custom-checkbox "
@@ -146,7 +146,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
       >
         <td>
           <div
-            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+            class="form-group"
           >
             <div
               class="custom-control custom-checkbox "
@@ -180,7 +180,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
       >
         <td>
           <div
-            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+            class="form-group"
           >
             <div
               class="custom-control custom-checkbox "
@@ -214,7 +214,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
       >
         <td>
           <div
-            class="form-group col-sm-12 offset-lg-1 col-lg-10"
+            class="form-group"
           >
             <div
               class="custom-control custom-checkbox "
@@ -246,7 +246,7 @@ loosing any data. On the other hand, you have a half of the disk space you would
     </tbody>
   </table>
   <button
-    class="btn btn-primary  offset-lg-8 col-lg-3 col-sm-12"
+    class="btn btn-primary  col-sm-12 col-lg-3"
     disabled=""
     type="button"
   >

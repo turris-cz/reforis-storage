@@ -3,7 +3,7 @@
 exports[`<UUIDs /> Should render. 1`] = `
 <div>
   <table
-    class="table table-hover col-sm-12 offset-lg-1 col-lg-10"
+    class="table table-hover col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
   >
     <thead>
       <tr>
