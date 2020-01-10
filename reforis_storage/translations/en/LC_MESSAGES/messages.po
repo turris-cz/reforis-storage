@@ -1,0 +1,215 @@
+# English translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-01-10 09:18+0100\n"
+"PO-Revision-Date: 2020-01-10 09:18+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: js/src/app.js:11 js/src/storage/Storage.js:58
+msgid "Storage"
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:33
+msgid "No drives connected, please connect a drive and refresh the page."
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:37
+msgid "Prepare drives"
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:40
+msgid "Use prepared storage"
+msgstr ""
+
+#: js/src/storage/Storage.js:24
+msgid ""
+"\n"
+"Here you can set up where your persistent data should be stored. If you "
+"want to use Nextcloud, LXC or other IO-intensive\n"
+"applications, don't put them on internal flash, but always use external "
+"storage. Also, make sure that your data will fit\n"
+"on the new drive before switching.\n"
+"</br></br>\n"
+"Once you choose a drive, it will be formatted to Btrfs filesystem and on "
+"next reboot, your /srv (directory where all\n"
+"IO-intensive applications should reside) will get moved to this new "
+"drive.\n"
+msgstr ""
+
+#: js/src/storage/Storage.js:61
+msgid "Current state"
+msgstr ""
+
+#: js/src/storage/constants.js:15
+msgid "Formatting"
+msgstr ""
+
+#: js/src/storage/constants.js:16
+msgid "Growing"
+msgstr ""
+
+#: js/src/storage/constants.js:17
+msgid "Shrinking"
+msgstr ""
+
+#: js/src/storage/constants.js:18
+msgid "Balancing"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:25
+msgid ""
+"\n"
+"You are adding the first drive, then you'll get notification and you will"
+" be asked to reboot. On the reboot data will be\n"
+"moved from old drive to the new one. This can take some time so your next"
+" reboot will take longer. \n"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:36
+msgid "Reboot confirmation"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:39
+msgid ""
+"\n"
+"Are you sure you want to proceed? Newly selected drive(s) will be "
+"formatted and you will loose all the data on it.\n"
+"${firstDriveMessage}\n"
+"Are you sure you want to continue?\n"
+"                    "
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:48
+msgid "Cancel"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:51
+msgid "Continue"
+msgstr ""
+
+#: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
+msgid "Device preparation failed."
+msgstr ""
+
+#: js/src/storage/Drives/Drives.js:88
+msgid "Format & Set"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:34
+#: js/src/storage/currentState/CurrentStateTable.js:44
+msgid "Device"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:35
+msgid "Description"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:36
+msgid "Filesystem"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:37
+#: js/src/storage/UUIDs/UUIDsTable.js:29
+#: js/src/storage/currentState/CurrentStateTable.js:49
+msgid "UUID"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
+msgid "Custom"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
+msgid "JBOD"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:17 js/src/storage/Drives/RAIDHelpTexts.js:32
+msgid "RAID1"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:31
+#: js/src/storage/currentState/CurrentStateTable.js:53
+msgid "RAID"
+msgstr ""
+
+#: js/src/storage/Drives/RAIDHelpTexts.js:11
+msgid ""
+"\n"
+"Don't change the RAID level, keeps everything set the way it was. Useful "
+"if you have a really custom setup of your RAID\n"
+"we don't support and want to just add/remove some disks.\n"
+msgstr ""
+
+#: js/src/storage/Drives/RAIDHelpTexts.js:15
+msgid ""
+"\n"
+"No redundancy, if one drive fails, you loose your data. On the other "
+"hand, provides the most space - sum of the space\n"
+"available on all included drives.\n"
+msgstr ""
+
+#: js/src/storage/Drives/RAIDHelpTexts.js:19
+msgid ""
+"\n"
+"Everything is redundant and stored at two distinct drives. If you loose "
+"one drive, you can easily replace it without\n"
+"loosing any data. On the other hand, you have a half of the disk space "
+"you would have with JBOD.\n"
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDs.js:41
+msgid "UUID selection failed."
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDs.js:58
+msgid "There aren't prepared drives to be used."
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:27
+msgid "Unset UUID"
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:34
+msgid "Set UUID"
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDsTable.js:28
+msgid "Devices"
+msgstr ""
+
+#: js/src/storage/currentState/BrokenSetupAlert.js:15
+msgid ""
+"Your setup is currently broken and you are probably loosing data, set a "
+"new storage device as soon as you can!"
+msgstr ""
+
+#: js/src/storage/currentState/CurrentStateTable.js:30
+msgid "State"
+msgstr ""
+
+#: js/src/storage/currentState/PendingMigrationAlert.js:11
+msgid ""
+"\n"
+"Your router is <b>waiting for restart</b> to proceed with migrating your "
+"data to the newly selected drive. Please\n"
+"restart your router <b>as soon as possible</b> but bear in mind that the "
+"next reboot will take longer as all data need\n"
+"to be migrated.\n"
+msgstr ""
+
+#: reforis_storage/__init__.py:71
+msgid "UUID set failed."
+msgstr ""
+
