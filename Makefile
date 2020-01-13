@@ -95,7 +95,7 @@ init-langs: create-messages
 		-d reforis_storage/translations/ -l $$lang \
 	; done
 update-messages:
-	$(VENV_BIN)/pybabel update -i ./reforis_storage/translations/messages.pot -d ./reforis/translations
+	$(VENV_BIN)/pybabel update -i ./reforis_storage/translations/messages.pot -d ./reforis_storage/translations
 compile-messages:
 	$(VENV_BIN)/pybabel compile -f -d ./reforis_storage/translations
 
