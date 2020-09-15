@@ -8,7 +8,12 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import {
-    API_STATE, ErrorMessage, Spinner, useAPIGet,
+    API_STATE,
+    ErrorMessage,
+    Spinner,
+    useAPIGet,
+    Alert,
+    ALERT_TYPES,
 } from "foris";
 
 import API_URLs from "../API";
@@ -37,16 +42,23 @@ export default function Storage({ ws }) {
         getDrives();
     }, [getDrives]);
 
-    if (storageState.state === API_STATE.ERROR || getDrivesResponse.state === API_STATE.ERROR) {
+    if (
+        storageState.state === API_STATE.ERROR ||
+        getDrivesResponse.state === API_STATE.ERROR
+    ) {
         return <ErrorMessage />;
     }
 
-    if (storageState.state !== API_STATE.SUCCESS || getDrivesResponse.state !== API_STATE.SUCCESS) {
+    if (
+        storageState.state !== API_STATE.SUCCESS ||
+        getDrivesResponse.state !== API_STATE.SUCCESS
+    ) {
         return <Spinner />;
     }
 
-    const storageIsPending = Object.keys(PENDING_STORAGE_STATES).includes(storageState.data.state)
-        || storageState.data.blocking;
+    const storageIsPending =
+        Object.keys(PENDING_STORAGE_STATES).includes(storageState.data.state) ||
+        storageState.data.blocking;
 
     function updateUUIDCallback() {
         getDrives();
@@ -57,13 +69,11 @@ export default function Storage({ ws }) {
         <>
             <h1>{_("Storage")}</h1>
             <p dangerouslySetInnerHTML={{ __html: HELP_TEXT }} />
-
-            <h3>{_("Current state")}</h3>
+            <h2>{_("Current state")}</h2>
             <CurrentState
                 storageIsPending={storageIsPending}
                 {...storageState.data}
             />
-
             <DrivesOperations
                 drives={getDrivesResponse.data.drives}
                 currentUUID={storageState.data.uuid}

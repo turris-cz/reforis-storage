@@ -25,11 +25,11 @@ loosing any data. On the other hand, you have a half of the disk space you would
 export default function RAIDHelpTexts() {
     return (
         <>
-            <h5>{_("Custom")}</h5>
+            <h3>{_("Custom")}</h3>
             <p>{RAID_HELP_TEXTS.custom}</p>
-            <h5>{_("JBOD")}</h5>
+            <h3>{_("JBOD")}</h3>
             <p>{RAID_HELP_TEXTS.JBOD}</p>
-            <h5>{_("RAID1")}</h5>
+            <h3>{_("RAID1")}</h3>
             <p>{RAID_HELP_TEXTS.RAID1}</p>
         </>
     );
