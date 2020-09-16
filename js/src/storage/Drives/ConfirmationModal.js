@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -8,11 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-    Modal,
-    ModalBody,
-    ModalHeader,
-    ModalFooter,
-    Button,
+    Modal, ModalBody, ModalHeader, ModalFooter, Button,
 } from "foris";
 
 ConfirmationModal.propTypes = {
@@ -28,12 +24,15 @@ moved from old drive to the new one. This can take some time so your next reboot
 `);
 
 export default function ConfirmationModal({
-    shown, setShown, onConfirm, isFirstDrive,
+    shown,
+    setShown,
+    onConfirm,
+    isFirstDrive,
 }) {
     const firstDriveMessage = isFirstDrive ? FIRST_DRIVE_MESSAGE : "";
     return (
         <Modal shown={shown} setShown={setShown}>
-            <ModalHeader setShown={setShown} title={_("Reboot confirmation")} />
+            <ModalHeader setShown={setShown} title={_("Format confirmation")} />
             <ModalBody>
                 <p>
                     {_(`
@@ -44,9 +43,7 @@ Are you sure you want to continue?
                 </p>
             </ModalBody>
             <ModalFooter>
-                <Button onClick={() => setShown(false)}>
-                    {_("Cancel")}
-                </Button>
+                <Button onClick={() => setShown(false)}>{_("Cancel")}</Button>
                 <Button className="btn-danger" onClick={onConfirm}>
                     {_("Continue")}
                 </Button>

@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { CheckBox } from "foris";
 import update from "immutability-helper";
 import PropTypes from "prop-types";
@@ -24,8 +24,14 @@ DriveTableRow.propTypes = {
 };
 
 export default function DriveTableRow({
-    drive, isSelected, setSelectedDrives, active, disabled,
+    drive,
+    isSelected,
+    setSelectedDrives,
+    active,
+    disabled,
 }) {
+    const [check, setCheck] = useState(active);
+
     function select() {
         setSelectedDrives((selectedDrives) => {
             const index = selectedDrives.indexOf(drive.dev);
@@ -37,12 +43,15 @@ export default function DriveTableRow({
     }
 
     return (
-        <tr className={active ? "table-active" : ""}>
-            <td>
+        <tr>
+            <td className={drive.dev.length > 3 ? "text-center" : "".trim()}>
                 <CheckBox
-                    checked={isSelected}
+                    checked={isSelected || check}
                     label={drive.dev}
-                    onChange={select}
+                    onChange={() => {
+                        setCheck(false);
+                        select();
+                    }}
                     disabled={disabled}
                 />
             </td>

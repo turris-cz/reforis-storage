@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -16,9 +16,22 @@ to be migrated.
 
 export default function PendingMigrationAlert() {
     return (
-        <Alert type={ALERT_TYPES.WARNING}>
-            <p dangerouslySetInnerHTML={{ __html: PENDING_MIGRATION_TEXT }} />
-            <RebootButton forisFormSize />
-        </Alert>
+        <>
+            <Alert type={ALERT_TYPES.WARNING}>
+                <div className="d-flex flex-column flex-lg-row align-items-center">
+                    <div className="col">
+                        <span
+                            className="mb-3 mb-lg-0"
+                            dangerouslySetInnerHTML={{
+                                __html: PENDING_MIGRATION_TEXT,
+                            }}
+                        />
+                    </div>
+                    <div className="col-auto">
+                        <RebootButton className="btn btn-danger" />
+                    </div>
+                </div>
+            </Alert>
+        </>
     );
 }

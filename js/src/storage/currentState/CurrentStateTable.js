@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -20,40 +20,56 @@ CurrentStateTable.propTypes = {
 };
 
 export default function CurrentStateTable({
-    state, old_device_desc, uuid, raid, storageIsPending,
+    state,
+    old_device_desc,
+    uuid,
+    raid,
+    storageIsPending,
 }) {
     return (
-        <table className="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12">
-            <tbody>
-                {!Object.keys(NOT_PENDING_STORAGE_STATES).includes(state) && (
+        <div className="table-responsive">
+            <table className="table table-hover">
+                <thead className="thead-light">
                     <tr>
-                        <th scope="row">{_("State")}</th>
-                        <td style={{ display: "flex", flexDirection: "row" }}>
-                            {storageIsPending ? (
-                                <SpinnerElement small>
-                                    &nbsp;
-                                    {STORAGE_STATES[state]}
-                                </SpinnerElement>
-                            ) : STORAGE_STATES[state]}
-                        </td>
+                        {old_device_desc !== "none" && (
+                            <th scope="col">{_("Device")}</th>
+                        )}
+                        {!Object.keys(NOT_PENDING_STORAGE_STATES).includes(
+                            state,
+                        ) && <th scope="col">{_("State")}</th>}
+                        <th scope="col">UUID</th>
+                        <th scope="col">RAID</th>
                     </tr>
-                )}
-                {old_device_desc !== "none"
-                    && (
-                        <tr>
-                            <th scope="row">{_("Device")}</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        {old_device_desc !== "none" && (
                             <td>{old_device_desc}</td>
-                        </tr>
-                    )}
-                <tr>
-                    <th scope="row">{_("UUID")}</th>
-                    <td>{uuid}</td>
-                </tr>
-                <tr>
-                    <th scope="row">{_("RAID")}</th>
-                    <td>{raid}</td>
-                </tr>
-            </tbody>
-        </table>
+                        )}
+                        {!Object.keys(NOT_PENDING_STORAGE_STATES).includes(
+                            state,
+                        ) && (
+                            <td
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                }}
+                            >
+                                {storageIsPending ? (
+                                    <SpinnerElement small>
+                                        &nbsp;
+                                        {STORAGE_STATES[state]}
+                                    </SpinnerElement>
+                                ) : (
+                                    STORAGE_STATES[state]
+                                )}
+                            </td>
+                        )}
+                        <td>{uuid}</td>
+                        <td>{raid}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     );
 }

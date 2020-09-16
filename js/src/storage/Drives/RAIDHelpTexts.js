@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -24,13 +24,21 @@ loosing any data. On the other hand, you have a half of the disk space you would
 
 export default function RAIDHelpTexts() {
     return (
-        <>
-            <h3>{_("Custom")}</h3>
-            <p>{RAID_HELP_TEXTS.custom}</p>
-            <h3>{_("JBOD")}</h3>
-            <p>{RAID_HELP_TEXTS.JBOD}</p>
-            <h3>{_("RAID1")}</h3>
-            <p>{RAID_HELP_TEXTS.RAID1}</p>
-        </>
+        <div className="container-fluid">
+            <div className="row row-cols-3">
+                <div className="col-12 col-lg-4">
+                    <h3>{_("Custom")}</h3>
+                    <p>{RAID_HELP_TEXTS.custom}</p>
+                </div>
+                <div className="col-12 col-lg-4">
+                    <h3>{_("JBOD")}</h3>
+                    <p>{RAID_HELP_TEXTS.JBOD}</p>
+                </div>
+                <div className="col-12 col-lg-4">
+                    <h3>{_("RAID1")}</h3>
+                    <p>{RAID_HELP_TEXTS.RAID1}</p>
+                </div>
+            </div>
+        </div>
     );
 }

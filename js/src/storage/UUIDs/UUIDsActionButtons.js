@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -14,25 +14,31 @@ UUIDsActionButtons.propTypes = {
     onUnselectSrv: PropTypes.func.isRequired,
     onUpdateSrv: PropTypes.func.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
+    buttonIsDisabled: PropTypes.bool.isRequired,
 };
 
-export default function UUIDsActionButtons({ onUnselectSrv, onUpdateSrv, storageIsPending }) {
+export default function UUIDsActionButtons({
+    onUnselectSrv,
+    onUpdateSrv,
+    storageIsPending,
+    buttonIsDisabled,
+}) {
     return (
-        <>
+        <div className="row justify-content-end ml-0 mr-0">
             <Button
-                className="btn-primary offset-lg-1 col-lg-4 col-sm-12"
-                disabled={storageIsPending}
+                className="btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
+                disabled={storageIsPending || buttonIsDisabled}
                 onClick={onUnselectSrv}
             >
                 {_("Unset UUID")}
             </Button>
             <Button
-                className="btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-                disabled={storageIsPending}
+                className="btn-primary col-sm-12 col-md-4 col-lg-2"
                 onClick={onUpdateSrv}
+                disabled={storageIsPending || buttonIsDisabled}
             >
                 {_("Set UUID")}
             </Button>
-        </>
+        </div>
     );
 }

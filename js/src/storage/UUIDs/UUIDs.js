@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -15,12 +15,14 @@ import UUIDsTable from "./UUIDsTable";
 import UUIDsActionButtons from "./UUIDsActionButtons";
 
 UUIDs.propTypes = {
-    drives: PropTypes.arrayOf(PropTypes.shape({
-        dev: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        fs: PropTypes.string.isRequired,
-        uuid: PropTypes.string.isRequired,
-    })).isRequired,
+    drives: PropTypes.arrayOf(
+        PropTypes.shape({
+            dev: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            fs: PropTypes.string.isRequired,
+            uuid: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
     updateUUIDCallback: PropTypes.func.isRequired,
@@ -31,7 +33,10 @@ UUIDs.defaultProps = {
 };
 
 export default function UUIDs({
-    drives, currentUUID, storageIsPending, updateUUIDCallback,
+    drives,
+    currentUUID,
+    storageIsPending,
+    updateUUIDCallback,
 }) {
     const [selectedUUID, setSelectedUUID] = useState(currentUUID);
     const [postUpdateSrvStatus, postUpdateSrv] = useAPIPost(API_URLs.updateSrv);
@@ -58,6 +63,10 @@ export default function UUIDs({
         return <p>{_("There aren't prepared drives to be used.")}</p>;
     }
 
+    const buttonIsDisabled = selectedUUID.length === 0
+        || selectedUUID.length < 2
+        || storageIsPending;
+
     return (
         <>
             <UUIDsTable
@@ -70,6 +79,7 @@ export default function UUIDs({
                 onUnselectSrv={onUnselectSrv}
                 onUpdateSrv={onUpdateSrv}
                 storageIsPending={storageIsPending}
+                buttonIsDisabled={buttonIsDisabled}
             />
         </>
     );

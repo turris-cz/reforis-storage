@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -17,12 +17,14 @@ import { RAID_CHOICES, RAIDSelect } from "./RAID";
 import ConfirmationModal from "./ConfirmationModal";
 
 Drives.propTypes = {
-    drives: PropTypes.arrayOf(PropTypes.shape({
-        dev: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        fs: PropTypes.string.isRequired,
-        uuid: PropTypes.string.isRequired,
-    })).isRequired,
+    drives: PropTypes.arrayOf(
+        PropTypes.shape({
+            dev: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            fs: PropTypes.string.isRequired,
+            uuid: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
 };
@@ -33,10 +35,14 @@ Drives.defaultProps = {
 
 export default function Drives({ drives, currentUUID, storageIsPending }) {
     const [selectedDrives, setSelectedDrives] = useState([]);
-    const [selectedRAID, setSelectedRAID] = useState(Object.keys(RAID_CHOICES)[0]);
+    const [selectedRAID, setSelectedRAID] = useState(
+        Object.keys(RAID_CHOICES)[0],
+    );
     const [confirmationModalShown, setConfirmationModalShown] = useState(false);
 
-    const [prepareSrvPostStatus, prepareSrvPost] = useAPIPost(API_URLs.prepareSrv);
+    const [prepareSrvPostStatus, prepareSrvPost] = useAPIPost(
+        API_URLs.prepareSrv,
+    );
     const [setAlert] = useAlert();
     useEffect(() => {
         if (prepareSrvPostStatus.state === API_STATE.ERROR) {
@@ -54,11 +60,9 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
         });
     }
 
-    const buttonIsDisabled = (
-        selectedDrives.length === 0
+    const buttonIsDisabled = selectedDrives.length === 0
         || (selectedDrives.length < 2 && selectedRAID === "raid1")
-        || storageIsPending
-    );
+        || storageIsPending;
 
     return (
         <>
@@ -81,7 +85,7 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 storageIsPending={storageIsPending}
             />
             <Button
-                forisFormSize
+                className="btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2"
                 onClick={() => setConfirmationModalShown(true)}
                 disabled={buttonIsDisabled}
             >
