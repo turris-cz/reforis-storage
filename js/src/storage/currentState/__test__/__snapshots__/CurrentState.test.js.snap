@@ -2,41 +2,50 @@
 
 exports[`<CurrentState /> Should render. 1`] = `
 <div>
-  <table
-    class="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12"
+  <h2>
+    Current state
+  </h2>
+  <div
+    class="table-responsive"
   >
-    <tbody>
-      <tr>
-        <th
-          scope="row"
-        >
-          Device
-        </th>
-        <td>
-          /dev/sdb
-        </td>
-      </tr>
-      <tr>
-        <th
-          scope="row"
-        >
-          UUID
-        </th>
-        <td>
-          1234-1234-1234-1234-1234
-        </td>
-      </tr>
-      <tr>
-        <th
-          scope="row"
-        >
-          RAID
-        </th>
-        <td>
-          single
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table
+      class="table table-hover"
+    >
+      <thead
+        class="thead-light"
+      >
+        <tr>
+          <th
+            scope="col"
+          >
+            Device
+          </th>
+          <th
+            scope="col"
+          >
+            UUID
+          </th>
+          <th
+            scope="col"
+          >
+            RAID
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            /dev/sdb
+          </td>
+          <td>
+            1234-1234-1234-1234-1234
+          </td>
+          <td>
+            single
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;

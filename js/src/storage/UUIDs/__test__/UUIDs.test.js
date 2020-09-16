@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -51,6 +51,7 @@ describe("<UUIDs />", () => {
     });
 
     it("Should post on 'Unset UUID' button click.", async () => {
+        fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Unset UUID"));
 
         const data = { uuid: "" };
@@ -63,6 +64,7 @@ describe("<UUIDs />", () => {
 
     it("Should call updateUUIDCallback when 'Unset UUID' button click.", async () => {
         expect(updateUUIDCallback).not.toBeCalled();
+        fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Unset UUID"));
         mockAxios.mockResponse({ result: true });
         await wait(() => expect(updateUUIDCallback).toBeCalled());
@@ -70,12 +72,14 @@ describe("<UUIDs />", () => {
 
     it("Should call updateUUIDCallback when 'Set UUID' button click.", async () => {
         expect(updateUUIDCallback).not.toBeCalled();
+        fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Set UUID"));
         mockAxios.mockResponse({ result: true });
         await wait(() => expect(updateUUIDCallback).toBeCalled());
     });
 
     it("Should handle set UUID post error.", async () => {
+        fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Set UUID"));
         mockJSONError();
         await wait(() =>
@@ -84,6 +88,7 @@ describe("<UUIDs />", () => {
     });
 
     it("Should handle unset UUID post error.", async () => {
+        fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Unset UUID"));
         mockJSONError();
         await wait(() =>
