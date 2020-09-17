@@ -21,7 +21,7 @@ UUIDs.propTypes = {
             description: PropTypes.string.isRequired,
             fs: PropTypes.string.isRequired,
             uuid: PropTypes.string.isRequired,
-        }),
+        })
     ).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
@@ -60,12 +60,17 @@ export default function UUIDs({
     const drivesByUUIDs = groupDrivesByUUIDs(filterNonBTRFS(drives));
 
     if (Object.keys(drivesByUUIDs).length === 0) {
-        return <p>{_("There aren't prepared drives to be used.")}</p>;
+        return (
+            <p className="text-muted text-center">
+                {_("There aren't prepared drives to be used.")}
+            </p>
+        );
     }
 
-    const buttonIsDisabled = selectedUUID.length === 0
-        || selectedUUID.length < 2
-        || storageIsPending;
+    const buttonIsDisabled =
+        selectedUUID.length === 0 ||
+        selectedUUID.length < 2 ||
+        storageIsPending;
 
     return (
         <>
@@ -78,7 +83,6 @@ export default function UUIDs({
             <UUIDsActionButtons
                 onUnselectSrv={onUnselectSrv}
                 onUpdateSrv={onUpdateSrv}
-                storageIsPending={storageIsPending}
                 buttonIsDisabled={buttonIsDisabled}
             />
         </>
