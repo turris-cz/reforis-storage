@@ -32,7 +32,7 @@ export default function ConfirmationModal({
     const firstDriveMessage = isFirstDrive ? FIRST_DRIVE_MESSAGE : "";
     return (
         <Modal shown={shown} setShown={setShown}>
-            <ModalHeader setShown={setShown} title={_("Format confirmation")} />
+            <ModalHeader setShown={setShown} title={_("Warning!")} />
             <ModalBody>
                 <p>
                     {_(`
