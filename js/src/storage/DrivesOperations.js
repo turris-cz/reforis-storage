@@ -33,7 +33,7 @@ export default function DrivesOperations(props) {
     const { updateUUIDCallback, drives } = props;
     if (drives.length === 0) {
         return (
-            <p>
+            <p className="text-center text-muted">
                 {_(
                     "No drives connected, please connect a drive and refresh the page."
                 )}

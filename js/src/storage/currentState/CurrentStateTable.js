@@ -49,20 +49,17 @@ export default function CurrentStateTable({
                         {!Object.keys(NOT_PENDING_STORAGE_STATES).includes(
                             state,
                         ) && (
-                            <td
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                }}
-                            >
-                                {storageIsPending ? (
-                                    <SpinnerElement small>
-                                        &nbsp;
-                                        {STORAGE_STATES[state]}
-                                    </SpinnerElement>
-                                ) : (
-                                    STORAGE_STATES[state]
-                                )}
+                            <td>
+                                <div className="d-flex flex-row">
+                                    {storageIsPending ? (
+                                        <SpinnerElement small>
+                                            &nbsp;
+                                            {STORAGE_STATES[state]}
+                                        </SpinnerElement>
+                                    ) : (
+                                        STORAGE_STATES[state]
+                                    )}
+                                </div>
                             </td>
                         )}
                         <td>{uuid}</td>
