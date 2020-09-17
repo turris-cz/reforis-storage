@@ -27,15 +27,15 @@ export default function RAIDHelpTexts() {
         <div className="container-fluid">
             <div className="row row-cols-3">
                 <div className="col-12 col-lg-4">
-                    <h3>{_("Custom")}</h3>
+                    <h3 className="h4">{_("Custom")}</h3>
                     <p>{RAID_HELP_TEXTS.custom}</p>
                 </div>
                 <div className="col-12 col-lg-4">
-                    <h3>{_("JBOD")}</h3>
+                    <h3 className="h4">{_("JBOD")}</h3>
                     <p>{RAID_HELP_TEXTS.JBOD}</p>
                 </div>
                 <div className="col-12 col-lg-4">
-                    <h3>{_("RAID1")}</h3>
+                    <h3 className="h4">{_("RAID1")}</h3>
                     <p>{RAID_HELP_TEXTS.RAID1}</p>
                 </div>
             </div>
