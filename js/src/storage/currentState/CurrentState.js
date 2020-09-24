@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import ActiveAlert from "./ActiveAlert";
 import PendingMigrationAlert from "./PendingMigrationAlert";
 import BrokenSetupAlert from "./BrokenSetupAlert";
 import CurrentStateTable from "./CurrentStateTable";
@@ -35,6 +36,7 @@ export default function CurrentState({
 }) {
     const pendingMigration = old_uuid !== uuid;
     const brokenSetup = old_uuid === "broken";
+    const unsetUuid = uuid === "";
     return (
         <>
             <h2>{_("Current state")}</h2>
@@ -42,16 +44,20 @@ export default function CurrentState({
 
             {brokenSetup && <BrokenSetupAlert />}
 
-            {/* {uuid !== "" && (
-                <ActiveAlert uuid={uuid} device={old_device_desc} />
-            )} */}
-            <CurrentStateTable
-                state={state}
-                old_device_desc={old_device_desc}
-                uuid={uuid}
-                raid={raid}
-                storageIsPending={storageIsPending}
-            />
+            {!brokenSetup && (
+                <>
+                    {!unsetUuid && !pendingMigration && (
+                        <ActiveAlert uuid={uuid} device={old_device_desc} />
+                    )}
+                    <CurrentStateTable
+                        state={state}
+                        old_device_desc={old_device_desc}
+                        uuid={uuid}
+                        raid={raid}
+                        storageIsPending={storageIsPending}
+                    />
+                </>
+            )}
         </>
     );
 }
