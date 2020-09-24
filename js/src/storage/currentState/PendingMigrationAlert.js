@@ -19,16 +19,15 @@ export default function PendingMigrationAlert() {
         <>
             <Alert type={ALERT_TYPES.WARNING}>
                 <div className="d-flex flex-column flex-lg-row align-items-center">
-                    <div className="col">
+                    <div className="col-sm-12 col-lg-10 text-center text-md-center text-lg-left mb-2 mb-lg-0">
                         <span
-                            className="mb-3 mb-lg-0"
                             dangerouslySetInnerHTML={{
                                 __html: PENDING_MIGRATION_TEXT,
                             }}
                         />
                     </div>
-                    <div className="col-auto">
-                        <RebootButton className="btn btn-danger" />
+                    <div className="col-sm-12 col-lg-2">
+                        <RebootButton className="btn btn-danger col-sm-12" />
                     </div>
                 </div>
             </Alert>
