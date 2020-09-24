@@ -30,7 +30,7 @@ export default function DriveTableRow({
     active,
     disabled,
 }) {
-    const [check, setCheck] = useState(active);
+    const [isActiveAndSelected, setIsActiveAndSelected] = useState(active);
 
     function select() {
         setSelectedDrives((selectedDrives) => {
@@ -41,17 +41,15 @@ export default function DriveTableRow({
             return update(selectedDrives, { $push: [drive.dev] });
         });
     }
-
     return (
         <tr>
             <td className={drive.dev.length > 3 ? "text-center" : "".trim()}>
                 <CheckBox
-                    checked={isSelected || check}
+                    checked={isActiveAndSelected || isSelected}
                     label={drive.dev}
-                    onChange={() => {
-                        setCheck(false);
-                        select();
-                    }}
+                    onChange={() => (isActiveAndSelected
+                        ? setIsActiveAndSelected(false)
+                        : select())}
                     disabled={disabled}
                 />
             </td>
