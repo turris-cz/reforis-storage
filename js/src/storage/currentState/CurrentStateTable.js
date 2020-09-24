@@ -27,46 +27,72 @@ export default function CurrentStateTable({
     storageIsPending,
 }) {
     return (
-        <div className="table-responsive">
-            <table className="table table-hover">
-                <thead className="thead-light">
-                    <tr>
-                        {old_device_desc !== "none" && (
-                            <th scope="col">{_("Device")}</th>
-                        )}
-                        {!Object.keys(NOT_PENDING_STORAGE_STATES).includes(
-                            state,
-                        ) && <th scope="col">{_("State")}</th>}
-                        <th scope="col">UUID</th>
-                        <th scope="col">RAID</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        {old_device_desc !== "none" && (
-                            <td>{old_device_desc}</td>
-                        )}
-                        {!Object.keys(NOT_PENDING_STORAGE_STATES).includes(
-                            state,
-                        ) && (
-                            <td>
-                                <div className="d-flex flex-row">
-                                    {storageIsPending ? (
-                                        <SpinnerElement small>
-                                            &nbsp;
-                                            {STORAGE_STATES[state]}
-                                        </SpinnerElement>
-                                    ) : (
-                                        STORAGE_STATES[state]
-                                    )}
-                                </div>
-                            </td>
-                        )}
-                        <td>{uuid}</td>
-                        <td>{raid}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <>
+            <div className="mb-3">
+                <div className="row no-gutters justify-content-center">
+                    <div className="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <i className="fas fa-hdd fa-4x mb-1" />
+                        <h5>{old_device_desc}</h5>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="card-body">
+                            <div className="table-responsive">
+                                <table className="table table-borderless table-hover">
+                                    <tbody>
+                                        {!Object.keys(
+                                            NOT_PENDING_STORAGE_STATES,
+                                        ).includes(state) && (
+                                            <tr>
+                                                <th scope="row">
+                                                    {_("State")}
+                                                </th>
+                                                <td>
+                                                    <div className="d-flex flex-row">
+                                                        {storageIsPending ? (
+                                                            <SpinnerElement
+                                                                small
+                                                            >
+                                                                &nbsp;
+                                                                {
+                                                                    STORAGE_STATES[
+                                                                        state
+                                                                    ]
+                                                                }
+                                                            </SpinnerElement>
+                                                        ) : (
+                                                            STORAGE_STATES[
+                                                                state
+                                                            ]
+                                                        )}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        )}
+                                        {old_device_desc !== "none" && (
+                                            <tr>
+                                                <th scope="row">
+                                                    {_("Device")}
+                                                </th>
+                                                <td>{old_device_desc}</td>
+                                            </tr>
+                                        )}
+                                        <tr>
+                                            <th scope="row">{_("UUID")}</th>
+                                            <td>
+                                                {uuid === "" ? _("N/A") : uuid}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">{_("RAID")}</th>
+                                            <td>{raid}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
