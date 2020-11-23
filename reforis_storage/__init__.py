@@ -1,4 +1,4 @@
-#  Copyright (C) 2019 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
@@ -34,9 +34,26 @@ def state():
     return jsonify(current_app.backend.perform('storage', 'get_state'))
 
 
-@blueprint.route('/settings', methods=['GET'])
+@blueprint.route('/settings', methods=['GET', 'POST'])
 def settings():
-    return jsonify(current_app.backend.perform('storage', 'get_settings'))
+    if request.method == 'GET':
+        settings = current_app.backend.perform('storage', 'get_settings')
+        drives_data = current_app.backend.perform('storage', 'get_drives')
+        drives = drives_data.get('drives')
+        settings['disk_mounted'] = False
+
+        if drives:
+            for drive in drives:
+                if drive['uuid'] != '':
+                    settings['disk_mounted'] = True
+                    break
+        return jsonify(settings)
+
+    response = current_app.backend.perform('storage', 'update_settings', request.json)
+    if response.get('result') is not True:
+        raise APIError(_('Cannot change persistent log setting.'), HTTPStatus.INTERNAL_SERVER_ERROR)
+
+    return jsonify(response), HTTPStatus.OK
 
 
 @blueprint.route('/drives', methods=['GET'])
