@@ -1,8 +1,12 @@
 {
     "name": "reforis_storage",
     "author": "CZ.NIC, z.s.p.o.",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.nic.cz/turris/reforis/reforis-storage.git"
+    },
     "license": "GPL-3.0",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "reForis storage plugin.",
     "main": "./src/app.js",
     "dependencies": {
