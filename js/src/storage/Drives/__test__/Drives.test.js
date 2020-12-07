@@ -7,7 +7,11 @@
 
 import React from "react";
 import {
-    render, wait, fireEvent, getByText, getByLabelText,
+    render,
+    wait,
+    fireEvent,
+    getByText,
+    getByLabelText,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 
@@ -25,12 +29,8 @@ describe("<Drives />", () => {
         ({ container, asFragment } = render(
             <>
                 <div id="modal-container" />
-                <Drives
-                    currentUUID=""
-                    storageIsPending={false}
-                    {...drives}
-                />
-            </>,
+                <Drives currentUUID="" storageIsPending={false} {...drives} />
+            </>
         ));
     });
 
@@ -48,7 +48,9 @@ describe("<Drives />", () => {
     });
 
     it("Button should be disabled when RAID1 and less that two disks are selected.", () => {
-        fireEvent.change(getByLabelText(container, "RAID"), { target: { value: "raid1" } });
+        fireEvent.change(getByLabelText(container, "RAID"), {
+            target: { value: "raid1" },
+        });
         fireEvent.click(getByLabelText(container, "sdb"));
         expect(getByText(container, "Format & Set").disabled).toBeTruthy();
 
@@ -57,7 +59,9 @@ describe("<Drives />", () => {
     });
 
     it("Should render modal on Format&Set click.", () => {
-        fireEvent.change(getByLabelText(container, "RAID"), { target: { value: "single" } });
+        fireEvent.change(getByLabelText(container, "RAID"), {
+            target: { value: "single" },
+        });
         fireEvent.click(getByLabelText(container, "sdb"));
         fireEvent.click(getByLabelText(container, "sdc"));
         const firstRender = asFragment();
@@ -69,7 +73,9 @@ describe("<Drives />", () => {
     });
 
     it("Should post on 'Continue' button click.", () => {
-        fireEvent.change(getByLabelText(container, "RAID"), { target: { value: "single" } });
+        fireEvent.change(getByLabelText(container, "RAID"), {
+            target: { value: "single" },
+        });
         fireEvent.click(getByLabelText(container, "sdb"));
         fireEvent.click(getByLabelText(container, "sdc"));
         fireEvent.click(getByText(container, "Format & Set"));
@@ -79,8 +85,11 @@ describe("<Drives />", () => {
             drives: ["sdb", "sdc"],
             raid: "single",
         };
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/storage/api/prepare-srv", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/storage/api/prepare-srv",
+            data,
+            expect.anything()
+        );
     });
 
     it("Should handle post error.", async () => {
@@ -88,6 +97,8 @@ describe("<Drives />", () => {
         fireEvent.click(getByText(container, "Format & Set"));
         fireEvent.click(getByText(container, "Continue"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("Device preparation failed."));
+        await wait(() =>
+            expect(mockSetAlert).toBeCalledWith("Device preparation failed.")
+        );
     });
 });

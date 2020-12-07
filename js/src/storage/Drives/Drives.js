@@ -6,9 +6,7 @@
  */
 
 import React, { useEffect, useState } from "react";
-import {
-    API_STATE, Button, useAlert, useAPIPost,
-} from "foris";
+import { API_STATE, Button, useAlert, useAPIPost } from "foris";
 import PropTypes from "prop-types";
 
 import DrivesTable from "./DrivesTable";
@@ -23,7 +21,7 @@ Drives.propTypes = {
             description: PropTypes.string.isRequired,
             fs: PropTypes.string.isRequired,
             uuid: PropTypes.string.isRequired,
-        }),
+        })
     ).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
@@ -36,12 +34,12 @@ Drives.defaultProps = {
 export default function Drives({ drives, currentUUID, storageIsPending }) {
     const [selectedDrives, setSelectedDrives] = useState([]);
     const [selectedRAID, setSelectedRAID] = useState(
-        Object.keys(RAID_CHOICES)[0],
+        Object.keys(RAID_CHOICES)[0]
     );
     const [confirmationModalShown, setConfirmationModalShown] = useState(false);
 
     const [prepareSrvPostStatus, prepareSrvPost] = useAPIPost(
-        API_URLs.prepareSrv,
+        API_URLs.prepareSrv
     );
     const [setAlert] = useAlert();
     useEffect(() => {
@@ -60,9 +58,10 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
         });
     }
 
-    const buttonIsDisabled = selectedDrives.length === 0
-        || (selectedDrives.length < 2 && selectedRAID === "raid1")
-        || storageIsPending;
+    const buttonIsDisabled =
+        selectedDrives.length === 0 ||
+        (selectedDrives.length < 2 && selectedRAID === "raid1") ||
+        storageIsPending;
 
     return (
         <>

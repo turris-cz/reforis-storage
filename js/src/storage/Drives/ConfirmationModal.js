@@ -7,9 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import {
-    Modal, ModalBody, ModalHeader, ModalFooter, Button,
-} from "foris";
+import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from "foris";
 
 ConfirmationModal.propTypes = {
     shown: PropTypes.bool.isRequired,

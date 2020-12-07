@@ -17,7 +17,7 @@ DrivesTable.propTypes = {
             description: PropTypes.string.isRequired,
             fs: PropTypes.string.isRequired,
             uuid: PropTypes.string.isRequired,
-        }),
+        })
     ).isRequired,
     selectedDrives: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelectedDrives: PropTypes.func.isRequired,

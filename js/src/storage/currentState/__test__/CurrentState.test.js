@@ -17,7 +17,7 @@ describe("<CurrentState />", () => {
 
     beforeEach(() => {
         ({ container, rerender } = render(
-            <CurrentState storageIsPending={false} {...getStateFixture()} />,
+            <CurrentState storageIsPending={false} {...getStateFixture()} />
         ));
     });
 
@@ -32,7 +32,7 @@ describe("<CurrentState />", () => {
                 {...getStateFixture()}
                 uuid="111"
                 old_uuid="222"
-            />,
+            />
         );
         getByText(container, /waiting for restart/);
     });
@@ -43,7 +43,7 @@ describe("<CurrentState />", () => {
                 storageIsPending={false}
                 {...getStateFixture()}
                 old_uuid="broken"
-            />,
+            />
         );
         getByText(container, /Your setup is currently broken/);
     });

@@ -47,9 +47,11 @@ export default function DriveTableRow({
                 <CheckBox
                     checked={isActiveAndSelected || isSelected}
                     label={drive.dev}
-                    onChange={() => (isActiveAndSelected
-                        ? setIsActiveAndSelected(false)
-                        : select())}
+                    onChange={() =>
+                        isActiveAndSelected
+                            ? setIsActiveAndSelected(false)
+                            : select()
+                    }
                     disabled={disabled}
                 />
             </td>

@@ -17,7 +17,7 @@ UUIDsTableRow.propTypes = {
             description: PropTypes.string.isRequired,
             fs: PropTypes.string.isRequired,
             uuid: PropTypes.string.isRequired,
-        }),
+        })
     ).isRequired,
     uuid: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired,

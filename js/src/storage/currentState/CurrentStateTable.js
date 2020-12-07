@@ -40,7 +40,7 @@ export default function CurrentStateTable({
                                 <table className="table table-borderless table-hover">
                                     <tbody>
                                         {!Object.keys(
-                                            NOT_PENDING_STORAGE_STATES,
+                                            NOT_PENDING_STORAGE_STATES
                                         ).includes(state) && (
                                             <tr>
                                                 <th scope="row">

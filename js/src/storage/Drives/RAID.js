@@ -43,15 +43,15 @@ export function RAIDSelect({
 }) {
     let raidHelpText;
     switch (selectedRAID) {
-    case "raid1":
-        raidHelpText = `RAID1: ${RAID_HELP_TEXTS.RAID1}`;
-        break;
-    case "single":
-        raidHelpText = `JBOD: ${RAID_HELP_TEXTS.JBOD}`;
-        break;
-    default:
-        raidHelpText = `Custom: ${RAID_HELP_TEXTS.custom}`;
-        break;
+        case "raid1":
+            raidHelpText = `RAID1: ${RAID_HELP_TEXTS.RAID1}`;
+            break;
+        case "single":
+            raidHelpText = `JBOD: ${RAID_HELP_TEXTS.JBOD}`;
+            break;
+        default:
+            raidHelpText = `Custom: ${RAID_HELP_TEXTS.custom}`;
+            break;
     }
 
     return (

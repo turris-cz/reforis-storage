@@ -18,10 +18,12 @@ describe("<CurrentStateTable />", () => {
     let firstRender;
 
     beforeEach(() => {
-        ({ rerender, asFragment } = render(<CurrentStateTable
-            storageIsPending={false}
-            {...getStateFixture()}
-        />));
+        ({ rerender, asFragment } = render(
+            <CurrentStateTable
+                storageIsPending={false}
+                {...getStateFixture()}
+            />
+        ));
         firstRender = asFragment();
     });
 
@@ -35,7 +37,7 @@ describe("<CurrentStateTable />", () => {
                 {...getStateFixture()}
                 state="formatting"
                 storageIsPending
-            />,
+            />
         );
 
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
@@ -48,7 +50,7 @@ describe("<CurrentStateTable />", () => {
                 old_device_desc=""
                 storageIsPending={false}
                 old_uuid="broken"
-            />,
+            />
         );
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();
     });

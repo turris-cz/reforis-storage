@@ -7,7 +7,11 @@
 
 import React from "react";
 import {
-    render, wait, fireEvent, getByText, getByLabelText,
+    render,
+    wait,
+    fireEvent,
+    getByText,
+    getByLabelText,
 } from "foris/testUtils/customTestRender";
 import mockAxios from "jest-mock-axios";
 
@@ -26,7 +30,7 @@ describe("<UUIDs />", () => {
                 storageIsPending={false}
                 updateUUIDCallback={updateUUIDCallback}
                 {...drives}
-            />,
+            />
         ));
     });
 
@@ -39,16 +43,22 @@ describe("<UUIDs />", () => {
         fireEvent.click(getByText(container, "Set UUID"));
 
         const data = { uuid: "4444" };
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/storage/api/update-srv", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/storage/api/update-srv",
+            data,
+            expect.anything()
+        );
     });
 
     it("Should post on 'Unset UUID' button click.", async () => {
         fireEvent.click(getByText(container, "Unset UUID"));
 
         const data = { uuid: "" };
-        expect(mockAxios.post)
-            .toHaveBeenCalledWith("/reforis/storage/api/update-srv", data, expect.anything());
+        expect(mockAxios.post).toHaveBeenCalledWith(
+            "/reforis/storage/api/update-srv",
+            data,
+            expect.anything()
+        );
     });
 
     it("Should call updateUUIDCallback when 'Unset UUID' button click.", async () => {
@@ -68,12 +78,16 @@ describe("<UUIDs />", () => {
     it("Should handle set UUID post error.", async () => {
         fireEvent.click(getByText(container, "Set UUID"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("UUID selection failed."));
+        await wait(() =>
+            expect(mockSetAlert).toBeCalledWith("UUID selection failed.")
+        );
     });
 
     it("Should handle unset UUID post error.", async () => {
         fireEvent.click(getByText(container, "Unset UUID"));
         mockJSONError();
-        await wait(() => expect(mockSetAlert).toBeCalledWith("UUID selection failed."));
+        await wait(() =>
+            expect(mockSetAlert).toBeCalledWith("UUID selection failed.")
+        );
     });
 });
