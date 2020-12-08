@@ -12,12 +12,14 @@ import Drives from "./Drives/Drives";
 import UUIDs from "./UUIDs/UUIDs";
 
 DrivesOperations.propTypes = {
-    drives: PropTypes.arrayOf(PropTypes.shape({
-        dev: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        fs: PropTypes.string.isRequired,
-        uuid: PropTypes.string.isRequired,
-    })).isRequired,
+    drives: PropTypes.arrayOf(
+        PropTypes.shape({
+            dev: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            fs: PropTypes.string.isRequired,
+            uuid: PropTypes.string.isRequired,
+        })
+    ).isRequired,
     currentUUID: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
     updateUUIDCallback: PropTypes.func.isRequired,
@@ -30,18 +32,21 @@ DrivesOperations.defaultProps = {
 export default function DrivesOperations(props) {
     const { updateUUIDCallback, drives } = props;
     if (drives.length === 0) {
-        return <p>{_("No drives connected, please connect a drive and refresh the page.")}</p>;
+        return (
+            <p className="text-center text-muted">
+                {_(
+                    "No drives connected, please connect a drive and refresh the page."
+                )}
+            </p>
+        );
     }
     return (
         <>
-            <h3>{_("Prepare drives")}</h3>
+            <h2>{_("Prepare drives")}</h2>
             <Drives {...props} />
 
-            <h3>{_("Use prepared storage")}</h3>
-            <UUIDs
-                updateUUIDCallback={updateUUIDCallback}
-                {...props}
-            />
+            <h2>{_("Use prepared storage")}</h2>
+            <UUIDs updateUUIDCallback={updateUUIDCallback} {...props} />
         </>
     );
 }

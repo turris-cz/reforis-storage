@@ -8,9 +8,7 @@
 import { useEffect, useState } from "react";
 import update from "immutability-helper";
 
-import {
-    API_STATE, useAlert, useAPIGet, useWSForisModule,
-} from "foris";
+import { API_STATE, useAlert, useAPIGet, useWSForisModule } from "foris";
 import API_URLs from "../API";
 import { NOT_PENDING_STORAGE_STATES } from "./constants";
 
@@ -22,13 +20,19 @@ export default function useStorageState(ws, onStateChange) {
     const [setAlert] = useAlert();
     const [storageState, setStorageState] = useState({ state: API_STATE.INIT });
 
-    const [getStorageStateResponse, getStorageState] = useAPIGet(API_URLs.state);
+    const [getStorageStateResponse, getStorageState] = useAPIGet(
+        API_URLs.state
+    );
     useEffect(() => {
         getStorageState();
     }, [getStorageState]);
 
     useEffect(() => {
-        if ([API_STATE.SUCCESS, API_STATE.ERROR].includes(getStorageStateResponse.state)) {
+        if (
+            [API_STATE.SUCCESS, API_STATE.ERROR].includes(
+                getStorageStateResponse.state
+            )
+        ) {
             setStorageState(getStorageStateResponse);
         }
     }, [setAlert, getStorageState, getStorageStateResponse]);
@@ -36,13 +40,18 @@ export default function useStorageState(ws, onStateChange) {
     const [storageStateWS] = useWSForisModule(ws, "storage", "state");
     useEffect(() => {
         if (storageStateWS && storageStateWS.current) {
-            setStorageState((currentState) => update(
-                currentState,
-                { data: { state: { $set: storageStateWS.current } } },
-            ));
+            setStorageState((currentState) =>
+                update(currentState, {
+                    data: { state: { $set: storageStateWS.current } },
+                })
+            );
             if (storageStateWS.current === NOT_PENDING_STORAGE_STATES.failed) {
-                setAlert("Device preparation failed. Check notifications for more information.");
-            } else if (storageStateWS.current === NOT_PENDING_STORAGE_STATES.done) {
+                setAlert(
+                    "Device preparation failed. Check notifications for more information."
+                );
+            } else if (
+                storageStateWS.current === NOT_PENDING_STORAGE_STATES.done
+            ) {
                 getStorageState();
             }
             onStateChange();

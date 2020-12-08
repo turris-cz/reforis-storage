@@ -2,41 +2,85 @@
 
 exports[`<CurrentState /> Should render. 1`] = `
 <div>
-  <table
-    class="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12"
+  <h2>
+    Current state
+  </h2>
+  <div
+    class="alert  alert-success"
   >
-    <tbody>
-      <tr>
-        <th
-          scope="row"
-        >
-          Device
-        </th>
-        <td>
+    
+Device currently in use is
+
+    <b>
+      /dev/sdb
+    </b>
+     (UUID: 1234-1234-1234-1234-1234).
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="row no-gutters justify-content-center"
+    >
+      <div
+        class="col-md-6 d-flex flex-column align-items-center justify-content-center"
+      >
+        <i
+          class="fas fa-hdd fa-4x mb-1"
+        />
+        <h5>
           /dev/sdb
-        </td>
-      </tr>
-      <tr>
-        <th
-          scope="row"
+        </h5>
+      </div>
+      <div
+        class="col-md-6"
+      >
+        <div
+          class="card-body"
         >
-          UUID
-        </th>
-        <td>
-          1234-1234-1234-1234-1234
-        </td>
-      </tr>
-      <tr>
-        <th
-          scope="row"
-        >
-          RAID
-        </th>
-        <td>
-          single
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <div
+            class="table-responsive"
+          >
+            <table
+              class="table table-borderless table-hover"
+            >
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Device
+                  </th>
+                  <td>
+                    /dev/sdb
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    UUID
+                  </th>
+                  <td>
+                    1234-1234-1234-1234-1234
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    RAID
+                  </th>
+                  <td>
+                    single
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

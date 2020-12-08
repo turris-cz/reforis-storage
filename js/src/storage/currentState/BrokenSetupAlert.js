@@ -12,7 +12,9 @@ export default function BrokenSetupAlert() {
     return (
         <Alert>
             <span>
-                {_("Your setup is currently broken and you are probably loosing data, set a new storage device as soon as you can!")}
+                {_(
+                    "Your setup is currently broken and you are probably loosing data, set a new storage device as soon as you can!"
+                )}
             </span>
         </Alert>
     );

@@ -6,19 +6,20 @@
  */
 
 import React from "react";
-import {render} from "foris/testUtils/customTestRender";
+import { render } from "foris/testUtils/customTestRender";
 
-import DrivesOperations from '../DrivesOperations';
+import DrivesOperations from "../DrivesOperations";
 
 describe("<DrivesOperations />", () => {
     it("Should handle empty drives list render.", async () => {
-        const {getByText} = render(<DrivesOperations
-            drives={[]}
-            storageIsPending={false}
-            currentUUID={""}
-            updateUUIDCallback={() => {
-            }}
-        />);
+        const { getByText } = render(
+            <DrivesOperations
+                drives={[]}
+                storageIsPending={false}
+                currentUUID={""}
+                updateUUIDCallback={() => {}}
+            />
+        );
         getByText(/No drives connected/);
     });
 });

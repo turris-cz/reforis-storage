@@ -5,354 +5,392 @@ exports[`<Storage /> Should render. 1`] = `
   <h1>
     Storage
   </h1>
-  <p>
+  <div>
     
-Here you can set up where your persistent data should be stored. If you want to use Nextcloud, LXC or other IO-intensive
+
+    <p>
+      Here you can set up where your persistent data should be stored. If you want to use Nextcloud, LXC or other IO-intensive
 applications, don't put them on internal flash, but always use external storage. Also, make sure that your data will fit
 on the new drive before switching.
-
-    <br />
-    <br />
+    </p>
     
-Once you choose a drive, it will be formatted to Btrfs filesystem and on next reboot, your /srv (directory where all
+
+    <p>
+      Once you choose a drive, it will be formatted to Btrfs filesystem and on next reboot, your /srv (directory where all
 IO-intensive applications should reside) will get moved to this new drive.
-
-  </p>
-  <h3>
-    Current state
-  </h3>
-  <table
-    class="table table-borderless table-hover offset-lg-1 col-lg-10 col-sm-12"
-  >
-    <tbody>
-      <tr>
-        <th
-          scope="row"
-        >
-          Device
-        </th>
-        <td>
-          /dev/sdb
-        </td>
-      </tr>
-      <tr>
-        <th
-          scope="row"
-        >
-          UUID
-        </th>
-        <td>
-          1234-1234-1234-1234-1234
-        </td>
-      </tr>
-      <tr>
-        <th
-          scope="row"
-        >
-          RAID
-        </th>
-        <td>
-          single
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>
-    Prepare drives
-  </h3>
-  <h5>
-    Custom
-  </h5>
-  <p>
+    </p>
     
+
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+  >
+    <h2>
+      Current state
+    </h2>
+    <div
+      class="alert  alert-success"
+    >
+      
+Device currently in use is
+
+      <b>
+        /dev/sdb
+      </b>
+       (UUID: 1234-1234-1234-1234-1234).
+    </div>
+    <div
+      class="mb-3"
+    >
+      <div
+        class="row no-gutters justify-content-center"
+      >
+        <div
+          class="col-md-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <i
+            class="fas fa-hdd fa-4x mb-1"
+          />
+          <h5>
+            /dev/sdb
+          </h5>
+        </div>
+        <div
+          class="col-md-6"
+        >
+          <div
+            class="card-body"
+          >
+            <div
+              class="table-responsive"
+            >
+              <table
+                class="table table-borderless table-hover"
+              >
+                <tbody>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      Device
+                    </th>
+                    <td>
+                      /dev/sdb
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      UUID
+                    </th>
+                    <td>
+                      1234-1234-1234-1234-1234
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      RAID
+                    </th>
+                    <td>
+                      single
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>
+      Prepare drives
+    </h2>
+    <div
+      class="form-group"
+    >
+      <label
+        for="1"
+      >
+        RAID
+      </label>
+      <select
+        class="custom-select"
+        id="1"
+      >
+        <option
+          value="custom"
+        >
+          Custom
+        </option>
+        <option
+          value="raid1"
+        >
+          RAID1
+        </option>
+        <option
+          value="single"
+        >
+          JBOD
+        </option>
+      </select>
+      <small
+        class="form-text text-muted"
+      >
+        Custom: 
 Don't change the RAID level, keeps everything set the way it was. Useful if you have a really custom setup of your RAID
 we don't support and want to just add/remove some disks.
 
-  </p>
-  <h5>
-    JBOD
-  </h5>
-  <p>
-    
-No redundancy, if one drive fails, you loose your data. On the other hand, provides the most space - sum of the space
-available on all included drives.
-
-  </p>
-  <h5>
-    RAID1
-  </h5>
-  <p>
-    
-Everything is redundant and stored at two distinct drives. If you loose one drive, you can easily replace it without
-loosing any data. On the other hand, you have a half of the disk space you would have with JBOD.
-
-  </p>
-  <div
-    class="form-group"
-  >
-    <label
-      for="1"
+      </small>
+    </div>
+    <div
+      class="table-responsive"
     >
-      RAID
-    </label>
-    <select
-      class="custom-select"
-      id="1"
+      <table
+        class="table table-hover"
+      >
+        <thead
+          class="thead-light"
+        >
+          <tr>
+            <th
+              scope="col"
+            >
+              Device
+            </th>
+            <th
+              scope="col"
+            >
+              Description
+            </th>
+            <th
+              scope="col"
+            >
+              Filesystem
+            </th>
+            <th
+              scope="col"
+            >
+              UUID
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              class=""
+            >
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    id="2"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="2"
+                  >
+                    sdb
+                  </label>
+                </div>
+              </div>
+            </td>
+            <td>
+              USB DISK 2.0 (7.2 GiB)
+            </td>
+            <td />
+            <td>
+              1111
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="text-center"
+            >
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    id="3"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="3"
+                  >
+                    sdb1
+                  </label>
+                </div>
+              </div>
+            </td>
+            <td>
+              USB DISK (7.2 GiB)
+            </td>
+            <td>
+              ext4
+            </td>
+            <td>
+              3333
+            </td>
+          </tr>
+          <tr>
+            <td
+              class=""
+            >
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    id="4"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="4"
+                  >
+                    sdc
+                  </label>
+                </div>
+              </div>
+            </td>
+            <td>
+              USB DISK 2.0 (3.6 GiB)
+            </td>
+            <td>
+              btrfs
+            </td>
+            <td>
+              4444
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="text-center"
+            >
+              <div
+                class="form-group"
+              >
+                <div
+                  class="custom-control custom-checkbox "
+                >
+                  <input
+                    class="custom-control-input"
+                    id="5"
+                    type="checkbox"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="5"
+                  >
+                    sdc1
+                  </label>
+                </div>
+              </div>
+            </td>
+            <td>
+              USB DISK (3.6 GiB)
+            </td>
+            <td>
+              vfat
+            </td>
+            <td>
+              2222
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button
+      class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2"
+      disabled=""
+      type="button"
     >
-      <option
-        value="custom"
+      Format & Set
+    </button>
+    <h2>
+      Use prepared storage
+    </h2>
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="table table-hover"
       >
-        Custom
-      </option>
-      <option
-        value="single"
+        <thead
+          class="thead-light"
+        >
+          <tr>
+            <th
+              scope="col"
+            >
+              Devices
+            </th>
+            <th
+              scope="col"
+            >
+              UUID
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div
+                class="custom-control custom-radio"
+              >
+                <input
+                  class="custom-control-input"
+                  id="4444"
+                  name="uuids"
+                  type="radio"
+                  value="4444"
+                />
+                <label
+                  class="custom-control-label"
+                  for="4444"
+                >
+                  sdc
+                </label>
+              </div>
+            </td>
+            <td>
+              4444
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="row justify-content-end ml-0 mr-0"
+    >
+      <button
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
+        type="button"
       >
-        JBOD
-      </option>
-      <option
-        value="raid1"
+        Unset UUID
+      </button>
+      <button
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+        type="button"
       >
-        RAID1
-      </option>
-    </select>
+        Set UUID
+      </button>
+    </div>
   </div>
-  <table
-    class="table table-hover col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
-  >
-    <thead>
-      <tr>
-        <th
-          scope="col"
-        >
-          Device
-        </th>
-        <th
-          scope="col"
-        >
-          Description
-        </th>
-        <th
-          scope="col"
-        >
-          Filesystem
-        </th>
-        <th
-          scope="col"
-        >
-          UUID
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        class=""
-      >
-        <td>
-          <div
-            class="form-group"
-          >
-            <div
-              class="custom-control custom-checkbox "
-            >
-              <input
-                class="custom-control-input"
-                id="2"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="2"
-              >
-                sdb
-              </label>
-            </div>
-          </div>
-        </td>
-        <td>
-          USB DISK 2.0 (7.2 GiB)
-        </td>
-        <td />
-        <td>
-          1111
-        </td>
-      </tr>
-      <tr
-        class=""
-      >
-        <td>
-          <div
-            class="form-group"
-          >
-            <div
-              class="custom-control custom-checkbox "
-            >
-              <input
-                class="custom-control-input"
-                id="3"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="3"
-              >
-                sdc1
-              </label>
-            </div>
-          </div>
-        </td>
-        <td>
-          USB DISK (3.6 GiB)
-        </td>
-        <td>
-          vfat
-        </td>
-        <td>
-          2222
-        </td>
-      </tr>
-      <tr
-        class=""
-      >
-        <td>
-          <div
-            class="form-group"
-          >
-            <div
-              class="custom-control custom-checkbox "
-            >
-              <input
-                class="custom-control-input"
-                id="4"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="4"
-              >
-                sdb1
-              </label>
-            </div>
-          </div>
-        </td>
-        <td>
-          USB DISK (7.2 GiB)
-        </td>
-        <td>
-          ext4
-        </td>
-        <td>
-          3333
-        </td>
-      </tr>
-      <tr
-        class=""
-      >
-        <td>
-          <div
-            class="form-group"
-          >
-            <div
-              class="custom-control custom-checkbox "
-            >
-              <input
-                class="custom-control-input"
-                id="5"
-                type="checkbox"
-              />
-              <label
-                class="custom-control-label"
-                for="5"
-              >
-                sdc
-              </label>
-            </div>
-          </div>
-        </td>
-        <td>
-          USB DISK 2.0 (3.6 GiB)
-        </td>
-        <td>
-          btrfs
-        </td>
-        <td>
-          4444
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <button
-    class="btn btn-primary  col-sm-12 col-lg-3"
-    disabled=""
-    type="button"
-  >
-     
-     
-    Format & Set
-  </button>
-  <h3>
-    Use prepared storage
-  </h3>
-  <table
-    class="table table-hover col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
-  >
-    <thead>
-      <tr>
-        <th
-          scope="col"
-        >
-          Devices
-        </th>
-        <th
-          scope="col"
-        >
-          UUID
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        class=""
-      >
-        <td>
-          <div
-            class="custom-control custom-radio custom-control-inline"
-          >
-            <input
-              class="custom-control-input"
-              id="4444"
-              name="uuids"
-              type="radio"
-              value="4444"
-            />
-            <label
-              class="custom-control-label"
-              for="4444"
-            >
-              sdc
-            </label>
-          </div>
-        </td>
-        <td>
-          4444
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <button
-    class="btn btn-primary offset-lg-1 col-lg-4 col-sm-12"
-    type="button"
-  >
-     
-     
-    Unset UUID
-  </button>
-  <button
-    class="btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-    type="button"
-  >
-     
-     
-    Set UUID
-  </button>
 </div>
 `;

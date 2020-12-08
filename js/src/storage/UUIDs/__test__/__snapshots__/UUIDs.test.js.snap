@@ -2,67 +2,73 @@
 
 exports[`<UUIDs /> Should render. 1`] = `
 <div>
-  <table
-    class="table table-hover col-sm-12 offset-lg-1 col-lg-10 p-0 mb-3"
+  <div
+    class="table-responsive"
   >
-    <thead>
-      <tr>
-        <th
-          scope="col"
-        >
-          Devices
-        </th>
-        <th
-          scope="col"
-        >
-          UUID
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        class=""
+    <table
+      class="table table-hover"
+    >
+      <thead
+        class="thead-light"
       >
-        <td>
-          <div
-            class="custom-control custom-radio custom-control-inline"
+        <tr>
+          <th
+            scope="col"
           >
-            <input
-              class="custom-control-input"
-              id="4444"
-              name="uuids"
-              type="radio"
-              value="4444"
-            />
-            <label
-              class="custom-control-label"
-              for="4444"
+            Devices
+          </th>
+          <th
+            scope="col"
+          >
+            UUID
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div
+              class="custom-control custom-radio"
             >
-              sdc
-            </label>
-          </div>
-        </td>
-        <td>
-          4444
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <button
-    class="btn btn-primary offset-lg-1 col-lg-4 col-sm-12"
-    type="button"
+              <input
+                class="custom-control-input"
+                id="4444"
+                name="uuids"
+                type="radio"
+                value="4444"
+              />
+              <label
+                class="custom-control-label"
+                for="4444"
+              >
+                sdc
+              </label>
+            </div>
+          </td>
+          <td>
+            4444
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="row justify-content-end ml-0 mr-0"
   >
-     
-     
-    Unset UUID
-  </button>
-  <button
-    class="btn btn-primary col-sm-12 col-lg-4 offset-lg-2 col-lg-3"
-    type="button"
-  >
-     
-     
-    Set UUID
-  </button>
+    <button
+      class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
+      disabled=""
+      type="button"
+    >
+      Unset UUID
+    </button>
+    <button
+      class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+      disabled=""
+      type="button"
+    >
+      Set UUID
+    </button>
+  </div>
 </div>
 `;
