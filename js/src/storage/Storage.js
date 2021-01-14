@@ -35,21 +35,25 @@ IO-intensive applications should reside) will get moved to this new drive.</p>
 
 export default function Storage({ ws }) {
     const [getDrivesResponse, getDrives] = useAPIGet(API_URLs.drives);
+    const [getSettingsResponse, getSettings] = useAPIGet(API_URLs.settings);
     const [storageState, getStorageState] = useStorageState(ws, getDrives);
     useEffect(() => {
         getDrives();
-    }, [getDrives]);
+        getSettings();
+    }, [getDrives, getSettings]);
 
     if (
         storageState.state === API_STATE.ERROR ||
-        getDrivesResponse.state === API_STATE.ERROR
+        getDrivesResponse.state === API_STATE.ERROR ||
+        getSettingsResponse.state === API_STATE.ERROR
     ) {
         return <ErrorMessage />;
     }
 
     if (
         storageState.state !== API_STATE.SUCCESS ||
-        getDrivesResponse.state !== API_STATE.SUCCESS
+        getDrivesResponse.state !== API_STATE.SUCCESS ||
+        getSettingsResponse.state !== API_STATE.SUCCESS
     ) {
         return <Spinner />;
     }
@@ -70,6 +74,7 @@ export default function Storage({ ws }) {
                 <CurrentState
                     storageIsPending={storageIsPending}
                     {...storageState.data}
+                    disk_mounted={getSettingsResponse.data.disk_mounted}
                 />
                 <DrivesOperations
                     drives={getDrivesResponse.data.drives}

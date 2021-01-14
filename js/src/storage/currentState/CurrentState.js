@@ -20,6 +20,7 @@ CurrentState.propTypes = {
     old_uuid: PropTypes.string.isRequired,
     old_device_desc: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
+    disk_mounted: PropTypes.bool.isRequired,
 };
 
 CurrentState.defaultProps = {
@@ -33,6 +34,7 @@ export default function CurrentState({
     old_uuid,
     old_device_desc,
     storageIsPending,
+    disk_mounted,
 }) {
     const pendingMigration = old_uuid !== uuid;
     const brokenSetup = old_uuid === "broken";
@@ -40,7 +42,9 @@ export default function CurrentState({
     return (
         <>
             <h2>{_("Current state")}</h2>
-            {!brokenSetup && pendingMigration && <PendingMigrationAlert />}
+            {disk_mounted && !brokenSetup && pendingMigration && (
+                <PendingMigrationAlert />
+            )}
 
             {brokenSetup && <BrokenSetupAlert />}
 
