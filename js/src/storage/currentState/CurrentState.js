@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -18,7 +18,9 @@ CurrentState.propTypes = {
     raid: PropTypes.string.isRequired,
     uuid: PropTypes.string.isRequired,
     old_uuid: PropTypes.string.isRequired,
-    old_device_desc: PropTypes.string.isRequired,
+    current_device: PropTypes.string.isRequired,
+    is_broken: PropTypes.bool.isRequired,
+    using_external: PropTypes.bool.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
     disk_mounted: PropTypes.bool.isRequired,
 };
@@ -32,30 +34,31 @@ export default function CurrentState({
     raid,
     uuid,
     old_uuid,
-    old_device_desc,
+    current_device,
+    is_broken,
+    using_external,
     storageIsPending,
     disk_mounted,
 }) {
     const pendingMigration = old_uuid !== uuid;
-    const brokenSetup = old_uuid === "broken";
     const unsetUuid = uuid === "";
     return (
         <>
             <h2>{_("Current state")}</h2>
-            {disk_mounted && !brokenSetup && pendingMigration && (
+            {disk_mounted && !is_broken && pendingMigration && (
                 <PendingMigrationAlert />
             )}
 
-            {brokenSetup && <BrokenSetupAlert />}
+            {is_broken && <BrokenSetupAlert />}
 
-            {!brokenSetup && (
+            {!is_broken && (
                 <>
-                    {!unsetUuid && !pendingMigration && (
-                        <ActiveAlert uuid={uuid} device={old_device_desc} />
+                    {using_external && !unsetUuid && !pendingMigration && (
+                        <ActiveAlert uuid={uuid} device={current_device} />
                     )}
                     <CurrentStateTable
                         state={state}
-                        old_device_desc={old_device_desc}
+                        current_device={current_device}
                         uuid={uuid}
                         raid={raid}
                         storageIsPending={storageIsPending}

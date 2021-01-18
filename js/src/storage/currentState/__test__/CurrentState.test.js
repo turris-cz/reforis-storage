@@ -29,25 +29,25 @@ describe("<CurrentState />", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("Should render <PendingMigration/> on differnet uuid and old_uuid.", () => {
+    it("Should render <PendingMigration/> on differnet uuid and using_external.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
                 {...getStateFixture()}
                 uuid="111"
-                old_uuid="222"
+                using_external="222"
                 disk_mounted
             />
         );
         getByText(container, /waiting for restart/);
     });
 
-    it("Should render <BrokenSetupAlert/> old_uuid broken.", () => {
+    it("Should render <BrokenSetupAlert/> using_external broken.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
                 {...getStateFixture()}
-                old_uuid="broken"
+                using_external="broken"
                 disk_mounted
             />
         );

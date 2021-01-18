@@ -8,8 +8,8 @@
 export default function getStateFixture(blocked = false) {
     return {
         blocked: blocked,
-        old_device_desc: "/dev/sdb",
-        old_uuid: "1234-1234-1234-1234-1234",
+        current_device: "/dev/sdb",
+        using_external: "1234-1234-1234-1234-1234",
         raid: "single",
         state: blocked ? "formatting" : "none",
         uuid: "1234-1234-1234-1234-1234",
