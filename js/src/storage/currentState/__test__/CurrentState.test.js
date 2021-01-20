@@ -9,7 +9,9 @@ import React from "react";
 import { render, getByText } from "foris/testUtils/customTestRender";
 
 import CurrentState from "../CurrentState";
-import getStateFixture from "../../__tests__/__fixtures__/getStateFixture";
+import getStateFixture, {
+    getStateFixtureBroken,
+} from "../../__tests__/__fixtures__/getStateFixture";
 
 describe("<CurrentState />", () => {
     let container;
@@ -29,25 +31,24 @@ describe("<CurrentState />", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("Should render <PendingMigration/> on differnet uuid and using_external.", () => {
+    it("Should render <PendingMigration/> on differnet uuid and old_uuid.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
                 {...getStateFixture()}
                 uuid="111"
-                using_external="222"
+                using_external
                 disk_mounted
             />
         );
         getByText(container, /waiting for restart/);
     });
 
-    it("Should render <BrokenSetupAlert/> using_external broken.", () => {
+    it("Should render <BrokenSetupAlert/> is_broken.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
-                {...getStateFixture()}
-                using_external="broken"
+                {...getStateFixtureBroken()}
                 disk_mounted
             />
         );
