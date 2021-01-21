@@ -15,13 +15,13 @@ CurrentStateTable.propTypes = {
     state: PropTypes.string.isRequired,
     raid: PropTypes.string.isRequired,
     uuid: PropTypes.string.isRequired,
-    old_device_desc: PropTypes.string.isRequired,
+    current_device: PropTypes.string.isRequired,
     storageIsPending: PropTypes.bool.isRequired,
 };
 
 export default function CurrentStateTable({
     state,
-    old_device_desc,
+    current_device,
     uuid,
     raid,
     storageIsPending,
@@ -32,7 +32,7 @@ export default function CurrentStateTable({
                 <div className="row no-gutters justify-content-center">
                     <div className="col-md-6 d-flex flex-column align-items-center justify-content-center">
                         <i className="fas fa-hdd fa-4x mb-1" />
-                        <h5>{old_device_desc}</h5>
+                        <h5>{current_device}</h5>
                     </div>
                     <div className="col-md-6">
                         <div className="card-body">
@@ -68,12 +68,12 @@ export default function CurrentStateTable({
                                                 </td>
                                             </tr>
                                         )}
-                                        {old_device_desc !== "none" && (
+                                        {current_device !== "none" && (
                                             <tr>
                                                 <th scope="row">
                                                     {_("Device")}
                                                 </th>
-                                                <td>{old_device_desc}</td>
+                                                <td>{current_device}</td>
                                             </tr>
                                         )}
                                         <tr>

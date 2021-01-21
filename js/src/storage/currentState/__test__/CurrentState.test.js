@@ -9,7 +9,9 @@ import React from "react";
 import { render, getByText } from "foris/testUtils/customTestRender";
 
 import CurrentState from "../CurrentState";
-import getStateFixture from "../../__tests__/__fixtures__/getStateFixture";
+import getStateFixture, {
+    getStateFixtureBroken,
+} from "../../__tests__/__fixtures__/getStateFixture";
 
 describe("<CurrentState />", () => {
     let container;
@@ -17,7 +19,11 @@ describe("<CurrentState />", () => {
 
     beforeEach(() => {
         ({ container, rerender } = render(
-            <CurrentState storageIsPending={false} {...getStateFixture()} />
+            <CurrentState
+                storageIsPending={false}
+                {...getStateFixture()}
+                disk_mounted
+            />
         ));
     });
 
@@ -31,18 +37,19 @@ describe("<CurrentState />", () => {
                 storageIsPending={false}
                 {...getStateFixture()}
                 uuid="111"
-                old_uuid="222"
+                using_external
+                disk_mounted
             />
         );
         getByText(container, /waiting for restart/);
     });
 
-    it("Should render <BrokenSetupAlert/> old_uuid broken.", () => {
+    it("Should render <BrokenSetupAlert/> is_broken.", () => {
         rerender(
             <CurrentState
                 storageIsPending={false}
-                {...getStateFixture()}
-                old_uuid="broken"
+                {...getStateFixtureBroken()}
+                disk_mounted
             />
         );
         getByText(container, /Your setup is currently broken/);

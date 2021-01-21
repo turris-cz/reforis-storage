@@ -47,9 +47,9 @@ describe("<CurrentStateTable />", () => {
         rerender(
             <CurrentStateTable
                 {...getStateFixture()}
-                old_device_desc=""
+                current_device=""
                 storageIsPending={false}
-                old_uuid="broken"
+                using_external="broken"
             />
         );
         expect(diffSnapshot(firstRender, asFragment())).toMatchSnapshot();

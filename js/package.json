@@ -6,11 +6,11 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-storage.git"
     },
     "license": "GPL-3.0",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "reForis storage plugin.",
     "main": "./src/app.js",
     "dependencies": {
-        "foris": "5.1.7",
+        "foris": "5.1.8",
         "immutability-helper": "3.0.1"
     },
     "peerDependencies": {

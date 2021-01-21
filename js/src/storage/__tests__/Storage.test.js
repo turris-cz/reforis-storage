@@ -30,6 +30,7 @@ describe("<Storage />", () => {
     it("Should render.", async () => {
         mockAxios.mockResponse({ data: getStateFixture() });
         mockAxios.mockResponse({ data: drives });
+        mockAxios.mockResponse({ data: { disk_mounted: true } });
 
         await wait(() => getByText("Storage"));
         expect(container).toMatchSnapshot();
@@ -38,6 +39,7 @@ describe("<Storage />", () => {
     it("Should handle pending states.", async () => {
         mockAxios.mockResponse({ data: getStateFixture(true) });
         mockAxios.mockResponse({ data: drives });
+        mockAxios.mockResponse({ data: { disk_mounted: true } });
         await wait(() => getByText("Formatting"));
         expect(getByLabelText("RAID").disabled).toBeTruthy();
         expect(getByLabelText("sdc1").disabled).toBeTruthy();
@@ -49,6 +51,7 @@ describe("<Storage />", () => {
     it("Should handle empty drives list.", async () => {
         mockAxios.mockResponse({ data: getStateFixture() });
         mockAxios.mockResponse({ data: { drives: [] } });
+        mockAxios.mockResponse({ data: { disk_mounted: false } });
         await wait(() => getByText(/No drives connected/));
     });
 });
