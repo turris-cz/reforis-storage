@@ -8,31 +8,35 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-10 09:18+0100\n"
-"PO-Revision-Date: 2020-01-10 09:18+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-02-06 17:50+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/nb_NO/>\n"
 "Language: nb_NO\n"
-"Language-Team: nb_NO <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/storage/Storage.js:58
 msgid "Storage"
-msgstr ""
+msgstr "Lagring"
 
 #: js/src/storage/DrivesOperations.js:33
+#, fuzzy
 msgid "No drives connected, please connect a drive and refresh the page."
-msgstr ""
+msgstr "Ingen enheter tilkoblet. Koble til en enhet og gjenoppfrisk siden."
 
 #: js/src/storage/DrivesOperations.js:37
+#, fuzzy
 msgid "Prepare drives"
-msgstr ""
+msgstr "Forbered lagringsenheter"
 
 #: js/src/storage/DrivesOperations.js:40
 msgid "Use prepared storage"
-msgstr ""
+msgstr "Bruk forberedet lagring"
 
 #: js/src/storage/Storage.js:24
 msgid ""
@@ -48,26 +52,36 @@ msgid ""
 "IO-intensive applications should reside) will get moved to this new "
 "drive.\n"
 msgstr ""
+"\n"
+"Her kan du sette opp hvor din vedvarende data skal lagres. Hvis du vil bruke "
+"Nextcloud, LXC, eller andre I/O-intensive\n"
+"programmer må du ikke putte dem på internt flash-basert minne, men alltid "
+"bruke eksternlagring. Forsikre deg også\n"
+"om at dataen får plass på den nye disken før du bytter.\n"
+"</br></br>\n"
+"Når du velger en disk, vil den formateres til Btrfs-filsystemet ved neste "
+"omstart, ditt /srv (mappen der alle\n"
+"I/O-intensive programmer skal ligge) vil bli flyttet til denne nye disken..\n"
 
 #: js/src/storage/Storage.js:61
 msgid "Current state"
-msgstr ""
+msgstr "Nåværende tilstand"
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
-msgstr ""
+msgstr "Formaterer …"
 
 #: js/src/storage/constants.js:16
 msgid "Growing"
-msgstr ""
+msgstr "Bygger på …"
 
 #: js/src/storage/constants.js:17
 msgid "Shrinking"
-msgstr ""
+msgstr "Krympter …"
 
 #: js/src/storage/constants.js:18
 msgid "Balancing"
-msgstr ""
+msgstr "Balanserer …"
 
 #: js/src/storage/Drives/ConfirmationModal.js:25
 msgid ""
@@ -77,12 +91,18 @@ msgid ""
 "moved from old drive to the new one. This can take some time so your next"
 " reboot will take longer. \n"
 msgstr ""
+"\n"
+"Du legger til første disk, og så vil du få en forespørsel om å starte på "
+"nytt. Ved omstart vil data bli skrevet\n"
+"fra den gamle disken til den nye. Dette kan ta litt tid, så din neste "
+"omstart vil ta lengre tid. \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid "Reboot confirmation"
-msgstr ""
+msgstr "Omstartsbekreftelse"
 
 #: js/src/storage/Drives/ConfirmationModal.js:39
+#, fuzzy
 msgid ""
 "\n"
 "Are you sure you want to proceed? Newly selected drive(s) will be "
@@ -91,66 +111,78 @@ msgid ""
 "Are you sure you want to continue?\n"
 "                    "
 msgstr ""
+"\n"
+"Er du sikker på at du vil fortsette? Nylig valgt(e) disk(er) vil bli "
+"formatert, og du vil miste dataen på den/dem.\n"
+"${firstDriveMessage}\n"
+"Er du sikker på at du vil fortsette?\n"
+"                    "
 
 #: js/src/storage/Drives/ConfirmationModal.js:48
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: js/src/storage/Drives/ConfirmationModal.js:51
 msgid "Continue"
-msgstr ""
+msgstr "Fortsett"
 
 #: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
 msgid "Device preparation failed."
-msgstr ""
+msgstr "Enhetsforberedelse mislyktes"
 
 #: js/src/storage/Drives/Drives.js:88
+#, fuzzy
 msgid "Format & Set"
-msgstr ""
+msgstr "Formater og sett"
 
 #: js/src/storage/Drives/DrivesTable.js:34
 #: js/src/storage/currentState/CurrentStateTable.js:44
 msgid "Device"
-msgstr ""
+msgstr "Enhet"
 
 #: js/src/storage/Drives/DrivesTable.js:35
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 #: js/src/storage/Drives/DrivesTable.js:36
 msgid "Filesystem"
-msgstr ""
+msgstr "Filsystem"
 
 #: js/src/storage/Drives/DrivesTable.js:37
 #: js/src/storage/UUIDs/UUIDsTable.js:29
 #: js/src/storage/currentState/CurrentStateTable.js:49
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
 msgid "Custom"
-msgstr ""
+msgstr "Tilpasset"
 
 #: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
 msgid "JBOD"
-msgstr ""
+msgstr "JBOD"
 
 #: js/src/storage/Drives/RAID.js:17 js/src/storage/Drives/RAIDHelpTexts.js:32
 msgid "RAID1"
-msgstr ""
+msgstr "RAID1"
 
 #: js/src/storage/Drives/RAID.js:31
 #: js/src/storage/currentState/CurrentStateTable.js:53
 msgid "RAID"
-msgstr ""
+msgstr "RAID"
 
 #: js/src/storage/Drives/RAIDHelpTexts.js:11
+#, fuzzy
 msgid ""
 "\n"
 "Don't change the RAID level, keeps everything set the way it was. Useful "
 "if you have a really custom setup of your RAID\n"
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
+"\n"
+"Ikke endre RAID-nivå, beholder alt som det var. Nyttig hvis du har et veldig "
+"tilpasset RAID-oppsett som ikke støttes\n"
+"og kun ønsker å legge til/fjerne noen disker.\n"
 
 #: js/src/storage/Drives/RAIDHelpTexts.js:15
 msgid ""
@@ -159,6 +191,10 @@ msgid ""
 "hand, provides the most space - sum of the space\n"
 "available on all included drives.\n"
 msgstr ""
+"\n"
+"Ingen redundans. Hvis en disk feiler, mister du all dataen din. Når det er "
+"sagt gir det mest mulig brukbar plass - summen\n"
+"av plassen på alle inkluderte disker.\n"
 
 #: js/src/storage/Drives/RAIDHelpTexts.js:19
 msgid ""
@@ -168,36 +204,44 @@ msgid ""
 "loosing any data. On the other hand, you have a half of the disk space "
 "you would have with JBOD.\n"
 msgstr ""
+"\n"
+"Alt er redundant og lagret på minst to egne disker. Hvis du mister én kan du "
+"enkelt bytte den uten\n"
+"å miste dataen din. Derimot har du kun halve plassen du ville hatt med JBOD."
+"\n"
 
 #: js/src/storage/UUIDs/UUIDs.js:41
 msgid "UUID selection failed."
-msgstr ""
+msgstr "UUID-utvalg mislyktes"
 
 #: js/src/storage/UUIDs/UUIDs.js:58
 msgid "There aren't prepared drives to be used."
-msgstr ""
+msgstr "Ingen enheter er forberedt for bruk."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:27
 msgid "Unset UUID"
-msgstr ""
+msgstr "Opphev UUID"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:34
 msgid "Set UUID"
-msgstr ""
+msgstr "Sett UUID"
 
 #: js/src/storage/UUIDs/UUIDsTable.js:28
 msgid "Devices"
-msgstr ""
+msgstr "Enheter"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
+#, fuzzy
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
+"Oppsettet ditt er skadet og du mister antagelig data. Sett en ny "
+"lagringsenhet så snart du kan!"
 
 #: js/src/storage/currentState/CurrentStateTable.js:30
 msgid "State"
-msgstr ""
+msgstr "Tilstand"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -208,8 +252,13 @@ msgid ""
 "next reboot will take longer as all data need\n"
 "to be migrated.\n"
 msgstr ""
+"\n"
+"Din ruter venter på å bli <b>startet på nytt</b> for å fortsette migreringen "
+"av dataen din til den nylig valgte disken.\n"
+"Start ruteren på nytt <b>så snart som mulig</b>, men ha i minnet at neste "
+"omstart vil ta lengre tid siden all dataen\n"
+"må migreres.\n"
 
 #: reforis_storage/__init__.py:71
 msgid "UUID set failed."
-msgstr ""
-
+msgstr "Kunne ikke sette UUID."
