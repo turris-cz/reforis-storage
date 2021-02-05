@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-10 09:18+0100\n"
-"PO-Revision-Date: 2020-01-10 09:18+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-02-06 17:50+0000\n"
+"Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/el/>\n"
 "Language: el\n"
-"Language-Team: el <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/storage/Storage.js:58
@@ -94,7 +96,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:48
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: js/src/storage/Drives/ConfirmationModal.js:51
 msgid "Continue"
@@ -111,7 +113,7 @@ msgstr ""
 #: js/src/storage/Drives/DrivesTable.js:34
 #: js/src/storage/currentState/CurrentStateTable.js:44
 msgid "Device"
-msgstr ""
+msgstr "Συσκευή"
 
 #: js/src/storage/Drives/DrivesTable.js:35
 msgid "Description"
@@ -212,4 +214,3 @@ msgstr ""
 #: reforis_storage/__init__.py:71
 msgid "UUID set failed."
 msgstr ""
-
