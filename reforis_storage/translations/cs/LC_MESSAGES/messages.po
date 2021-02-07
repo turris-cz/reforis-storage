@@ -8,19 +8,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-10 09:18+0100\n"
-"PO-Revision-Date: 2020-01-10 09:18+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-02-08 14:50+0000\n"
+"Last-Translator: Martin Novák <testxxx1@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/cs/>\n"
 "Language: cs\n"
-"Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/storage/Storage.js:58
 msgid "Storage"
-msgstr ""
+msgstr "Uložiště"
 
 #: js/src/storage/DrivesOperations.js:33
 msgid "No drives connected, please connect a drive and refresh the page."
@@ -98,7 +100,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:51
 msgid "Continue"
-msgstr ""
+msgstr "Pokračovat"
 
 #: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
 msgid "Device preparation failed."
@@ -111,11 +113,11 @@ msgstr ""
 #: js/src/storage/Drives/DrivesTable.js:34
 #: js/src/storage/currentState/CurrentStateTable.js:44
 msgid "Device"
-msgstr ""
+msgstr "Zařízení"
 
 #: js/src/storage/Drives/DrivesTable.js:35
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: js/src/storage/Drives/DrivesTable.js:36
 msgid "Filesystem"
@@ -125,7 +127,7 @@ msgstr ""
 #: js/src/storage/UUIDs/UUIDsTable.js:29
 #: js/src/storage/currentState/CurrentStateTable.js:49
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
 msgid "Custom"
@@ -133,16 +135,16 @@ msgstr ""
 
 #: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
 msgid "JBOD"
-msgstr ""
+msgstr "JBOD"
 
 #: js/src/storage/Drives/RAID.js:17 js/src/storage/Drives/RAIDHelpTexts.js:32
 msgid "RAID1"
-msgstr ""
+msgstr "RAID1"
 
 #: js/src/storage/Drives/RAID.js:31
 #: js/src/storage/currentState/CurrentStateTable.js:53
 msgid "RAID"
-msgstr ""
+msgstr "RAID"
 
 #: js/src/storage/Drives/RAIDHelpTexts.js:11
 msgid ""
@@ -187,7 +189,7 @@ msgstr ""
 
 #: js/src/storage/UUIDs/UUIDsTable.js:28
 msgid "Devices"
-msgstr ""
+msgstr "Zařízení"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
 msgid ""
@@ -197,7 +199,7 @@ msgstr ""
 
 #: js/src/storage/currentState/CurrentStateTable.js:30
 msgid "State"
-msgstr ""
+msgstr "Stav"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -212,4 +214,3 @@ msgstr ""
 #: reforis_storage/__init__.py:71
 msgid "UUID set failed."
 msgstr ""
-
