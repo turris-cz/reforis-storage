@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-10 09:18+0100\n"
-"PO-Revision-Date: 2021-02-06 17:50+0000\n"
+"PO-Revision-Date: 2021-02-09 16:50+0000\n"
 "Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/el/>\n"
@@ -96,15 +96,15 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:48
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Άκυρο"
 
 #: js/src/storage/Drives/ConfirmationModal.js:51
 msgid "Continue"
-msgstr ""
+msgstr "Συνέχεια"
 
 #: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
 msgid "Device preparation failed."
-msgstr ""
+msgstr "Η προετοιμασία της συσκευής απέτυχε."
 
 #: js/src/storage/Drives/Drives.js:88
 msgid "Format & Set"
