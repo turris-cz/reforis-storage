@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-01-10 09:18+0100\n"
-"PO-Revision-Date: 2021-02-06 17:50+0000\n"
-"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
+"PO-Revision-Date: 2021-02-19 07:02+0000\n"
+"Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5\n"
 "Generated-By: Babel 2.8.0\n"
 
 #: js/src/app.js:11 js/src/storage/Storage.js:58
@@ -27,7 +27,7 @@ msgstr "Хранилище"
 
 #: js/src/storage/DrivesOperations.js:33
 msgid "No drives connected, please connect a drive and refresh the page."
-msgstr ""
+msgstr "Диски не подключены, подключите диск и обновите страницу."
 
 #: js/src/storage/DrivesOperations.js:37
 msgid "Prepare drives"
@@ -51,6 +51,15 @@ msgid ""
 "IO-intensive applications should reside) will get moved to this new "
 "drive.\n"
 msgstr ""
+"\n"
+"Здесь вы можете настроить, где будут храниться ваши данные. Если вы хотите "
+"использовать Nextcloud, LXC или другие приложения с интенсивным вводом-"
+"выводом, не помещайте их во внутреннюю флэш-память, а всегда используйте "
+"внешнее хранилище. Кроме того, перед переключением убедитесь, что ваши "
+"данные уместятся на новом диске. </br></br>После выбора диска он будет "
+"отформатирован в файловую систему Btrfs и при следующей перезагрузке ваш /"
+"srv (каталог, в котором находятся все приложения с интенсивным "
+"вводом-выводом) будет перемещен на этот новый диск.\n"
 
 #: js/src/storage/Storage.js:61
 msgid "Current state"
@@ -62,11 +71,11 @@ msgstr "Форматирование"
 
 #: js/src/storage/constants.js:16
 msgid "Growing"
-msgstr ""
+msgstr "Рост"
 
 #: js/src/storage/constants.js:17
 msgid "Shrinking"
-msgstr ""
+msgstr "Снижение"
 
 #: js/src/storage/constants.js:18
 msgid "Balancing"
@@ -80,6 +89,11 @@ msgid ""
 "moved from old drive to the new one. This can take some time so your next"
 " reboot will take longer. \n"
 msgstr ""
+"\n"
+"Вы добавляете первый диск, вы получите уведомление и вам будет предложено "
+"перезагрузиться. При перезагрузке данные будут перенесены со старого диска "
+"на новый. Это может занять некоторое время, поэтому следующая перезагрузка "
+"займет больше времени. \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid "Reboot confirmation"
@@ -94,6 +108,11 @@ msgid ""
 "Are you sure you want to continue?\n"
 "                    "
 msgstr ""
+"\n"
+"Вы уверены, что хотите продолжить? Новый выбранный диск (и) будет "
+"отформатирован, и вы потеряете все данные на нем. ${firstDriveMessage} Вы "
+"уверены что хотите продолжить?\n"
+"                    "
 
 #: js/src/storage/Drives/ConfirmationModal.js:48
 msgid "Cancel"
@@ -109,7 +128,7 @@ msgstr "Подготовка устройства не удалась."
 
 #: js/src/storage/Drives/Drives.js:88
 msgid "Format & Set"
-msgstr ""
+msgstr "Форматирование и установка"
 
 #: js/src/storage/Drives/DrivesTable.js:34
 #: js/src/storage/currentState/CurrentStateTable.js:44
@@ -132,7 +151,7 @@ msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
 msgid "Custom"
-msgstr ""
+msgstr "Ручная настройка"
 
 #: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
 msgid "JBOD"
@@ -154,6 +173,10 @@ msgid ""
 "if you have a really custom setup of your RAID\n"
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
+"\n"
+"Оставить без изменения уровень RAID. Полезно, если у вас индивидуальная "
+"настройка вашего RAID, которую мы не поддерживаем и хотим просто добавить/"
+"удалить несколько дисков.\n"
 
 #: js/src/storage/Drives/RAIDHelpTexts.js:15
 msgid ""
@@ -162,6 +185,10 @@ msgid ""
 "hand, provides the most space - sum of the space\n"
 "available on all included drives.\n"
 msgstr ""
+"\n"
+"Нет избыточности, если один диск выходит из строя, вы теряете свои данные. С "
+"другой стороны, обеспечивает наибольшее объем - емкость всех дисков "
+"суммируется.\n"
 
 #: js/src/storage/Drives/RAIDHelpTexts.js:19
 msgid ""
@@ -171,22 +198,26 @@ msgid ""
 "loosing any data. On the other hand, you have a half of the disk space "
 "you would have with JBOD.\n"
 msgstr ""
+"\n"
+"Есть избыточность и данные хранятся на двух разных дисках. Если вы потеряете "
+"один диск, вы можете легко заменить его без потеря данных. С другой стороны, "
+"у вас есть половина дискового пространства, которое у вас было бы с JBOD.\n"
 
 #: js/src/storage/UUIDs/UUIDs.js:41
 msgid "UUID selection failed."
-msgstr ""
+msgstr "Не удалось выбрать UUID."
 
 #: js/src/storage/UUIDs/UUIDs.js:58
 msgid "There aren't prepared drives to be used."
-msgstr ""
+msgstr "Нет дисков, подготовленных для использования."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:27
 msgid "Unset UUID"
-msgstr ""
+msgstr "Снять UUID"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:34
 msgid "Set UUID"
-msgstr ""
+msgstr "Установить UUID"
 
 #: js/src/storage/UUIDs/UUIDsTable.js:28
 msgid "Devices"
@@ -197,6 +228,8 @@ msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
+"Ваши настройки в настоящее время повреждены, и вы, вероятно, теряете можете "
+"потерять данные, установите новое устройство хранения как можно скорее!"
 
 #: js/src/storage/currentState/CurrentStateTable.js:30
 msgid "State"
@@ -211,7 +244,12 @@ msgid ""
 "next reboot will take longer as all data need\n"
 "to be migrated.\n"
 msgstr ""
+"\n"
+"Ваш маршрутизатор <b>ожидает перезагрузки</b>, чтобы продолжить перенос "
+"данных на новый выбранный диск. Пожалуйста перезагрузите маршрутизатор "
+"<b>как можно скорее</b>, но помните, что следующая перезагрузка займет "
+"больше времени, поскольку все данные потребуются для миграции.\n"
 
 #: reforis_storage/__init__.py:71
 msgid "UUID set failed."
-msgstr ""
+msgstr "Не удалось установить UUID."
