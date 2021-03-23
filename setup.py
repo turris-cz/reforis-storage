@@ -51,14 +51,14 @@ setuptools.setup(
             'pylint',
             'pylint-quotes',
             'pycodestyle',
-            'reforis @ git+https://gitlab.labs.nic.cz/turris/reforis/reforis#egg=reforis',
+            'reforis @ git+https://gitlab.nic.cz/turris/reforis/reforis#egg=reforis',
         ],
     },
     setup_requires=[
         'reforis_distutils',
     ],
     dependency_links=[
-        'git+https://gitlab.labs.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils',
+        'git+https://gitlab.nic.cz/turris/reforis/reforis-distutils.git#egg=reforis-distutils',
     ],
     entry_points={
         'foris.plugins': f'{NAME} = {NAME}:storage'
