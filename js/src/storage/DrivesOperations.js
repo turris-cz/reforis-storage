@@ -42,10 +42,10 @@ export default function DrivesOperations(props) {
     }
     return (
         <>
-            <h2>{_("Prepare drives")}</h2>
+            <h2>{_("Prepare Drives")}</h2>
             <Drives {...props} />
 
-            <h2>{_("Use prepared storage")}</h2>
+            <h2>{_("Use Prepared Storage")}</h2>
             <UUIDs updateUUIDCallback={updateUUIDCallback} {...props} />
         </>
     );

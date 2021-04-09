@@ -45,7 +45,7 @@ export default function CurrentState({
     const pendingMigration = old_uuid !== uuid && (!unsetUuid || !initialState);
     return (
         <>
-            <h2>{_("Current state")}</h2>
+            <h2>{_("Current State")}</h2>
             {disk_mounted &&
                 !is_broken &&
                 !storageIsPending &&
