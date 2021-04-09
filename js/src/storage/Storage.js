@@ -64,6 +64,7 @@ export default function Storage({ ws }) {
 
     function updateUUIDCallback() {
         getDrives();
+        getSettings();
         getStorageState();
     }
     return (
