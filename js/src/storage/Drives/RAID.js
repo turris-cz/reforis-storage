@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { Select } from "foris";
 
 export const RAID_CHOICES = {
-    custom: _("Custom"),
+    custom: _("Not specified"),
     single: _("JBOD"),
     raid1: _("RAID1"),
 };
@@ -50,7 +50,7 @@ export function RAIDSelect({
             raidHelpText = `JBOD: ${RAID_HELP_TEXTS.JBOD}`;
             break;
         default:
-            raidHelpText = `Custom: ${RAID_HELP_TEXTS.custom}`;
+            raidHelpText = `Not specified: ${RAID_HELP_TEXTS.custom}`;
             break;
     }
 
