@@ -1,5 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Storage /> Should handle pending states. 1`] = `
+<div>
+  <h1>
+    Storage
+  </h1>
+  <div>
+    
+
+    <p>
+      Here you can set up where your persistent data should be stored.
+If you want to use Nextcloud, LXC or other IO-intensive applications,
+don't put them on internal flash, but always use external storage.
+Also, make sure that your data will fit on the new drive before switching.
+    </p>
+    
+
+    <p>
+      To set up external storage, you have to connect an external drive - like
+an USB flash drive - and format it to Btrfs filesystem. All you have to do is
+select the correct drive, the desired RAID level and click "Format & Set"
+button in "Prepare storage" section. This will format the drive and will
+ask you to reboot the router. During the reboot your /srv (directory
+where all IO-intensive applications should reside) will get moved to this
+new drive.
+    </p>
+    
+
+    <p>
+      If you already have a device that you used with the Turris router before,
+you can set it to be used as external storage in "Drive selection" section
+without losing any data.
+    </p>
+    
+
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
+  >
+    <h2>
+      Current State
+    </h2>
+    <div
+      class="mb-3"
+    >
+      <div
+        class="row no-gutters justify-content-center"
+      >
+        <div
+          class="col-md-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <i
+            class="fas fa-hdd fa-4x mb-1"
+          />
+          <h5>
+            /dev/sdb
+          </h5>
+        </div>
+        <div
+          class="col-md-6"
+        >
+          <div
+            class="card-body"
+          >
+            <div
+              class="table-responsive"
+            >
+              <table
+                class="table table-borderless table-hover"
+              >
+                <tbody>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      State
+                    </th>
+                    <td>
+                      <div
+                        class="d-flex flex-row"
+                      >
+                        <div
+                          class="spinner-border spinner-border-sm"
+                          role="status"
+                        >
+                          <span
+                            class="sr-only"
+                          />
+                        </div>
+                        <div
+                          class="spinner-text"
+                        >
+                           
+                          Formatting
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      Device
+                    </th>
+                    <td>
+                      /dev/sdb
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      UUID
+                    </th>
+                    <td>
+                      1234-1234-1234-1234-1234
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                    >
+                      RAID
+                    </th>
+                    <td>
+                      single
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Storage /> Should render. 1`] = `
 <div>
   <h1>
@@ -9,15 +147,28 @@ exports[`<Storage /> Should render. 1`] = `
     
 
     <p>
-      Here you can set up where your persistent data should be stored. If you want to use Nextcloud, LXC or other IO-intensive
-applications, don't put them on internal flash, but always use external storage. Also, make sure that your data will fit
-on the new drive before switching.
+      Here you can set up where your persistent data should be stored.
+If you want to use Nextcloud, LXC or other IO-intensive applications,
+don't put them on internal flash, but always use external storage.
+Also, make sure that your data will fit on the new drive before switching.
     </p>
     
 
     <p>
-      Once you choose a drive, it will be formatted to Btrfs filesystem and on next reboot, your /srv (directory where all
-IO-intensive applications should reside) will get moved to this new drive.
+      To set up external storage, you have to connect an external drive - like
+an USB flash drive - and format it to Btrfs filesystem. All you have to do is
+select the correct drive, the desired RAID level and click "Format & Set"
+button in "Prepare storage" section. This will format the drive and will
+ask you to reboot the router. During the reboot your /srv (directory
+where all IO-intensive applications should reside) will get moved to this
+new drive.
+    </p>
+    
+
+    <p>
+      If you already have a device that you used with the Turris router before,
+you can set it to be used as external storage in "Drive selection" section
+without losing any data.
     </p>
     
 
@@ -123,7 +274,7 @@ Device currently in use is
         <option
           value="custom"
         >
-          Custom
+          Not specified
         </option>
         <option
           value="raid1"
@@ -139,7 +290,7 @@ Device currently in use is
       <small
         class="form-text text-muted"
       >
-        Custom: 
+        Not specified: 
 Don't change the RAID level, keeps everything set the way it was. Useful if you have a really custom setup of your RAID
 we don't support and want to just add/remove some disks.
 
@@ -323,8 +474,19 @@ we don't support and want to just add/remove some disks.
       Format & Set
     </button>
     <h2>
-      Use Prepared Storage
+      Drive Selection
     </h2>
+    <p>
+      Here you can select which one of the already prepared drives should be
+used as external storage. If you already have a device that you used
+with the Turris router before, you can set it to be used as external
+storage here. Alternatively, if you are migrating your drive to another
+Turris device, you can disable external storage here. In such a case,
+all your data will remain on the external drive that you can connect
+elsewhere. Your /srv will use internal storage again but no data will
+be migrated. That means that services like MySQL will end up with empty
+databases and LXC virtual machines will be unavailable.
+    </p>
     <div
       class="table-responsive"
     >
@@ -382,13 +544,13 @@ we don't support and want to just add/remove some disks.
         class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
         type="button"
       >
-        Unset UUID
+        Disable external storage
       </button>
       <button
         class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
         type="button"
       >
-        Set UUID
+        Use drive
       </button>
     </div>
   </div>

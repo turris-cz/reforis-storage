@@ -40,7 +40,7 @@ exports[`<Drives /> Should render. 1`] = `
       <option
         value="custom"
       >
-        Custom
+        Not specified
       </option>
       <option
         value="raid1"
@@ -56,7 +56,7 @@ exports[`<Drives /> Should render. 1`] = `
     <small
       class="form-text text-muted"
     >
-      Custom: 
+      Not specified: 
 Don't change the RAID level, keeps everything set the way it was. Useful if you have a really custom setup of your RAID
 we don't support and want to just add/remove some disks.
 

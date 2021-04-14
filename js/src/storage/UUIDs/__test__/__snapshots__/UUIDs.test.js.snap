@@ -60,14 +60,14 @@ exports[`<UUIDs /> Should render. 1`] = `
       disabled=""
       type="button"
     >
-      Unset UUID
+      Disable external storage
     </button>
     <button
       class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
       disabled=""
       type="button"
     >
-      Set UUID
+      Use drive
     </button>
   </div>
 </div>
