@@ -40,14 +40,16 @@ export default function CurrentState({
     storageIsPending,
     disk_mounted,
 }) {
-    const pendingMigration = old_uuid !== uuid;
     const unsetUuid = uuid === "";
+    const initialState = old_uuid === "rootfs";
+    const pendingMigration = old_uuid !== uuid && (!unsetUuid || !initialState);
     return (
         <>
-            <h2>{_("Current state")}</h2>
-            {disk_mounted && !is_broken && pendingMigration && (
-                <PendingMigrationAlert />
-            )}
+            <h2>{_("Current State")}</h2>
+            {disk_mounted &&
+                !is_broken &&
+                !storageIsPending &&
+                pendingMigration && <PendingMigrationAlert />}
 
             {is_broken && <BrokenSetupAlert />}
 

@@ -26,7 +26,7 @@ IO-intensive applications should reside) will get moved to this new drive.
     class="card p-4 col-sm-12 col-lg-12 p-0 mb-3"
   >
     <h2>
-      Current state
+      Current State
     </h2>
     <div
       class="alert  alert-success"
@@ -106,7 +106,7 @@ Device currently in use is
       </div>
     </div>
     <h2>
-      Prepare drives
+      Prepare Drives
     </h2>
     <div
       class="form-group"
@@ -323,7 +323,7 @@ we don't support and want to just add/remove some disks.
       Format & Set
     </button>
     <h2>
-      Use prepared storage
+      Use Prepared Storage
     </h2>
     <div
       class="table-responsive"
