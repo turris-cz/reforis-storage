@@ -30,7 +30,10 @@ DrivesOperations.defaultProps = {
 };
 
 export default function DrivesOperations(props) {
-    const { updateUUIDCallback, drives } = props;
+    const { updateUUIDCallback, drives, storageIsPending } = props;
+
+    if (storageIsPending) return null;
+
     if (drives.length === 0) {
         return (
             <p className="text-center text-muted">
@@ -40,6 +43,7 @@ export default function DrivesOperations(props) {
             </p>
         );
     }
+
     return (
         <>
             <h2>{_("Prepare Drives")}</h2>
