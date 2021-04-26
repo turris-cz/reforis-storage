@@ -32,7 +32,7 @@ class StorageBuild(build_py):
 
 setuptools.setup(
     name=NAME,
-    version='0.2.1',
+    version='0.2.2',
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
