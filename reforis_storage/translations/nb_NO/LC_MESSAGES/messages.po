@@ -7,65 +7,76 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-10 09:18+0100\n"
+"POT-Creation-Date: 2021-04-26 17:44+0200\n"
 "PO-Revision-Date: 2021-02-06 17:50+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
-"reforis-storage-plugin/nb_NO/>\n"
 "Language: nb_NO\n"
+"Language-Team: Norwegian Bokmål "
+"<https://hosted.weblate.org/projects/turris/reforis-storage-"
+"plugin/nb_NO/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-#: js/src/app.js:11 js/src/storage/Storage.js:58
+#: js/src/app.js:12 js/src/storage/Storage.js:81
 msgid "Storage"
 msgstr "Lagring"
 
-#: js/src/storage/DrivesOperations.js:33
+#: js/src/storage/DrivesOperations.js:32
+msgid ""
+"Here you can select which one of the already prepared drives should be\n"
+"used as external storage. If you already have a device that you used\n"
+"with the Turris router before, you can set it to be used as external\n"
+"storage here. Alternatively, if you are migrating your drive to another\n"
+"Turris device, you can disable external storage here. In such a case,\n"
+"all your data will remain on the external drive that you can connect\n"
+"elsewhere. Your /srv will use internal storage again but no data will\n"
+"be migrated. That means that services like MySQL will end up with empty\n"
+"databases and LXC virtual machines will be unavailable."
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:52
 #, fuzzy
-msgid "No drives connected, please connect a drive and refresh the page."
+msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr "Ingen enheter tilkoblet. Koble til en enhet og gjenoppfrisk siden."
 
-#: js/src/storage/DrivesOperations.js:37
+#: js/src/storage/DrivesOperations.js:61
 #, fuzzy
-msgid "Prepare drives"
+msgid "Prepare Drives"
 msgstr "Forbered lagringsenheter"
 
-#: js/src/storage/DrivesOperations.js:40
-msgid "Use prepared storage"
-msgstr "Bruk forberedet lagring"
+#: js/src/storage/DrivesOperations.js:64
+msgid "Drive Selection"
+msgstr ""
 
-#: js/src/storage/Storage.js:24
+#: js/src/storage/Storage.js:28
 msgid ""
 "\n"
-"Here you can set up where your persistent data should be stored. If you "
-"want to use Nextcloud, LXC or other IO-intensive\n"
-"applications, don't put them on internal flash, but always use external "
-"storage. Also, make sure that your data will fit\n"
-"on the new drive before switching.\n"
-"</br></br>\n"
-"Once you choose a drive, it will be formatted to Btrfs filesystem and on "
-"next reboot, your /srv (directory where all\n"
-"IO-intensive applications should reside) will get moved to this new "
-"drive.\n"
-msgstr ""
+"<p>Here you can set up where your persistent data should be stored.\n"
+"If you want to use Nextcloud, LXC or other IO-intensive applications,\n"
+"don't put them on internal flash, but always use external storage.\n"
+"Also, make sure that your data will fit on the new drive before "
+"switching.</p>\n"
+"<p>To set up external storage, you have to connect an external drive - "
+"like\n"
+"an USB flash drive - and format it to Btrfs filesystem. All you have to "
+"do is\n"
+"select the correct drive, the desired RAID level and click \"Format & "
+"Set\"\n"
+"button in \"Prepare storage\" section. This will format the drive and "
+"will\n"
+"ask you to reboot the router. During the reboot your /srv (directory\n"
+"where all IO-intensive applications should reside) will get moved to this"
 "\n"
-"Her kan du sette opp hvor din vedvarende data skal lagres. Hvis du vil bruke "
-"Nextcloud, LXC, eller andre I/O-intensive\n"
-"programmer må du ikke putte dem på internt flash-basert minne, men alltid "
-"bruke eksternlagring. Forsikre deg også\n"
-"om at dataen får plass på den nye disken før du bytter.\n"
-"</br></br>\n"
-"Når du velger en disk, vil den formateres til Btrfs-filsystemet ved neste "
-"omstart, ditt /srv (mappen der alle\n"
-"I/O-intensive programmer skal ligge) vil bli flyttet til denne nye disken..\n"
-
-#: js/src/storage/Storage.js:61
-msgid "Current state"
-msgstr "Nåværende tilstand"
+"new drive.</p>\n"
+"<p>If you already have a device that you used with the Turris router "
+"before,\n"
+"you can set it to be used as external storage in \"Drive selection\" "
+"section\n"
+"without losing any data.</p>\n"
+msgstr ""
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
@@ -83,7 +94,7 @@ msgstr "Krympter …"
 msgid "Balancing"
 msgstr "Balanserer …"
 
-#: js/src/storage/Drives/ConfirmationModal.js:25
+#: js/src/storage/Drives/ConfirmationModal.js:19
 msgid ""
 "\n"
 "You are adding the first drive, then you'll get notification and you will"
@@ -97,11 +108,11 @@ msgstr ""
 "fra den gamle disken til den nye. Dette kan ta litt tid, så din neste "
 "omstart vil ta lengre tid. \n"
 
-#: js/src/storage/Drives/ConfirmationModal.js:36
-msgid "Reboot confirmation"
-msgstr "Omstartsbekreftelse"
+#: js/src/storage/Drives/ConfirmationModal.js:33
+msgid "Warning!"
+msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:39
+#: js/src/storage/Drives/ConfirmationModal.js:36
 #, fuzzy
 msgid ""
 "\n"
@@ -118,60 +129,55 @@ msgstr ""
 "Er du sikker på at du vil fortsette?\n"
 "                    "
 
-#: js/src/storage/Drives/ConfirmationModal.js:48
+#: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: js/src/storage/Drives/ConfirmationModal.js:51
+#: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
 msgstr "Fortsett"
 
-#: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
+#: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
 msgid "Device preparation failed."
 msgstr "Enhetsforberedelse mislyktes"
 
-#: js/src/storage/Drives/Drives.js:88
+#: js/src/storage/Drives/Drives.js:91
 #, fuzzy
 msgid "Format & Set"
 msgstr "Formater og sett"
 
-#: js/src/storage/Drives/DrivesTable.js:34
-#: js/src/storage/currentState/CurrentStateTable.js:44
+#: js/src/storage/Drives/DrivesTable.js:40
+#: js/src/storage/currentState/CurrentStateTable.js:74
 msgid "Device"
 msgstr "Enhet"
 
-#: js/src/storage/Drives/DrivesTable.js:35
+#: js/src/storage/Drives/DrivesTable.js:41
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: js/src/storage/Drives/DrivesTable.js:36
+#: js/src/storage/Drives/DrivesTable.js:42
 msgid "Filesystem"
 msgstr "Filsystem"
 
-#: js/src/storage/Drives/DrivesTable.js:37
-#: js/src/storage/UUIDs/UUIDsTable.js:29
-#: js/src/storage/currentState/CurrentStateTable.js:49
+#: js/src/storage/Drives/DrivesTable.js:43
+#: js/src/storage/UUIDs/UUIDsTable.js:32
+#: js/src/storage/currentState/CurrentStateTable.js:80
 msgid "UUID"
 msgstr "UUID"
 
-#: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
-msgid "Custom"
-msgstr "Tilpasset"
+#: js/src/storage/Drives/RAID.js:13
+msgid "Not specified"
+msgstr ""
 
-#: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
+#: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
 msgstr "JBOD"
 
-#: js/src/storage/Drives/RAID.js:17 js/src/storage/Drives/RAIDHelpTexts.js:32
+#: js/src/storage/Drives/RAID.js:15
 msgid "RAID1"
 msgstr "RAID1"
 
-#: js/src/storage/Drives/RAID.js:31
-#: js/src/storage/currentState/CurrentStateTable.js:53
-msgid "RAID"
-msgstr "RAID"
-
-#: js/src/storage/Drives/RAIDHelpTexts.js:11
+#: js/src/storage/Drives/RAID.js:25
 #, fuzzy
 msgid ""
 "\n"
@@ -180,11 +186,11 @@ msgid ""
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
 "\n"
-"Ikke endre RAID-nivå, beholder alt som det var. Nyttig hvis du har et veldig "
-"tilpasset RAID-oppsett som ikke støttes\n"
+"Ikke endre RAID-nivå, beholder alt som det var. Nyttig hvis du har et "
+"veldig tilpasset RAID-oppsett som ikke støttes\n"
 "og kun ønsker å legge til/fjerne noen disker.\n"
 
-#: js/src/storage/Drives/RAIDHelpTexts.js:15
+#: js/src/storage/Drives/RAID.js:29
 msgid ""
 "\n"
 "No redundancy, if one drive fails, you loose your data. On the other "
@@ -192,11 +198,11 @@ msgid ""
 "available on all included drives.\n"
 msgstr ""
 "\n"
-"Ingen redundans. Hvis en disk feiler, mister du all dataen din. Når det er "
-"sagt gir det mest mulig brukbar plass - summen\n"
+"Ingen redundans. Hvis en disk feiler, mister du all dataen din. Når det "
+"er sagt gir det mest mulig brukbar plass - summen\n"
 "av plassen på alle inkluderte disker.\n"
 
-#: js/src/storage/Drives/RAIDHelpTexts.js:19
+#: js/src/storage/Drives/RAID.js:33
 msgid ""
 "\n"
 "Everything is redundant and stored at two distinct drives. If you loose "
@@ -205,30 +211,44 @@ msgid ""
 "you would have with JBOD.\n"
 msgstr ""
 "\n"
-"Alt er redundant og lagret på minst to egne disker. Hvis du mister én kan du "
-"enkelt bytte den uten\n"
-"å miste dataen din. Derimot har du kun halve plassen du ville hatt med JBOD."
-"\n"
+"Alt er redundant og lagret på minst to egne disker. Hvis du mister én kan"
+" du enkelt bytte den uten\n"
+"å miste dataen din. Derimot har du kun halve plassen du ville hatt med "
+"JBOD.\n"
 
-#: js/src/storage/UUIDs/UUIDs.js:41
-msgid "UUID selection failed."
+#: js/src/storage/Drives/RAID.js:59
+#: js/src/storage/currentState/CurrentStateTable.js:86
+msgid "RAID"
+msgstr "RAID"
+
+#: js/src/storage/UUIDs/UUIDs.js:46
+#, fuzzy
+msgid "Drive selection failed."
 msgstr "UUID-utvalg mislyktes"
 
-#: js/src/storage/UUIDs/UUIDs.js:58
-msgid "There aren't prepared drives to be used."
+#: js/src/storage/UUIDs/UUIDs.js:65
+#, fuzzy
+msgid "There are no prepared drives to be used."
 msgstr "Ingen enheter er forberedt for bruk."
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:27
-msgid "Unset UUID"
-msgstr "Opphev UUID"
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:31
+msgid "Disable external storage"
+msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:34
-msgid "Set UUID"
-msgstr "Sett UUID"
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:38
+#, fuzzy
+msgid "Use drive"
+msgstr "Forbered lagringsenheter"
 
-#: js/src/storage/UUIDs/UUIDsTable.js:28
+#: js/src/storage/UUIDs/UUIDsTable.js:31
 msgid "Devices"
 msgstr "Enheter"
+
+#: js/src/storage/currentState/ActiveAlert.js:17
+msgid ""
+"\n"
+"Device currently in use is\n"
+msgstr ""
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
 #, fuzzy
@@ -239,9 +259,18 @@ msgstr ""
 "Oppsettet ditt er skadet og du mister antagelig data. Sett en ny "
 "lagringsenhet så snart du kan!"
 
-#: js/src/storage/currentState/CurrentStateTable.js:30
+#: js/src/storage/currentState/CurrentState.js:48
+#, fuzzy
+msgid "Current State"
+msgstr "Nåværende tilstand"
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
 msgstr "Tilstand"
+
+#: js/src/storage/currentState/CurrentStateTable.js:82
+msgid "N/A"
+msgstr ""
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -253,12 +282,70 @@ msgid ""
 "to be migrated.\n"
 msgstr ""
 "\n"
-"Din ruter venter på å bli <b>startet på nytt</b> for å fortsette migreringen "
-"av dataen din til den nylig valgte disken.\n"
-"Start ruteren på nytt <b>så snart som mulig</b>, men ha i minnet at neste "
-"omstart vil ta lengre tid siden all dataen\n"
+"Din ruter venter på å bli <b>startet på nytt</b> for å fortsette "
+"migreringen av dataen din til den nylig valgte disken.\n"
+"Start ruteren på nytt <b>så snart som mulig</b>, men ha i minnet at neste"
+" omstart vil ta lengre tid siden all dataen\n"
 "må migreres.\n"
 
-#: reforis_storage/__init__.py:71
+#: reforis_storage/__init__.py:54
+msgid "Cannot change persistent log setting."
+msgstr ""
+
+#: reforis_storage/__init__.py:88
 msgid "UUID set failed."
 msgstr "Kunne ikke sette UUID."
+
+#~ msgid "Use prepared storage"
+#~ msgstr "Bruk forberedet lagring"
+
+#~ msgid ""
+#~ "\n"
+#~ "Here you can set up where your "
+#~ "persistent data should be stored. If "
+#~ "you want to use Nextcloud, LXC or"
+#~ " other IO-intensive\n"
+#~ "applications, don't put them on internal"
+#~ " flash, but always use external "
+#~ "storage. Also, make sure that your "
+#~ "data will fit\n"
+#~ "on the new drive before switching.\n"
+#~ "</br></br>\n"
+#~ "Once you choose a drive, it will"
+#~ " be formatted to Btrfs filesystem and"
+#~ " on next reboot, your /srv (directory"
+#~ " where all\n"
+#~ "IO-intensive applications should reside) "
+#~ "will get moved to this new drive."
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Her kan du sette opp hvor din "
+#~ "vedvarende data skal lagres. Hvis du "
+#~ "vil bruke Nextcloud, LXC, eller andre"
+#~ " I/O-intensive\n"
+#~ "programmer må du ikke putte dem på"
+#~ " internt flash-basert minne, men "
+#~ "alltid bruke eksternlagring. Forsikre deg "
+#~ "også\n"
+#~ "om at dataen får plass på den nye disken før du bytter.\n"
+#~ "</br></br>\n"
+#~ "Når du velger en disk, vil den "
+#~ "formateres til Btrfs-filsystemet ved "
+#~ "neste omstart, ditt /srv (mappen der "
+#~ "alle\n"
+#~ "I/O-intensive programmer skal ligge) vil "
+#~ "bli flyttet til denne nye disken..\n\n"
+
+#~ msgid "Reboot confirmation"
+#~ msgstr "Omstartsbekreftelse"
+
+#~ msgid "Custom"
+#~ msgstr "Tilpasset"
+
+#~ msgid "Unset UUID"
+#~ msgstr "Opphev UUID"
+
+#~ msgid "Set UUID"
+#~ msgstr "Sett UUID"
+

@@ -7,63 +7,76 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-10 09:18+0100\n"
+"POT-Creation-Date: 2021-04-26 17:44+0200\n"
 "PO-Revision-Date: 2021-03-18 08:18+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/turris/"
-"reforis-storage-plugin/ru/>\n"
 "Language: ru\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/turris"
+"/reforis-storage-plugin/ru/>\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-#: js/src/app.js:11 js/src/storage/Storage.js:58
+#: js/src/app.js:12 js/src/storage/Storage.js:81
 msgid "Storage"
 msgstr "Хранилище"
 
-#: js/src/storage/DrivesOperations.js:33
-msgid "No drives connected, please connect a drive and refresh the page."
+#: js/src/storage/DrivesOperations.js:32
+msgid ""
+"Here you can select which one of the already prepared drives should be\n"
+"used as external storage. If you already have a device that you used\n"
+"with the Turris router before, you can set it to be used as external\n"
+"storage here. Alternatively, if you are migrating your drive to another\n"
+"Turris device, you can disable external storage here. In such a case,\n"
+"all your data will remain on the external drive that you can connect\n"
+"elsewhere. Your /srv will use internal storage again but no data will\n"
+"be migrated. That means that services like MySQL will end up with empty\n"
+"databases and LXC virtual machines will be unavailable."
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:52
+#, fuzzy
+msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr "Диски не подключены, подключите диск и обновите страницу."
 
-#: js/src/storage/DrivesOperations.js:37
-msgid "Prepare drives"
+#: js/src/storage/DrivesOperations.js:61
+#, fuzzy
+msgid "Prepare Drives"
 msgstr "Подготовка дисков"
 
-#: js/src/storage/DrivesOperations.js:40
-msgid "Use prepared storage"
-msgstr "Использовать подготовленное хранилище"
+#: js/src/storage/DrivesOperations.js:64
+msgid "Drive Selection"
+msgstr ""
 
-#: js/src/storage/Storage.js:24
+#: js/src/storage/Storage.js:28
 msgid ""
 "\n"
-"Here you can set up where your persistent data should be stored. If you "
-"want to use Nextcloud, LXC or other IO-intensive\n"
-"applications, don't put them on internal flash, but always use external "
-"storage. Also, make sure that your data will fit\n"
-"on the new drive before switching.\n"
-"</br></br>\n"
-"Once you choose a drive, it will be formatted to Btrfs filesystem and on "
-"next reboot, your /srv (directory where all\n"
-"IO-intensive applications should reside) will get moved to this new "
-"drive.\n"
-msgstr ""
+"<p>Here you can set up where your persistent data should be stored.\n"
+"If you want to use Nextcloud, LXC or other IO-intensive applications,\n"
+"don't put them on internal flash, but always use external storage.\n"
+"Also, make sure that your data will fit on the new drive before "
+"switching.</p>\n"
+"<p>To set up external storage, you have to connect an external drive - "
+"like\n"
+"an USB flash drive - and format it to Btrfs filesystem. All you have to "
+"do is\n"
+"select the correct drive, the desired RAID level and click \"Format & "
+"Set\"\n"
+"button in \"Prepare storage\" section. This will format the drive and "
+"will\n"
+"ask you to reboot the router. During the reboot your /srv (directory\n"
+"where all IO-intensive applications should reside) will get moved to this"
 "\n"
-"Здесь вы можете настроить, где будут храниться ваши данные. Если вы хотите "
-"использовать Nextcloud, LXC или другие приложения с интенсивным вводом-"
-"выводом, не помещайте их во внутреннюю флэш-память, используйте внешнее "
-"хранилище. Кроме того, перед переключением убедитесь, что ваши данные "
-"уместятся на новом диске. </br></br>После выбора диска он будет "
-"отформатирован в файловую систему Btrfs и при следующей перезагрузке ваш /"
-"srv (каталог, в котором находятся все приложения с интенсивным "
-"вводом-выводом) будет перемещен на этот новый диск.\n"
-
-#: js/src/storage/Storage.js:61
-msgid "Current state"
-msgstr "Текущее состояние"
+"new drive.</p>\n"
+"<p>If you already have a device that you used with the Turris router "
+"before,\n"
+"you can set it to be used as external storage in \"Drive selection\" "
+"section\n"
+"without losing any data.</p>\n"
+msgstr ""
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
@@ -81,7 +94,7 @@ msgstr "Снижение"
 msgid "Balancing"
 msgstr "Балансировка"
 
-#: js/src/storage/Drives/ConfirmationModal.js:25
+#: js/src/storage/Drives/ConfirmationModal.js:19
 msgid ""
 "\n"
 "You are adding the first drive, then you'll get notification and you will"
@@ -90,16 +103,16 @@ msgid ""
 " reboot will take longer. \n"
 msgstr ""
 "\n"
-"Вы добавляете первый диск, вы получите уведомление и вам будет предложено "
-"перезагрузиться. При перезагрузке данные будут перенесены со старого диска "
-"на новый. Это может занять некоторое время, поэтому следующая перезагрузка "
-"займет больше времени. \n"
+"Вы добавляете первый диск, вы получите уведомление и вам будет предложено"
+" перезагрузиться. При перезагрузке данные будут перенесены со старого "
+"диска на новый. Это может занять некоторое время, поэтому следующая "
+"перезагрузка займет больше времени. \n"
+
+#: js/src/storage/Drives/ConfirmationModal.js:33
+msgid "Warning!"
+msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
-msgid "Reboot confirmation"
-msgstr "Подтверждение перезагрузки"
-
-#: js/src/storage/Drives/ConfirmationModal.js:39
 msgid ""
 "\n"
 "Are you sure you want to proceed? Newly selected drive(s) will be "
@@ -110,63 +123,58 @@ msgid ""
 msgstr ""
 "\n"
 "Вы уверены, что хотите продолжить? Новый выбранный диск (и) будет "
-"отформатирован, и вы потеряете все данные на нем. ${firstDriveMessage} Вы "
-"уверены что хотите продолжить?\n"
+"отформатирован, и вы потеряете все данные на нем. ${firstDriveMessage} Вы"
+" уверены что хотите продолжить?\n"
 "                    "
 
-#: js/src/storage/Drives/ConfirmationModal.js:48
+#: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
 msgstr "Отмена"
 
-#: js/src/storage/Drives/ConfirmationModal.js:51
+#: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
 msgstr "Продолжить"
 
-#: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
+#: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
 msgid "Device preparation failed."
 msgstr "Подготовка устройства не удалась."
 
-#: js/src/storage/Drives/Drives.js:88
+#: js/src/storage/Drives/Drives.js:91
 msgid "Format & Set"
 msgstr "Форматирование и установка"
 
-#: js/src/storage/Drives/DrivesTable.js:34
-#: js/src/storage/currentState/CurrentStateTable.js:44
+#: js/src/storage/Drives/DrivesTable.js:40
+#: js/src/storage/currentState/CurrentStateTable.js:74
 msgid "Device"
 msgstr "Устройство"
 
-#: js/src/storage/Drives/DrivesTable.js:35
+#: js/src/storage/Drives/DrivesTable.js:41
 msgid "Description"
 msgstr "Описание"
 
-#: js/src/storage/Drives/DrivesTable.js:36
+#: js/src/storage/Drives/DrivesTable.js:42
 msgid "Filesystem"
 msgstr "Файловая система"
 
-#: js/src/storage/Drives/DrivesTable.js:37
-#: js/src/storage/UUIDs/UUIDsTable.js:29
-#: js/src/storage/currentState/CurrentStateTable.js:49
+#: js/src/storage/Drives/DrivesTable.js:43
+#: js/src/storage/UUIDs/UUIDsTable.js:32
+#: js/src/storage/currentState/CurrentStateTable.js:80
 msgid "UUID"
 msgstr "UUID"
 
-#: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
-msgid "Custom"
-msgstr "Ручная настройка"
+#: js/src/storage/Drives/RAID.js:13
+msgid "Not specified"
+msgstr ""
 
-#: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
+#: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
 msgstr "JBOD"
 
-#: js/src/storage/Drives/RAID.js:17 js/src/storage/Drives/RAIDHelpTexts.js:32
+#: js/src/storage/Drives/RAID.js:15
 msgid "RAID1"
 msgstr "RAID1"
 
-#: js/src/storage/Drives/RAID.js:31
-#: js/src/storage/currentState/CurrentStateTable.js:53
-msgid "RAID"
-msgstr "RAID"
-
-#: js/src/storage/Drives/RAIDHelpTexts.js:11
+#: js/src/storage/Drives/RAID.js:25
 msgid ""
 "\n"
 "Don't change the RAID level, keeps everything set the way it was. Useful "
@@ -175,10 +183,10 @@ msgid ""
 msgstr ""
 "\n"
 "Оставить без изменения уровень RAID. Полезно, если у вас индивидуальная "
-"настройка вашего RAID, которую мы не поддерживаем и хотим просто добавить/"
-"удалить несколько дисков.\n"
+"настройка вашего RAID, которую мы не поддерживаем и хотим просто "
+"добавить/удалить несколько дисков.\n"
 
-#: js/src/storage/Drives/RAIDHelpTexts.js:15
+#: js/src/storage/Drives/RAID.js:29
 msgid ""
 "\n"
 "No redundancy, if one drive fails, you loose your data. On the other "
@@ -186,11 +194,11 @@ msgid ""
 "available on all included drives.\n"
 msgstr ""
 "\n"
-"Нет избыточности, если один диск выходит из строя, вы теряете свои данные. С "
-"другой стороны, обеспечивает наибольшее объем - емкость всех дисков "
-"суммируется.\n"
+"Нет избыточности, если один диск выходит из строя, вы теряете свои "
+"данные. С другой стороны, обеспечивает наибольшее объем - емкость всех "
+"дисков суммируется.\n"
 
-#: js/src/storage/Drives/RAIDHelpTexts.js:19
+#: js/src/storage/Drives/RAID.js:33
 msgid ""
 "\n"
 "Everything is redundant and stored at two distinct drives. If you loose "
@@ -199,41 +207,66 @@ msgid ""
 "you would have with JBOD.\n"
 msgstr ""
 "\n"
-"Есть избыточность и данные хранятся на двух разных дисках. Если вы потеряете "
-"один диск, вы можете легко заменить его без потеря данных. С другой стороны, "
-"у вас есть половина дискового пространства, которое у вас было бы с JBOD.\n"
+"Есть избыточность и данные хранятся на двух разных дисках. Если вы "
+"потеряете один диск, вы можете легко заменить его без потеря данных. С "
+"другой стороны, у вас есть половина дискового пространства, которое у вас"
+" было бы с JBOD.\n"
 
-#: js/src/storage/UUIDs/UUIDs.js:41
-msgid "UUID selection failed."
+#: js/src/storage/Drives/RAID.js:59
+#: js/src/storage/currentState/CurrentStateTable.js:86
+msgid "RAID"
+msgstr "RAID"
+
+#: js/src/storage/UUIDs/UUIDs.js:46
+#, fuzzy
+msgid "Drive selection failed."
 msgstr "Не удалось выбрать UUID."
 
-#: js/src/storage/UUIDs/UUIDs.js:58
-msgid "There aren't prepared drives to be used."
+#: js/src/storage/UUIDs/UUIDs.js:65
+#, fuzzy
+msgid "There are no prepared drives to be used."
 msgstr "Нет дисков, подготовленных для использования."
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:27
-msgid "Unset UUID"
-msgstr "Снять UUID"
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:31
+msgid "Disable external storage"
+msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:34
-msgid "Set UUID"
-msgstr "Установить UUID"
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:38
+#, fuzzy
+msgid "Use drive"
+msgstr "Подготовка дисков"
 
-#: js/src/storage/UUIDs/UUIDsTable.js:28
+#: js/src/storage/UUIDs/UUIDsTable.js:31
 msgid "Devices"
 msgstr "Устройства"
+
+#: js/src/storage/currentState/ActiveAlert.js:17
+msgid ""
+"\n"
+"Device currently in use is\n"
+msgstr ""
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
-"Ваши настройки в настоящее время повреждены, и вы, вероятно, теряете можете "
-"потерять данные, установите новое устройство хранения как можно скорее!"
+"Ваши настройки в настоящее время повреждены, и вы, вероятно, теряете "
+"можете потерять данные, установите новое устройство хранения как можно "
+"скорее!"
 
-#: js/src/storage/currentState/CurrentStateTable.js:30
+#: js/src/storage/currentState/CurrentState.js:48
+#, fuzzy
+msgid "Current State"
+msgstr "Текущее состояние"
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
 msgstr "Состояние"
+
+#: js/src/storage/currentState/CurrentStateTable.js:82
+msgid "N/A"
+msgstr ""
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -250,6 +283,62 @@ msgstr ""
 "<b>как можно скорее</b>, но помните, что следующая перезагрузка займет "
 "больше времени, поскольку все данные потребуются для миграции.\n"
 
-#: reforis_storage/__init__.py:71
+#: reforis_storage/__init__.py:54
+msgid "Cannot change persistent log setting."
+msgstr ""
+
+#: reforis_storage/__init__.py:88
 msgid "UUID set failed."
 msgstr "Не удалось установить UUID."
+
+#~ msgid "Use prepared storage"
+#~ msgstr "Использовать подготовленное хранилище"
+
+#~ msgid ""
+#~ "\n"
+#~ "Here you can set up where your "
+#~ "persistent data should be stored. If "
+#~ "you want to use Nextcloud, LXC or"
+#~ " other IO-intensive\n"
+#~ "applications, don't put them on internal"
+#~ " flash, but always use external "
+#~ "storage. Also, make sure that your "
+#~ "data will fit\n"
+#~ "on the new drive before switching.\n"
+#~ "</br></br>\n"
+#~ "Once you choose a drive, it will"
+#~ " be formatted to Btrfs filesystem and"
+#~ " on next reboot, your /srv (directory"
+#~ " where all\n"
+#~ "IO-intensive applications should reside) "
+#~ "will get moved to this new drive."
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Здесь вы можете настроить, где будут "
+#~ "храниться ваши данные. Если вы хотите"
+#~ " использовать Nextcloud, LXC или другие "
+#~ "приложения с интенсивным вводом-выводом, не"
+#~ " помещайте их во внутреннюю флэш-память,"
+#~ " используйте внешнее хранилище. Кроме того,"
+#~ " перед переключением убедитесь, что ваши"
+#~ " данные уместятся на новом диске. "
+#~ "</br></br>После выбора диска он будет "
+#~ "отформатирован в файловую систему Btrfs "
+#~ "и при следующей перезагрузке ваш /srv"
+#~ " (каталог, в котором находятся все "
+#~ "приложения с интенсивным вводом-выводом) будет"
+#~ " перемещен на этот новый диск.\n"
+
+#~ msgid "Reboot confirmation"
+#~ msgstr "Подтверждение перезагрузки"
+
+#~ msgid "Custom"
+#~ msgstr "Ручная настройка"
+
+#~ msgid "Unset UUID"
+#~ msgstr "Снять UUID"
+
+#~ msgid "Set UUID"
+#~ msgstr "Установить UUID"
+
