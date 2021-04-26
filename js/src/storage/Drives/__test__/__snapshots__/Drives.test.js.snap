@@ -16,7 +16,7 @@ exports[`<Drives /> Should render modal on Format&Set click. 1`] = `
         role=\\"dialog\\"
       >
         <div
-          class=\\"modal-dialog  modal-dialog-centered\\"
+          class=\\"modal-dialog modal-dialog-centered\\"
           role=\\"document\\""
 `;
 

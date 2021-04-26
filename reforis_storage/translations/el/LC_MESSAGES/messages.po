@@ -7,50 +7,72 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-10 09:18+0100\n"
-"PO-Revision-Date: 2020-01-10 09:18+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2021-04-26 17:44+0200\n"
+"PO-Revision-Date: 2021-02-09 16:50+0000\n"
+"Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
 "Language: el\n"
-"Language-Team: el <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/turris/reforis-"
+"storage-plugin/el/>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
-#: js/src/app.js:11 js/src/storage/Storage.js:58
+#: js/src/app.js:12 js/src/storage/Storage.js:81
 msgid "Storage"
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:33
-msgid "No drives connected, please connect a drive and refresh the page."
+#: js/src/storage/DrivesOperations.js:32
+msgid ""
+"Here you can select which one of the already prepared drives should be\n"
+"used as external storage. If you already have a device that you used\n"
+"with the Turris router before, you can set it to be used as external\n"
+"storage here. Alternatively, if you are migrating your drive to another\n"
+"Turris device, you can disable external storage here. In such a case,\n"
+"all your data will remain on the external drive that you can connect\n"
+"elsewhere. Your /srv will use internal storage again but no data will\n"
+"be migrated. That means that services like MySQL will end up with empty\n"
+"databases and LXC virtual machines will be unavailable."
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:37
-msgid "Prepare drives"
+#: js/src/storage/DrivesOperations.js:52
+msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:40
-msgid "Use prepared storage"
+#: js/src/storage/DrivesOperations.js:61
+msgid "Prepare Drives"
 msgstr ""
 
-#: js/src/storage/Storage.js:24
+#: js/src/storage/DrivesOperations.js:64
+msgid "Drive Selection"
+msgstr ""
+
+#: js/src/storage/Storage.js:28
 msgid ""
 "\n"
-"Here you can set up where your persistent data should be stored. If you "
-"want to use Nextcloud, LXC or other IO-intensive\n"
-"applications, don't put them on internal flash, but always use external "
-"storage. Also, make sure that your data will fit\n"
-"on the new drive before switching.\n"
-"</br></br>\n"
-"Once you choose a drive, it will be formatted to Btrfs filesystem and on "
-"next reboot, your /srv (directory where all\n"
-"IO-intensive applications should reside) will get moved to this new "
-"drive.\n"
-msgstr ""
-
-#: js/src/storage/Storage.js:61
-msgid "Current state"
+"<p>Here you can set up where your persistent data should be stored.\n"
+"If you want to use Nextcloud, LXC or other IO-intensive applications,\n"
+"don't put them on internal flash, but always use external storage.\n"
+"Also, make sure that your data will fit on the new drive before "
+"switching.</p>\n"
+"<p>To set up external storage, you have to connect an external drive - "
+"like\n"
+"an USB flash drive - and format it to Btrfs filesystem. All you have to "
+"do is\n"
+"select the correct drive, the desired RAID level and click \"Format & "
+"Set\"\n"
+"button in \"Prepare storage\" section. This will format the drive and "
+"will\n"
+"ask you to reboot the router. During the reboot your /srv (directory\n"
+"where all IO-intensive applications should reside) will get moved to this"
+"\n"
+"new drive.</p>\n"
+"<p>If you already have a device that you used with the Turris router "
+"before,\n"
+"you can set it to be used as external storage in \"Drive selection\" "
+"section\n"
+"without losing any data.</p>\n"
 msgstr ""
 
 #: js/src/storage/constants.js:15
@@ -69,7 +91,7 @@ msgstr ""
 msgid "Balancing"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:25
+#: js/src/storage/Drives/ConfirmationModal.js:19
 msgid ""
 "\n"
 "You are adding the first drive, then you'll get notification and you will"
@@ -78,11 +100,11 @@ msgid ""
 " reboot will take longer. \n"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:36
-msgid "Reboot confirmation"
+#: js/src/storage/Drives/ConfirmationModal.js:33
+msgid "Warning!"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:39
+#: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
 "\n"
 "Are you sure you want to proceed? Newly selected drive(s) will be "
@@ -92,59 +114,54 @@ msgid ""
 "                    "
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:48
+#: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
-msgstr ""
+msgstr "Άκυρο"
 
-#: js/src/storage/Drives/ConfirmationModal.js:51
+#: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
-msgstr ""
+msgstr "Συνέχεια"
 
-#: js/src/storage/Drives/Drives.js:43 reforis_storage/__init__.py:57
+#: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
 msgid "Device preparation failed."
-msgstr ""
+msgstr "Η προετοιμασία της συσκευής απέτυχε."
 
-#: js/src/storage/Drives/Drives.js:88
+#: js/src/storage/Drives/Drives.js:91
 msgid "Format & Set"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:34
-#: js/src/storage/currentState/CurrentStateTable.js:44
+#: js/src/storage/Drives/DrivesTable.js:40
+#: js/src/storage/currentState/CurrentStateTable.js:74
 msgid "Device"
-msgstr ""
+msgstr "Συσκευή"
 
-#: js/src/storage/Drives/DrivesTable.js:35
+#: js/src/storage/Drives/DrivesTable.js:41
 msgid "Description"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:36
+#: js/src/storage/Drives/DrivesTable.js:42
 msgid "Filesystem"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:37
-#: js/src/storage/UUIDs/UUIDsTable.js:29
-#: js/src/storage/currentState/CurrentStateTable.js:49
+#: js/src/storage/Drives/DrivesTable.js:43
+#: js/src/storage/UUIDs/UUIDsTable.js:32
+#: js/src/storage/currentState/CurrentStateTable.js:80
 msgid "UUID"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:15 js/src/storage/Drives/RAIDHelpTexts.js:28
-msgid "Custom"
+#: js/src/storage/Drives/RAID.js:13
+msgid "Not specified"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:16 js/src/storage/Drives/RAIDHelpTexts.js:30
+#: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:17 js/src/storage/Drives/RAIDHelpTexts.js:32
+#: js/src/storage/Drives/RAID.js:15
 msgid "RAID1"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:31
-#: js/src/storage/currentState/CurrentStateTable.js:53
-msgid "RAID"
-msgstr ""
-
-#: js/src/storage/Drives/RAIDHelpTexts.js:11
+#: js/src/storage/Drives/RAID.js:25
 msgid ""
 "\n"
 "Don't change the RAID level, keeps everything set the way it was. Useful "
@@ -152,7 +169,7 @@ msgid ""
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
 
-#: js/src/storage/Drives/RAIDHelpTexts.js:15
+#: js/src/storage/Drives/RAID.js:29
 msgid ""
 "\n"
 "No redundancy, if one drive fails, you loose your data. On the other "
@@ -160,7 +177,7 @@ msgid ""
 "available on all included drives.\n"
 msgstr ""
 
-#: js/src/storage/Drives/RAIDHelpTexts.js:19
+#: js/src/storage/Drives/RAID.js:33
 msgid ""
 "\n"
 "Everything is redundant and stored at two distinct drives. If you loose "
@@ -169,24 +186,36 @@ msgid ""
 "you would have with JBOD.\n"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDs.js:41
-msgid "UUID selection failed."
+#: js/src/storage/Drives/RAID.js:59
+#: js/src/storage/currentState/CurrentStateTable.js:86
+msgid "RAID"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDs.js:58
-msgid "There aren't prepared drives to be used."
+#: js/src/storage/UUIDs/UUIDs.js:46
+#, fuzzy
+msgid "Drive selection failed."
+msgstr "Η προετοιμασία της συσκευής απέτυχε."
+
+#: js/src/storage/UUIDs/UUIDs.js:65
+msgid "There are no prepared drives to be used."
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:27
-msgid "Unset UUID"
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:31
+msgid "Disable external storage"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:34
-msgid "Set UUID"
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:38
+msgid "Use drive"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsTable.js:28
+#: js/src/storage/UUIDs/UUIDsTable.js:31
 msgid "Devices"
+msgstr ""
+
+#: js/src/storage/currentState/ActiveAlert.js:17
+msgid ""
+"\n"
+"Device currently in use is\n"
 msgstr ""
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
@@ -195,8 +224,16 @@ msgid ""
 "new storage device as soon as you can!"
 msgstr ""
 
-#: js/src/storage/currentState/CurrentStateTable.js:30
+#: js/src/storage/currentState/CurrentState.js:48
+msgid "Current State"
+msgstr ""
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
+msgstr ""
+
+#: js/src/storage/currentState/CurrentStateTable.js:82
+msgid "N/A"
 msgstr ""
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
@@ -209,7 +246,62 @@ msgid ""
 "to be migrated.\n"
 msgstr ""
 
-#: reforis_storage/__init__.py:71
+#: reforis_storage/__init__.py:54
+msgid "Cannot change persistent log setting."
+msgstr ""
+
+#: reforis_storage/__init__.py:88
 msgid "UUID set failed."
 msgstr ""
+
+#~ msgid "No drives connected, please connect a drive and refresh the page."
+#~ msgstr ""
+
+#~ msgid "Prepare drives"
+#~ msgstr ""
+
+#~ msgid "Use prepared storage"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "Here you can set up where your "
+#~ "persistent data should be stored. If "
+#~ "you want to use Nextcloud, LXC or"
+#~ " other IO-intensive\n"
+#~ "applications, don't put them on internal"
+#~ " flash, but always use external "
+#~ "storage. Also, make sure that your "
+#~ "data will fit\n"
+#~ "on the new drive before switching.\n"
+#~ "</br></br>\n"
+#~ "Once you choose a drive, it will"
+#~ " be formatted to Btrfs filesystem and"
+#~ " on next reboot, your /srv (directory"
+#~ " where all\n"
+#~ "IO-intensive applications should reside) "
+#~ "will get moved to this new drive."
+#~ "\n"
+#~ msgstr ""
+
+#~ msgid "Current state"
+#~ msgstr ""
+
+#~ msgid "Reboot confirmation"
+#~ msgstr ""
+
+#~ msgid "Custom"
+#~ msgstr ""
+
+#~ msgid "UUID selection failed."
+#~ msgstr ""
+
+#~ msgid "There aren't prepared drives to be used."
+#~ msgstr ""
+
+#~ msgid "Unset UUID"
+#~ msgstr ""
+
+#~ msgid "Set UUID"
+#~ msgstr ""
 
