@@ -26,11 +26,20 @@ Storage.propTypes = {
 };
 
 const HELP_TEXT = _(`
-<p>Here you can set up where your persistent data should be stored. If you want to use Nextcloud, LXC or other IO-intensive
-applications, don't put them on internal flash, but always use external storage. Also, make sure that your data will fit
-on the new drive before switching.</p>
-<p>Once you choose a drive, it will be formatted to Btrfs filesystem and on next reboot, your /srv (directory where all
-IO-intensive applications should reside) will get moved to this new drive.</p>
+<p>Here you can set up where your persistent data should be stored.
+If you want to use Nextcloud, LXC or other IO-intensive applications,
+don't put them on internal flash, but always use external storage.
+Also, make sure that your data will fit on the new drive before switching.</p>
+<p>To set up external storage, you have to connect an external drive - like
+an USB flash drive - and format it to Btrfs filesystem. All you have to do is
+select the correct drive, the desired RAID level and click "Format & Set"
+button in "Prepare storage" section. This will format the drive and will
+ask you to reboot the router. During the reboot your /srv (directory
+where all IO-intensive applications should reside) will get moved to this
+new drive.</p>
+<p>If you already have a device that you used with the Turris router before,
+you can set it to be used as external storage in "Drive selection" section
+without losing any data.</p>
 `);
 
 export default function Storage({ ws }) {

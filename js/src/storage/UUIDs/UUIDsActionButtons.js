@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -28,14 +28,14 @@ export default function UUIDsActionButtons({
                 disabled={buttonIsDisabled}
                 onClick={onUnselectSrv}
             >
-                {_("Unset UUID")}
+                {_("Disable external storage")}
             </Button>
             <Button
                 className="btn-primary col-sm-12 col-md-4 col-lg-2"
                 onClick={onUpdateSrv}
                 disabled={buttonIsDisabled}
             >
-                {_("Set UUID")}
+                {_("Use drive")}
             </Button>
         </div>
     );
