@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-03-18 08:18+0000\n"
+"PO-Revision-Date: 2021-04-29 12:31+0000\n"
 "Last-Translator: Алексей Леньшин <alenshin@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/ru/>\n"
 "Language: ru\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/turris"
-"/reforis-storage-plugin/ru/>\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -36,20 +37,28 @@ msgid ""
 "be migrated. That means that services like MySQL will end up with empty\n"
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
+"Здесь вы можете выбрать, какой из уже подготовленных дисков следует "
+"использовать в качестве внешнего хранилища. Если у вас уже есть устройство, "
+"которое вы ранее использовали с маршрутизатором Turris, вы можете настроить "
+"его для использования в качестве внешнего хранилища. Кроме того, если вы "
+"переносите свой диск на другое устройство Turris, здесь вы можете отключить "
+"внешнее хранилище. В таком случае все ваши данные останутся на внешнем "
+"диске, который вы можете подключить в другом месте. Ваш /srv снова будет "
+"использовать внутреннюю память, но никакие данные не будут перенесены. Это "
+"означает, что такие сервисы, как MySQL, останутся с пустыми базами данных и "
+"виртуальные машины LXC будут недоступны."
 
 #: js/src/storage/DrivesOperations.js:52
-#, fuzzy
 msgid "No drives connected. Please connect a drive and refresh the page."
-msgstr "Диски не подключены, подключите диск и обновите страницу."
+msgstr "Диски не подключены. Подключите диск и обновите страницу."
 
 #: js/src/storage/DrivesOperations.js:61
-#, fuzzy
 msgid "Prepare Drives"
-msgstr "Подготовка дисков"
+msgstr "Подготовить диски"
 
 #: js/src/storage/DrivesOperations.js:64
 msgid "Drive Selection"
-msgstr ""
+msgstr "Выбор диска"
 
 #: js/src/storage/Storage.js:28
 msgid ""
@@ -77,6 +86,23 @@ msgid ""
 "section\n"
 "without losing any data.</p>\n"
 msgstr ""
+"\n"
+"<p> Здесь вы можете указать, где будут храниться ваши постоянные данные. "
+"Если вы хотите использовать Nextcloud, LXC или другие приложения с "
+"интенсивным вводом-выводом, не помещайте их во внутреннюю флэш-память, а "
+"всегда используйте внешнее хранилище. Кроме того, перед переключением "
+"убедитесь, что ваши данные уместятся на новом диске.</p>\n"
+"<p> Чтобы настроить внешнее хранилище, необходимо подключить внешний диск - "
+"например, USB-накопитель, и отформатировать его в файловую систему Btrfs. "
+"Все, что вам нужно сделать, это выбрать правильный диск, желаемый уровень "
+"RAID и нажать кнопку «Форматировать и установить» в разделе «Подготовить "
+"хранилище». Это отформатирует диск и попросит вас перезагрузить "
+"маршрутизатор. Во время перезагрузки ваш /srv (каталог где должны находиться "
+"все приложения с интенсивным вводом-выводом) будут перемещены в этот новый "
+"диск.</p>\n"
+"<p> Если у вас уже есть устройство, которое вы ранее использовали с "
+"маршрутизатором Turris, вы можете настроить его для использования в качестве "
+"внешнего хранилища в разделе «Выбор диска» без потери данных.</p>\n"
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
@@ -110,7 +136,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Предупреждение!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
@@ -164,7 +190,7 @@ msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:13
 msgid "Not specified"
-msgstr ""
+msgstr "Не указан"
 
 #: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
@@ -218,23 +244,20 @@ msgid "RAID"
 msgstr "RAID"
 
 #: js/src/storage/UUIDs/UUIDs.js:46
-#, fuzzy
 msgid "Drive selection failed."
-msgstr "Не удалось выбрать UUID."
+msgstr "Не удалось выбрать диск."
 
 #: js/src/storage/UUIDs/UUIDs.js:65
-#, fuzzy
 msgid "There are no prepared drives to be used."
-msgstr "Нет дисков, подготовленных для использования."
+msgstr "Подготовленных дисков нет."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:31
 msgid "Disable external storage"
-msgstr ""
+msgstr "Отключить внешнее хранилище"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:38
-#, fuzzy
 msgid "Use drive"
-msgstr "Подготовка дисков"
+msgstr "Использовать диск"
 
 #: js/src/storage/UUIDs/UUIDsTable.js:31
 msgid "Devices"
@@ -245,6 +268,8 @@ msgid ""
 "\n"
 "Device currently in use is\n"
 msgstr ""
+"\n"
+"Устройство в настоящее время используется\n"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
 msgid ""
@@ -256,7 +281,6 @@ msgstr ""
 "скорее!"
 
 #: js/src/storage/currentState/CurrentState.js:48
-#, fuzzy
 msgid "Current State"
 msgstr "Текущее состояние"
 
@@ -266,7 +290,7 @@ msgstr "Состояние"
 
 #: js/src/storage/currentState/CurrentStateTable.js:82
 msgid "N/A"
-msgstr ""
+msgstr "Не доступно"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -285,7 +309,7 @@ msgstr ""
 
 #: reforis_storage/__init__.py:54
 msgid "Cannot change persistent log setting."
-msgstr ""
+msgstr "Невозможно изменить настройку постоянного журнала."
 
 #: reforis_storage/__init__.py:88
 msgid "UUID set failed."
@@ -341,4 +365,3 @@ msgstr "Не удалось установить UUID."
 
 #~ msgid "Set UUID"
 #~ msgstr "Установить UUID"
-
