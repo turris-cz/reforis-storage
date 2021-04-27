@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-02-06 17:50+0000\n"
+"PO-Revision-Date: 2021-04-29 12:31+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/nb_NO/>\n"
 "Language: nb_NO\n"
-"Language-Team: Norwegian Bokmål "
-"<https://hosted.weblate.org/projects/turris/reforis-storage-"
-"plugin/nb_NO/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -36,6 +36,15 @@ msgid ""
 "be migrated. That means that services like MySQL will end up with empty\n"
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
+"Her kan du velge hvilken av de forberedede stasjonene som skal\n"
+"brukes som eksternlagring. Hvis du allerede har en enhet som du brukte\n"
+"med Turris-ruteren før, kan du bruke den som eksternlagring her.\n"
+"Alternativt, hvis du flytter din stasjon til en annen Turris-enhet, kan du\n"
+"skru av eksternlagring her. I sådant fall vil all din data forbli på den\n"
+"eksterne stasjonen som du kan koble til et annet sted. Din /srv vil bruke\n"
+"internlageret igjen, men ingen data vil bli flyttet. Det betyr at tjenester\n"
+"som MySQL vil ende opp med tomme databaser, og virtuelle LXC-\n"
+"maskiner vil bli utilgjengelige."
 
 #: js/src/storage/DrivesOperations.js:52
 #, fuzzy
@@ -49,9 +58,10 @@ msgstr "Forbered lagringsenheter"
 
 #: js/src/storage/DrivesOperations.js:64
 msgid "Drive Selection"
-msgstr ""
+msgstr "Stasjonsvalg"
 
 #: js/src/storage/Storage.js:28
+#, fuzzy
 msgid ""
 "\n"
 "<p>Here you can set up where your persistent data should be stored.\n"
@@ -77,6 +87,24 @@ msgid ""
 "section\n"
 "without losing any data.</p>\n"
 msgstr ""
+"\n"
+"<p>Her kan du sette opp hvordan din vedvarende data skal lagres.\n"
+"Hvis du vil bruke Nextcloud, LXC, eller andre I/O-intensive programmer,\n"
+"bør du ikke legge dem på internminne, men alltid bruke eksternlagring.\n"
+"Forsikre deg om at dataen faktisk får plass på den nye enheten før du "
+"bytter</p>\n"
+"<p>For å sette opp eksternlagring, må du koble til en ekstern stasjon, som f."
+"eks.\n"
+"en USB-minnepinne, og formatere den til Btrfs-filsystem. Alt du må gjøre er "
+"å\n"
+"velge rett enhet, ønsket RAID-nivå, og klikke «Formater og sett»-knappen\n"
+"i «Forbered lagring»-delen. Dette vil formatere enheten og deretter "
+"forespørre\n"
+"deg om å starte ruteren på ny. Under omstart vil din /srv (mappe der alle\n"
+"I/O-intensive programmer bør ligge) bli flyttet til denne nye enheten.</p>\n"
+"<p>Hvis du allerede har en enhet du brukte med Turris-ruteren før,\n"
+"kan du sette den opp for bruk som eksternlagring i «Stasjonsvalg»-delen\n"
+"uten å miste data.</p>\n"
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
@@ -110,7 +138,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Advarsel!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 #, fuzzy
@@ -167,7 +195,7 @@ msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:13
 msgid "Not specified"
-msgstr ""
+msgstr "Ikke angitt"
 
 #: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
@@ -233,7 +261,7 @@ msgstr "Ingen enheter er forberedt for bruk."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:31
 msgid "Disable external storage"
-msgstr ""
+msgstr "Skru av eksternlagring"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:38
 #, fuzzy
@@ -249,9 +277,10 @@ msgid ""
 "\n"
 "Device currently in use is\n"
 msgstr ""
+"\n"
+"Enheten i bruk er\n"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
-#, fuzzy
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
@@ -270,7 +299,7 @@ msgstr "Tilstand"
 
 #: js/src/storage/currentState/CurrentStateTable.js:82
 msgid "N/A"
-msgstr ""
+msgstr "I/T"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -289,8 +318,9 @@ msgstr ""
 "må migreres.\n"
 
 #: reforis_storage/__init__.py:54
+#, fuzzy
 msgid "Cannot change persistent log setting."
-msgstr ""
+msgstr "Kan ikke endre innstilling for vedvarende logging."
 
 #: reforis_storage/__init__.py:88
 msgid "UUID set failed."
@@ -348,4 +378,3 @@ msgstr "Kunne ikke sette UUID."
 
 #~ msgid "Set UUID"
 #~ msgstr "Sett UUID"
-
