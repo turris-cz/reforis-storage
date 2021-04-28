@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-02-17 15:50+0000\n"
+"PO-Revision-Date: 2021-04-29 12:31+0000\n"
 "Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/cs/>\n"
 "Language: cs\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
-"storage-plugin/cs/>\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -35,20 +36,27 @@ msgid ""
 "be migrated. That means that services like MySQL will end up with empty\n"
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
+"Zde můžete vybrat, který z již připravených disků bude použit jako\n"
+"externí úložiště. Pokud máte zařízení, které už jste s routerem Turris\n"
+"používali dříve, můžete ho zde nastavit jako externí úložiště. Pokud\n"
+"přesouváte svůj disk na jiné zařízení Turris, můžete zde také externí\n"
+"zařízení deaktivovat. V takovém případě všechna vaše data zůstanou\n"
+"na externím disku, který pak můžete připojit jinam. Adresář /srv bude\n"
+"opět používat interní úložiště, ale žádná data se nepřesunou. To\n"
+"znamená, že služby jako MySQL skončí s prázdnými databázemi\n"
+"a virtuální stroje LXC nebudou dostupné."
 
 #: js/src/storage/DrivesOperations.js:52
-#, fuzzy
 msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr "Nejsou připojeny žádné disky. Připojte prosím nějaký a obnovte stránku."
 
 #: js/src/storage/DrivesOperations.js:61
-#, fuzzy
 msgid "Prepare Drives"
 msgstr "Připravit disky"
 
 #: js/src/storage/DrivesOperations.js:64
 msgid "Drive Selection"
-msgstr ""
+msgstr "Výběr disku"
 
 #: js/src/storage/Storage.js:28
 msgid ""
@@ -76,6 +84,26 @@ msgid ""
 "section\n"
 "without losing any data.</p>\n"
 msgstr ""
+"\n"
+"<p>Zde můžete nastavit, kam se budou ukládat vaše perzistentní (trvalá)\n"
+"data. Chcete-li používat Nextcloud, LXC nebo jiné aplikace s intezivními I/"
+"O\n"
+"operacemi, neukládejte data na interní flashové úložiště, vždy použijte\n"
+"úložiště externí. Před přepnutím se také ujistěte, že se vaše data na nový\n"
+"disk vejdou.</p>\n"
+"<p>Pro nastavení externího úložiště nejdřív připojte externí disk – "
+"například\n"
+"USB flash disk – a naformátujte ho na souborový systém Btrfs. Vše, co "
+"musíte\n"
+"udělat, je vybrat správný disk, požadovanou úroveň RAID a stisknout "
+"tlačítko\n"
+"„Naformátovat a nastavit“ v sekci „Připravit úložiště“. To naformátuje disk\n"
+"a vyžádá si restart routeru. Při restartu bude adresář /srv (kam by si měly\n"
+"aplikace s intenzivními I/O operacemi ukládat data) přesunut na tento nový\n"
+"disk.</p>\n"
+"<p>Pokud máte zařízení, které jste používali s routerem Turris už dříve,\n"
+"můžete ho beze ztráty dat nastavit jako externí úložiště v sekci „Výběr "
+"disku“.</p>\n"
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
@@ -109,7 +137,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Varování!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
@@ -164,7 +192,7 @@ msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:13
 msgid "Not specified"
-msgstr ""
+msgstr "Nespecifikováno"
 
 #: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
@@ -218,23 +246,20 @@ msgid "RAID"
 msgstr "RAID"
 
 #: js/src/storage/UUIDs/UUIDs.js:46
-#, fuzzy
 msgid "Drive selection failed."
-msgstr "Výběr UUID selhal."
+msgstr "Výběr disku selhal."
 
 #: js/src/storage/UUIDs/UUIDs.js:65
-#, fuzzy
 msgid "There are no prepared drives to be used."
 msgstr "Nejsou připraveny žádné disky, které by šly použít."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:31
 msgid "Disable external storage"
-msgstr ""
+msgstr "Deaktivovat externí úložiště"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:38
-#, fuzzy
 msgid "Use drive"
-msgstr "Připravit disky"
+msgstr "Použít disk"
 
 #: js/src/storage/UUIDs/UUIDsTable.js:31
 msgid "Devices"
@@ -245,6 +270,8 @@ msgid ""
 "\n"
 "Device currently in use is\n"
 msgstr ""
+"\n"
+"Aktuálně používané zařízení je\n"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
 msgid ""
@@ -255,7 +282,6 @@ msgstr ""
 " nové úložné zařízení, jak nejdříve je to možné!"
 
 #: js/src/storage/currentState/CurrentState.js:48
-#, fuzzy
 msgid "Current State"
 msgstr "Aktuální stav"
 
@@ -265,7 +291,7 @@ msgstr "Stav"
 
 #: js/src/storage/currentState/CurrentStateTable.js:82
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -285,7 +311,7 @@ msgstr ""
 
 #: reforis_storage/__init__.py:54
 msgid "Cannot change persistent log setting."
-msgstr ""
+msgstr "Nelze změnit nastavení trvalého systémového záznamu."
 
 #: reforis_storage/__init__.py:88
 msgid "UUID set failed."
@@ -344,4 +370,3 @@ msgstr "Nastavení UUID selhalo."
 
 #~ msgid "Set UUID"
 #~ msgstr "Nastavit UUID"
-
