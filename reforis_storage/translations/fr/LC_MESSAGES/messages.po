@@ -8,20 +8,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-02-08 14:50+0000\n"
-"Last-Translator: Yuraï Slovaque <assistance@simplix.fr>\n"
+"PO-Revision-Date: 2021-05-06 16:32+0000\n"
+"Last-Translator: XoD DarK <xod@xoddark.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/fr/>\n"
 "Language: fr\n"
-"Language-Team: French <https://hosted.weblate.org/projects/turris"
-"/reforis-storage-plugin/fr/>\n"
-"Plural-Forms: nplurals=2; plural=n > 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
 msgid "Storage"
-msgstr ""
+msgstr "Stockage"
 
 #: js/src/storage/DrivesOperations.js:32
 msgid ""
@@ -39,14 +40,15 @@ msgstr ""
 #: js/src/storage/DrivesOperations.js:52
 msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr ""
+"Aucun lecteur connecté. Veuillez connecter un lecteur et actualiser la page."
 
 #: js/src/storage/DrivesOperations.js:61
 msgid "Prepare Drives"
-msgstr ""
+msgstr "Préparer les lecteurs"
 
 #: js/src/storage/DrivesOperations.js:64
 msgid "Drive Selection"
-msgstr ""
+msgstr "Sélection du lecteur"
 
 #: js/src/storage/Storage.js:28
 msgid ""
@@ -77,11 +79,11 @@ msgstr ""
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
-msgstr ""
+msgstr "Mise en page"
 
 #: js/src/storage/constants.js:16
 msgid "Growing"
-msgstr ""
+msgstr "Croissance"
 
 #: js/src/storage/constants.js:17
 msgid "Shrinking"
@@ -303,4 +305,3 @@ msgstr ""
 
 #~ msgid "Set UUID"
 #~ msgstr ""
-
