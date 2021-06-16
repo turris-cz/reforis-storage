@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-06-15 22:23+0000\n"
+"PO-Revision-Date: 2021-06-17 15:33+0000\n"
 "Last-Translator: Atec <nil.maho@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.7\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -36,13 +36,14 @@ msgid ""
 "be migrated. That means that services like MySQL will end up with empty\n"
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
-"Na tomto mieste môžete vybrať, ktorý z už pripravených diskov sa použije\n"
+"Tu môžete vybrať, ktorý z už pripravených diskov sa použije\n"
 "ako externé úložisko. Ak máte zariadenie, ktoré ste už predtým s routerom\n"
 "Turris používali, môžete ho tu nastavit ako externé úložisko. Podobne,\n"
 "ak disk presúvate na iné zariadenie Turris, môžete ho tu ako externé "
 "úložisko\n"
 "deaktivovať. V takom prípade zostanú všetky vaše dáta na externom disku,\n"
-"ktorý potom môžete pripojiť inde. Priečinok /srv bude opäť používať interné\n"
+"ktorý potom môžete pripojiť inde. Priečinok /srv sa presunie späť na "
+"interné\n"
 "úložisko, ale nedôjde k presunu žiadnych dát.\n"
 "To znamená, že služby ako sú MySQL budú mať prázdne databázy\n"
 "a virtuálne stroje LXC nebudú dostupné."
@@ -121,7 +122,7 @@ msgstr "Zmenšovanie"
 
 #: js/src/storage/constants.js:18
 msgid "Balancing"
-msgstr "Vyvažovanie"
+msgstr "Vyrovnávanie"
 
 #: js/src/storage/Drives/ConfirmationModal.js:19
 msgid ""
@@ -171,7 +172,7 @@ msgstr "Príprava zariadenia neúspešná."
 
 #: js/src/storage/Drives/Drives.js:91
 msgid "Format & Set"
-msgstr "Sformátovať a nastaviť"
+msgstr "Formátovať a nastaviť"
 
 #: js/src/storage/Drives/DrivesTable.js:40
 #: js/src/storage/currentState/CurrentStateTable.js:74
@@ -212,9 +213,9 @@ msgid ""
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
 "\n"
-"Nemeniť úroveň RAID, všetko ponechať tak ako je. Vhodné vtedy, ak máte "
+"Nemeniť úroveň RAID, všetko ponechať bez zmeny. Vhodné vtedy, ak máte "
 "vlastné nastavenie RAID,\n"
-"ktoré nepodporujeme, a chcete len pridať/odobrať niektorý disk.\n"
+"ktoré tu nie je podporované, a chcete len pridať/odobrať niektorý disk.\n"
 
 #: js/src/storage/Drives/RAID.js:29
 msgid ""
@@ -224,7 +225,7 @@ msgid ""
 "available on all included drives.\n"
 msgstr ""
 "\n"
-"Žiadna redundancia, ak jeden disk zlyhá, jeho dáta budú stratené. Na druhej "
+"Žiadna redundancia. Ak jeden disk zlyhá, jeho dáta budú stratené. Na druhej "
 "strane poskytuje najviac miesta – súčet kapacít\n"
 "všetkých dostupných a zahrnutých diskov.\n"
 
