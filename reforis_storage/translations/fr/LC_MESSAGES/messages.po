@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-05-06 16:32+0000\n"
-"Last-Translator: XoD DarK <xod@xoddark.com>\n"
+"PO-Revision-Date: 2021-07-24 08:33+0000\n"
+"Last-Translator: Florian <flo.site@zaclys.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.7.2-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -104,7 +104,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Attention !"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
@@ -115,6 +115,13 @@ msgid ""
 "Are you sure you want to continue?\n"
 "                    "
 msgstr ""
+"\n"
+"Êtes-vous sûr de vouloir continuer ? Le(s) disque(s) nouvellement "
+"sélectionné(s) sera(ont) formaté(s) et vous perdrez toutes les données qui "
+"s'y trouvent.\n"
+"${firstDriveMessage}\n"
+"Êtes-vous sûr de vouloir continuer ?\n"
+"                    "
 
 #: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
