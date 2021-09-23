@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2020-01-10 09:18+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-09-24 18:37+0000\n"
+"Last-Translator: CryptKid <CryptKiddie@chaospott.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/de/>\n"
 "Language: de\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -101,7 +103,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Warnung!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
@@ -115,7 +117,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
@@ -302,4 +304,3 @@ msgstr ""
 
 #~ msgid "Set UUID"
 #~ msgstr ""
-
