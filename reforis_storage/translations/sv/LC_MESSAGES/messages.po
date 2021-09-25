@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-07-10 02:32+0000\n"
+"PO-Revision-Date: 2021-09-26 03:36+0000\n"
 "Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/sv/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -121,7 +121,7 @@ msgstr "Avbryt"
 
 #: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
-msgstr ""
+msgstr "Fortsätt"
 
 #: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
 msgid "Device preparation failed."
@@ -234,7 +234,7 @@ msgstr ""
 
 #: js/src/storage/currentState/CurrentStateTable.js:82
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
