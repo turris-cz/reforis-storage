@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2021-09-22 20:36+0000\n"
+"PO-Revision-Date: 2022-03-17 04:54+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Tu môžete zvoliť, ktorý z už pripravených diskov sa použije\n"
 "ako externé úložisko. Ak máte zariadenie, ktoré ste už predtým s routerom\n"
-"Turris používali, môžete ho tu nastavit ako externé úložisko. Podobne,\n"
+"Turris používali, môžete ho tu nastavit ako externé úložisko. Prípadne,\n"
 "ak disk presúvate na iné zariadenie Turris, môžete ho tu ako externé "
 "úložisko\n"
 "deaktivovať. V takom prípade zostanú všetky vaše dáta na externom disku,\n"
@@ -133,9 +133,9 @@ msgid ""
 " reboot will take longer. \n"
 msgstr ""
 "\n"
-"Pridávate prvé zariadenie, dostanete notifikáciu a vyžiada sa reštart. Počas "
-"neho sa dáta\n"
-"presunú zo starého disku na nový. Vyžiada si to určitý čas, takže reštart "
+"Pridávate prvý disk, dostanete notifikáciu a vyžiada sa reštart. Počas neho "
+"sa dáta\n"
+"presunú zo starého disku na nový. Vyžaduje si to určitý čas, takže reštart "
 "môže trvať dlhšie. \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
@@ -227,7 +227,7 @@ msgstr ""
 "\n"
 "Žiadna redundancia. Ak jeden disk zlyhá, jeho dáta budú stratené. Na druhej "
 "strane poskytuje najviac miesta – súčet kapacít\n"
-"všetkých dostupných a zahrnutých diskov.\n"
+"všetkých zahrnutých diskov.\n"
 
 #: js/src/storage/Drives/RAID.js:33
 msgid ""
@@ -254,7 +254,7 @@ msgstr "Výber disku neúspešný."
 
 #: js/src/storage/UUIDs/UUIDs.js:65
 msgid "There are no prepared drives to be used."
-msgstr "Nie sú pripravené žiadne disky na použitie."
+msgstr "Nie sú pripravené žiadne disky, ktoré by sa dali použiť."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:31
 msgid "Disable external storage"
@@ -282,7 +282,7 @@ msgid ""
 "new storage device as soon as you can!"
 msgstr ""
 "Vaše súčasné nastavenia sú nesprávne a pravdepodobne strácate dáta. Nastavte "
-"nové úložné zariadenie čím skôr!"
+"nové úložiskové zariadenie čím skôr!"
 
 #: js/src/storage/currentState/CurrentState.js:48
 msgid "Current State"
@@ -314,7 +314,7 @@ msgstr ""
 
 #: reforis_storage/__init__.py:54
 msgid "Cannot change persistent log setting."
-msgstr "Nedá sa zmeniť nastavenie perzistentného záznamu (logu)."
+msgstr "Nedá sa zmeniť nastavenie perzistentného záznamu."
 
 #: reforis_storage/__init__.py:88
 msgid "UUID set failed."
