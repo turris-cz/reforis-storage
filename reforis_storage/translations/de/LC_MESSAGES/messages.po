@@ -8,19 +8,21 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2020-01-10 09:18+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2023-09-08 13:51+0000\n"
+"Last-Translator: Erik Pfannenstein <debianignatz@gmx.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/de/>\n"
 "Language: de\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
 msgid "Storage"
-msgstr ""
+msgstr "Speicher"
 
 #: js/src/storage/DrivesOperations.js:32
 msgid ""
@@ -34,18 +36,32 @@ msgid ""
 "be migrated. That means that services like MySQL will end up with empty\n"
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
+"Hier können Sie angeben, welches der Laufwerke, die bereits \n"
+"eingerichtet sind, als externer Speicher eingesetzt werden soll. \n"
+"Falls Sie bereits einen Speicher besitzen, der schon einmal mit \n"
+"dem Turris-Router verbunden war, können Sie ihn hier als \n"
+"externen Speicher einstellen. Alternativ können Sie, wenn Sie \n"
+"Ihr Speichergerät in ein anderes Turris-Gerät umziehen, \n"
+"den externen Speicher hier abschalten. In diesem Fall bleiben \n"
+"Ihre Daten auf dem Speicher erhalten und Sie können ihn \n"
+"woanders anschließen. Ihr /srv wird wieder den internen Speicher \n"
+"verwenden, es werden aber keine Daten dorthin verschoben. \n"
+"Das bedeutet, dass Dienste wie MySQL mit leeren Datenbanken \n"
+"dastehen und virtuelle LXC-Maschinen nicht verfügbar sein werden."
 
 #: js/src/storage/DrivesOperations.js:52
 msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr ""
+"Kein Laufwerk erkannt. Bitte schließen Sie ein Laufwerk an und laden Sie die "
+"Seite neu."
 
 #: js/src/storage/DrivesOperations.js:61
 msgid "Prepare Drives"
-msgstr ""
+msgstr "Laufwerk vorbereiten"
 
 #: js/src/storage/DrivesOperations.js:64
 msgid "Drive Selection"
-msgstr ""
+msgstr "Laufwerksauswahl"
 
 #: js/src/storage/Storage.js:28
 msgid ""
@@ -73,22 +89,40 @@ msgid ""
 "section\n"
 "without losing any data.</p>\n"
 msgstr ""
+"\n"
+"<p>Hier können Sie einstellen, wo ihre Daten abgelegt werden sollen. \n"
+"Falls Sie Nextcloud, LXC oder andere E/A-lastige Anwendungen \n"
+"verwenden wollen, verwenden Sie dafür nicht den internen Flash-, \n"
+"sondern immer einen externen Speicher. Achten Sie vor dem Wechsel \n"
+"darauf, dass Ihre Daten auf das neue Laufwerk passen.</p>\n"
+"<p>Zum Einrichten des externen Speichers müssen Sie ein externes \n"
+"Laufwerk – wie einen USB-Stick – anschließen und mit dem Btrfs-Dateisystem \n"
+"formatieren. Dazu müssen Sie lediglich das richtige Laufwerk auswählen, \n"
+"dann wählen Sie den gewünschten RAID-Level und klicken auf \n"
+"\"Formatieren & festlegen\" im Abschnitt \"Speicher vorbereiten\". Dann \n"
+"wird der Speicher formatiert und Sie werden gebeten, den Router neu zu \n"
+"starten. Während des Neustarts wird Ihr /srv (das Verzeichnis, in dem \n"
+"sämtliche E/A-lastigen Anwendungen abgelegt sein sollten), auf das neue \n"
+"Laufwerk verschoben.</p>\n"
+"<p>Falls Sie in Ihrem Turris-Router früher schon ein Gerät verwendet \n"
+"haben, können Sie dieses im \"Laufwerk auswählen\"-Abschnitt sofort \n"
+"übernehmen, ohne irgendwelche Daten zu verlieren.</p>\n"
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
-msgstr ""
+msgstr "Formatierung"
 
 #: js/src/storage/constants.js:16
 msgid "Growing"
-msgstr ""
+msgstr "Vergrößerung"
 
 #: js/src/storage/constants.js:17
 msgid "Shrinking"
-msgstr ""
+msgstr "Verkleinerung"
 
 #: js/src/storage/constants.js:18
 msgid "Balancing"
-msgstr ""
+msgstr "Ausbalancierung"
 
 #: js/src/storage/Drives/ConfirmationModal.js:19
 msgid ""
@@ -98,10 +132,16 @@ msgid ""
 "moved from old drive to the new one. This can take some time so your next"
 " reboot will take longer. \n"
 msgstr ""
+"\n"
+"Sie fügen das erste Laufwerk hinzu, dann werden Sie eine Benachrichtigung "
+"erhalten und gebeten werden, das Gerät \n"
+"neu zu starten. Beim Neustart werden die Daten vom alten Gerät auf das neue "
+"verschoben. Das kann eine Weile \n"
+"dauern, daher wird auch der Neustart mehr Zeit in Anspruch nehmen. \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Warnung!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
@@ -112,53 +152,60 @@ msgid ""
 "Are you sure you want to continue?\n"
 "                    "
 msgstr ""
+"\n"
+"Sind Sie sicher, dass Sie fortfahren wollen? Das oder die neu ausgewählten "
+"Laufwerke werden formatiert und Sie \n"
+"werden alle darauf abgelegten Daten verlieren.\n"
+"${firstDriveMessage}\n"
+"Möchten Sie weitermachen?\n"
+"                    "
 
 #: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
-msgstr ""
+msgstr "Weiter"
 
 #: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
 msgid "Device preparation failed."
-msgstr ""
+msgstr "Gerätevorbereitung fehlgeschlagen."
 
 #: js/src/storage/Drives/Drives.js:91
 msgid "Format & Set"
-msgstr ""
+msgstr "Formatieren & Festlegen"
 
 #: js/src/storage/Drives/DrivesTable.js:40
 #: js/src/storage/currentState/CurrentStateTable.js:74
 msgid "Device"
-msgstr ""
+msgstr "Gerät"
 
 #: js/src/storage/Drives/DrivesTable.js:41
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: js/src/storage/Drives/DrivesTable.js:42
 msgid "Filesystem"
-msgstr ""
+msgstr "Dateisystem"
 
 #: js/src/storage/Drives/DrivesTable.js:43
 #: js/src/storage/UUIDs/UUIDsTable.js:32
 #: js/src/storage/currentState/CurrentStateTable.js:80
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: js/src/storage/Drives/RAID.js:13
 msgid "Not specified"
-msgstr ""
+msgstr "Nicht angegeben"
 
 #: js/src/storage/Drives/RAID.js:14
 msgid "JBOD"
-msgstr ""
+msgstr "JBOD"
 
 #: js/src/storage/Drives/RAID.js:15
 msgid "RAID1"
-msgstr ""
+msgstr "RAID 1"
 
 #: js/src/storage/Drives/RAID.js:25
 msgid ""
@@ -167,6 +214,11 @@ msgid ""
 "if you have a really custom setup of your RAID\n"
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
+"\n"
+"Ändert den RAID-Level nicht und lässt alles, wie es ist. Die richtige "
+"Option, wenn Ihr RAID nicht den offiziell unterstützten \n"
+"Konfigurationen entspricht und Sie lediglich Platten hinzufügen/entfernen "
+"wollen.\n"
 
 #: js/src/storage/Drives/RAID.js:29
 msgid ""
@@ -175,6 +227,10 @@ msgid ""
 "hand, provides the most space - sum of the space\n"
 "available on all included drives.\n"
 msgstr ""
+"\n"
+"Keine Redundanz; wenn eine Platte ausfällt, verlieren Sie Ihre Daten. Bietet "
+"auf der anderen Seite den meisten Platz – \n"
+"die Summe des Speicherplatzes aller beteiligten Laufwerke.\n"
 
 #: js/src/storage/Drives/RAID.js:33
 msgid ""
@@ -184,55 +240,64 @@ msgid ""
 "loosing any data. On the other hand, you have a half of the disk space "
 "you would have with JBOD.\n"
 msgstr ""
+"\n"
+"Alles ist redundant und wird auf zwei getrennten Platten abgelegt. Wenn Sie "
+"eine davon verlieren, können Sie sie \n"
+"ohne Datenverlust einfach ersetzen. Auf der anderen Seite haben Sie nur halb "
+"so viel Speicherplatz wie bei JBOD.\n"
 
 #: js/src/storage/Drives/RAID.js:59
 #: js/src/storage/currentState/CurrentStateTable.js:86
 msgid "RAID"
-msgstr ""
+msgstr "RAID"
 
 #: js/src/storage/UUIDs/UUIDs.js:46
 msgid "Drive selection failed."
-msgstr ""
+msgstr "Festlegung des Laufwerks fehlgeschlagen."
 
 #: js/src/storage/UUIDs/UUIDs.js:65
 msgid "There are no prepared drives to be used."
-msgstr ""
+msgstr "Es stehen keine vorbereiteten Laufwerke zur Verfügung."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:31
 msgid "Disable external storage"
-msgstr ""
+msgstr "Externen Speicher deaktivieren"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:38
 msgid "Use drive"
-msgstr ""
+msgstr "Laufwerk verwenden"
 
 #: js/src/storage/UUIDs/UUIDsTable.js:31
 msgid "Devices"
-msgstr ""
+msgstr "Geräte"
 
 #: js/src/storage/currentState/ActiveAlert.js:17
 msgid ""
 "\n"
 "Device currently in use is\n"
 msgstr ""
+"\n"
+"Zur Zeit verwendetes Gerät ist\n"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:15
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
+"Ihr Aufbau ist zur Zeit defekt und Sie verlieren möglicherweise Daten, "
+"richten Sie schnellstmöglich ein Speichergerät ein!"
 
 #: js/src/storage/currentState/CurrentState.js:48
 msgid "Current State"
-msgstr ""
+msgstr "Derzeitiger Status"
 
 #: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
-msgstr ""
+msgstr "Zustand"
 
 #: js/src/storage/currentState/CurrentStateTable.js:82
 msgid "N/A"
-msgstr ""
+msgstr "n. v."
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:11
 msgid ""
@@ -243,14 +308,20 @@ msgid ""
 "next reboot will take longer as all data need\n"
 "to be migrated.\n"
 msgstr ""
+"\n"
+"Ihr Router <b>wartet auf einen Neustart,</b> um dann mit der Migration Ihrer "
+"Daten auf das neue Laufwerk \n"
+"anzufangen. Bitte lösen Sie den Neustart <b>so bald wie möglich</b> aus, "
+"aber bedenken Sie, dass er länger \n"
+"dauern wird als üblich, weil die gesamten Daten migriert werden müssen.\n"
 
 #: reforis_storage/__init__.py:54
 msgid "Cannot change persistent log setting."
-msgstr ""
+msgstr "Einstellung für persistentes Log kann nicht geändert werden."
 
 #: reforis_storage/__init__.py:88
 msgid "UUID set failed."
-msgstr ""
+msgstr "Festlegen der UUID fehlgeschlagen."
 
 #~ msgid "No drives connected, please connect a drive and refresh the page."
 #~ msgstr ""
@@ -302,4 +373,3 @@ msgstr ""
 
 #~ msgid "Set UUID"
 #~ msgstr ""
-
