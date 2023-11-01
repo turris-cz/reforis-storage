@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2022-12-31 23:57+0000\n"
+"PO-Revision-Date: 2023-11-03 05:03+0000\n"
 "Last-Translator: Anselmo <anselmo@casinadicornia.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/it/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -138,7 +138,7 @@ msgstr "Dispositivo"
 
 #: js/src/storage/Drives/DrivesTable.js:41
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #: js/src/storage/Drives/DrivesTable.js:42
 msgid "Filesystem"
