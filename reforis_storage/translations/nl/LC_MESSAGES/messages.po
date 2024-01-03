@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-04-26 17:44+0200\n"
-"PO-Revision-Date: 2022-07-11 13:22+0000\n"
+"PO-Revision-Date: 2024-01-04 21:08+0000\n"
 "Last-Translator: powerburner-nl <peter.mulder.1981@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/nl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 "Generated-By: Babel 2.9.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:81
@@ -103,7 +103,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:33
 msgid "Warning!"
-msgstr ""
+msgstr "Waarschuwing!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:36
 msgid ""
@@ -117,7 +117,7 @@ msgstr ""
 
 #: js/src/storage/Drives/ConfirmationModal.js:44
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: js/src/storage/Drives/ConfirmationModal.js:46
 msgid "Continue"
