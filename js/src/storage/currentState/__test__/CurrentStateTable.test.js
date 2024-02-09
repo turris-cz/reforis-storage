@@ -6,9 +6,10 @@
  */
 
 import React from "react";
-import { render } from "foris/testUtils/customTestRender";
 
+import { render } from "foris/testUtils/customTestRender";
 import diffSnapshot from "snapshot-diff";
+
 import getStateFixture from "../../__tests__/__fixtures__/getStateFixture";
 import CurrentStateTable from "../CurrentStateTable";
 

@@ -6,13 +6,14 @@
  */
 
 import React, { useEffect, useState } from "react";
+
 import { API_STATE, Button, useAlert, useAPIPost } from "foris";
 import PropTypes from "prop-types";
 
-import DrivesTable from "./DrivesTable";
-import API_URLs from "../../API";
-import { RAID_CHOICES, RAIDSelect } from "./RAID";
 import ConfirmationModal from "./ConfirmationModal";
+import DrivesTable from "./DrivesTable";
+import { RAID_CHOICES, RAIDSelect } from "./RAID";
+import API_URLs from "../../API";
 
 Drives.propTypes = {
     drives: PropTypes.arrayOf(
@@ -48,7 +49,7 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
         }
     }, [prepareSrvPostStatus.state, setAlert]);
 
-    function prepareSrv(event) {
+    const prepareSrv = (event) => {
         event.preventDefault();
         prepareSrvPost({
             data: {
@@ -56,7 +57,7 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 raid: selectedRAID,
             },
         });
-    }
+    };
 
     const buttonIsDisabled =
         selectedDrives.length === 0 ||

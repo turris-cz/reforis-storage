@@ -6,9 +6,9 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Button } from "foris";
+import PropTypes from "prop-types";
 
 UUIDsActionButtons.propTypes = {
     onUnselectSrv: PropTypes.func.isRequired,

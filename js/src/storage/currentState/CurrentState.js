@@ -6,12 +6,13 @@
  */
 
 import React from "react";
+
 import PropTypes from "prop-types";
 
 import ActiveAlert from "./ActiveAlert";
-import PendingMigrationAlert from "./PendingMigrationAlert";
 import BrokenSetupAlert from "./BrokenSetupAlert";
 import CurrentStateTable from "./CurrentStateTable";
+import PendingMigrationAlert from "./PendingMigrationAlert";
 
 CurrentState.propTypes = {
     state: PropTypes.string.isRequired,

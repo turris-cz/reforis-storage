@@ -6,17 +6,17 @@
  */
 
 import React from "react";
+
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import {
     render,
     wait,
     fireEvent,
-    getByText,
     getByLabelText,
 } from "foris/testUtils/customTestRender";
+import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
 
-import { mockJSONError } from "foris/testUtils/network";
-import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import drives from "../../__tests__/__fixtures__/drives";
 import UUIDs from "../UUIDs";
 

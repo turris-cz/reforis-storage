@@ -6,8 +6,9 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
+
 import { Select } from "foris";
+import PropTypes from "prop-types";
 
 export const RAID_CHOICES = {
     custom: _("Not specified"),

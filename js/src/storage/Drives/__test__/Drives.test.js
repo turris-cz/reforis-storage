@@ -6,6 +6,8 @@
  */
 
 import React from "react";
+
+import { mockSetAlert } from "foris/testUtils/alertContextMock";
 import {
     render,
     wait,
@@ -13,11 +15,10 @@ import {
     getByText,
     getByLabelText,
 } from "foris/testUtils/customTestRender";
-import mockAxios from "jest-mock-axios";
-
-import diffSnapshot from "snapshot-diff";
 import { mockJSONError } from "foris/testUtils/network";
-import { mockSetAlert } from "foris/testUtils/alertContextMock";
+import mockAxios from "jest-mock-axios";
+import diffSnapshot from "snapshot-diff";
+
 import drives from "../../__tests__/__fixtures__/drives";
 import Drives from "../Drives";
 

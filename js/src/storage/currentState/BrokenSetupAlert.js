@@ -5,8 +5,9 @@
  * See /LICENSE for more information.
  */
 
-import { Alert } from "foris";
 import React from "react";
+
+import { Alert } from "foris";
 
 export default function BrokenSetupAlert() {
     return (

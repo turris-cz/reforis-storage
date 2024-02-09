@@ -6,11 +6,12 @@
  */
 
 import { useEffect, useState } from "react";
-import update from "immutability-helper";
 
 import { API_STATE, useAlert, useAPIGet, useWSForisModule } from "foris";
-import API_URLs from "../API";
+import update from "immutability-helper";
+
 import { NOT_PENDING_STORAGE_STATES } from "./constants";
+import API_URLs from "../API";
 
 /**
  * The useStorageState hook gets initial storage state and keeps it updated via WebSockets.
