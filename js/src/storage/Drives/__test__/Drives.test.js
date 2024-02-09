@@ -14,6 +14,7 @@ import {
     fireEvent,
     getByText,
     getByLabelText,
+    getByTestId,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
@@ -40,23 +41,25 @@ describe("<Drives />", () => {
     });
 
     it("Button should be disabled when nothing is selected.", () => {
-        expect(getByText(container, "Format & Set").disabled).toBeTruthy();
+        expect(getByTestId(container, "format-set-btn").disabled).toBeTruthy();
     });
 
     it("Button should be enabled when some disk is selected.", () => {
         fireEvent.click(getByLabelText(container, "sdb"));
-        expect(getByText(container, "Format & Set").disabled).toBeFalsy();
+
+        expect(getByTestId(container, "format-set-btn").disabled).toBeFalsy();
     });
 
     it("Button should be disabled when RAID1 and less that two disks are selected.", () => {
         fireEvent.change(getByLabelText(container, "RAID"), {
             target: { value: "raid1" },
         });
+
         fireEvent.click(getByLabelText(container, "sdb"));
-        expect(getByText(container, "Format & Set").disabled).toBeTruthy();
+        expect(getByTestId(container, "format-set-btn").disabled).toBeTruthy();
 
         fireEvent.click(getByLabelText(container, "sdc"));
-        expect(getByText(container, "Format & Set").disabled).toBeFalsy();
+        expect(getByTestId(container, "format-set-btn").disabled).toBeFalsy();
     });
 
     it("Should render modal on Format&Set click.", () => {
