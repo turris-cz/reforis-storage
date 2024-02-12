@@ -36,7 +36,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
 
-    description='reForis Storage plugin allows easy setup storage on Turris routers.',
+    description='reForis Storage plugin allows saving large amounts of data on an external storage device.',
     url='https://gitlab.nic.cz/turris/reforis/reforis-storage',
     author='CZ.NIC, z.s.p.o.',
     author_email='software@turris.com',

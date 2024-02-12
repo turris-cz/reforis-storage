@@ -7,7 +7,7 @@
     },
     "license": "GPL-3.0",
     "version": "0.2.2",
-    "description": "reForis Storage plugin for managing storage devices",
+    "description": "reForis Storage plugin allows saving large amounts of data on an external storage device.",
     "main": "./src/app.js",
     "eslintConfig": {
         "extends": "eslint-config-reforis"
