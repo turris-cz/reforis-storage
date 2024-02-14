@@ -85,6 +85,7 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 storageIsPending={storageIsPending}
             />
             <Button
+                data-testid="format-set-btn"
                 className="btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2"
                 onClick={() => setConfirmationModalShown(true)}
                 disabled={buttonIsDisabled}

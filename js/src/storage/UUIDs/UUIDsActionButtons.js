@@ -24,6 +24,7 @@ export default function UUIDsActionButtons({
     return (
         <div className="row justify-content-end ml-0 mr-0">
             <Button
+                data-testid="disable-external-storage-btn"
                 className="btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
                 disabled={buttonIsDisabled}
                 onClick={onUnselectSrv}
@@ -31,6 +32,7 @@ export default function UUIDsActionButtons({
                 {_("Disable external storage")}
             </Button>
             <Button
+                data-testid="use-drive-btn"
                 className="btn-primary col-sm-12 col-md-4 col-lg-2"
                 onClick={onUpdateSrv}
                 disabled={buttonIsDisabled}
