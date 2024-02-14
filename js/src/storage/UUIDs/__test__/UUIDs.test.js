@@ -13,6 +13,7 @@ import {
     wait,
     fireEvent,
     getByLabelText,
+    getByTestId,
 } from "foris/testUtils/customTestRender";
 import { mockJSONError } from "foris/testUtils/network";
 import mockAxios from "jest-mock-axios";
@@ -40,7 +41,7 @@ describe("<UUIDs />", () => {
 
     it("Should post on 'Use drive' button click.", () => {
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Use drive"));
+        fireEvent.click(getByTestId(container, "use-drive-btn"));
 
         const data = { uuid: "4444" };
         expect(mockAxios.post).toHaveBeenCalledWith(
@@ -52,7 +53,7 @@ describe("<UUIDs />", () => {
 
     it("Should post on 'Disable external storage' button click.", async () => {
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Disable external storage"));
+        fireEvent.click(getByTestId(container, "disable-external-storage-btn"));
 
         const data = { uuid: "" };
         expect(mockAxios.post).toHaveBeenCalledWith(
@@ -65,7 +66,7 @@ describe("<UUIDs />", () => {
     it("Should call updateUUIDCallback when 'Disable external storage' button click.", async () => {
         expect(updateUUIDCallback).not.toBeCalled();
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Disable external storage"));
+        fireEvent.click(getByTestId(container, "disable-external-storage-btn"));
         mockAxios.mockResponse({ result: true });
         await wait(() => expect(updateUUIDCallback).toBeCalled());
     });
@@ -73,14 +74,14 @@ describe("<UUIDs />", () => {
     it("Should call updateUUIDCallback when 'Use drive' button click.", async () => {
         expect(updateUUIDCallback).not.toBeCalled();
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Use drive"));
+        fireEvent.click(getByTestId(container, "use-drive-btn"));
         mockAxios.mockResponse({ result: true });
         await wait(() => expect(updateUUIDCallback).toBeCalled());
     });
 
     it("Should handle Use drive post error.", async () => {
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Use drive"));
+        fireEvent.click(getByTestId(container, "use-drive-btn"));
         mockJSONError();
         await wait(() =>
             expect(mockSetAlert).toBeCalledWith("Drive selection failed.")
@@ -89,7 +90,7 @@ describe("<UUIDs />", () => {
 
     it("Should handle Disable external storage post error.", async () => {
         fireEvent.click(getByLabelText(container, "sdc"));
-        fireEvent.click(getByText(container, "Disable external storage"));
+        fireEvent.click(getByTestId(container, "disable-external-storage-btn"));
         mockJSONError();
         await wait(() =>
             expect(mockSetAlert).toBeCalledWith("Drive selection failed.")
