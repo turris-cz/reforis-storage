@@ -6,9 +6,9 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Radio } from "foris";
+import PropTypes from "prop-types";
 
 UUIDsTableRow.propTypes = {
     drives: PropTypes.arrayOf(

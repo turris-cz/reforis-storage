@@ -277,14 +277,14 @@ Device currently in use is
           Not specified
         </option>
         <option
-          value="raid1"
-        >
-          RAID1
-        </option>
-        <option
           value="single"
         >
           JBOD
+        </option>
+        <option
+          value="raid1"
+        >
+          RAID1
         </option>
       </select>
       <small
@@ -467,11 +467,14 @@ we don't support and want to just add/remove some disks.
       </table>
     </div>
     <button
-      class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2"
+      class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
+      data-testid="format-set-btn"
       disabled=""
       type="button"
     >
-      Format & Set
+      <span>
+        Format & Set
+      </span>
     </button>
     <h2>
       Drive Selection
@@ -541,16 +544,22 @@ databases and LXC virtual machines will be unavailable.
       class="row justify-content-end ml-0 mr-0"
     >
       <button
-        class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0 d-inline-flex justify-content-center align-items-center"
+        data-testid="disable-external-storage-btn"
         type="button"
       >
-        Disable external storage
+        <span>
+          Disable external storage
+        </span>
       </button>
       <button
-        class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
+        data-testid="use-drive-btn"
         type="button"
       >
-        Use drive
+        <span>
+          Use drive
+        </span>
       </button>
     </div>
   </div>

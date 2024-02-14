@@ -6,12 +6,13 @@
  */
 
 import React from "react";
+
 import { render, getByText } from "foris/testUtils/customTestRender";
 
-import CurrentState from "../CurrentState";
 import getStateFixture, {
     getStateFixtureBroken,
 } from "../../__tests__/__fixtures__/getStateFixture";
+import CurrentState from "../CurrentState";
 
 describe("<CurrentState />", () => {
     let container;

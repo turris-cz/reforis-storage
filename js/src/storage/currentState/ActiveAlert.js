@@ -6,6 +6,7 @@
  */
 
 import React from "react";
+
 import { Alert, ALERT_TYPES } from "foris";
 import PropTypes from "prop-types";
 

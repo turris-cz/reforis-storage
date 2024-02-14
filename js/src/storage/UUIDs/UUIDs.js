@@ -6,13 +6,14 @@
  */
 
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { API_STATE, useAlert, useAPIPost } from "foris";
 
+import { API_STATE, useAlert, useAPIPost } from "foris";
+import PropTypes from "prop-types";
+
+import UUIDsActionButtons from "./UUIDsActionButtons";
+import UUIDsTable from "./UUIDsTable";
 import API_URLs from "../../API";
 import { filterNonBTRFS, groupDrivesByUUIDs } from "../utils";
-import UUIDsTable from "./UUIDsTable";
-import UUIDsActionButtons from "./UUIDsActionButtons";
 
 UUIDs.propTypes = {
     drives: PropTypes.arrayOf(
@@ -49,13 +50,13 @@ export default function UUIDs({
         }
     }, [postUpdateSrvStatus.state, setAlert, updateUUIDCallback]);
 
-    function onUnselectSrv() {
+    const onUnselectSrv = () => {
         postUpdateSrv({ data: { uuid: "" } });
-    }
+    };
 
-    function onUpdateSrv() {
+    const onUpdateSrv = () => {
         postUpdateSrv({ data: { uuid: selectedUUID } });
-    }
+    };
 
     const drivesByUUIDs = groupDrivesByUUIDs(filterNonBTRFS(drives));
 

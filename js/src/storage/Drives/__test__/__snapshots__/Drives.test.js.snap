@@ -43,14 +43,14 @@ exports[`<Drives /> Should render. 1`] = `
         Not specified
       </option>
       <option
-        value="raid1"
-      >
-        RAID1
-      </option>
-      <option
         value="single"
       >
         JBOD
+      </option>
+      <option
+        value="raid1"
+      >
+        RAID1
       </option>
     </select>
     <small
@@ -233,11 +233,14 @@ we don't support and want to just add/remove some disks.
     </table>
   </div>
   <button
-    class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2"
+    class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
+    data-testid="format-set-btn"
     disabled=""
     type="button"
   >
-    Format & Set
+    <span>
+      Format & Set
+    </span>
   </button>
 </div>
 `;

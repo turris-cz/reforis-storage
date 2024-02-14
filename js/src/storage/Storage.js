@@ -6,7 +6,7 @@
  */
 
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+
 import {
     API_STATE,
     ErrorMessage,
@@ -14,12 +14,13 @@ import {
     useAPIGet,
     formFieldsSize,
 } from "foris";
+import PropTypes from "prop-types";
 
-import API_URLs from "../API";
-import CurrentState from "./currentState/CurrentState";
-import useStorageState from "./hooks";
 import { PENDING_STORAGE_STATES } from "./constants";
+import CurrentState from "./currentState/CurrentState";
 import DrivesOperations from "./DrivesOperations";
+import useStorageState from "./hooks";
+import API_URLs from "../API";
 
 Storage.propTypes = {
     ws: PropTypes.object.isRequired,
@@ -71,11 +72,12 @@ export default function Storage({ ws }) {
         Object.keys(PENDING_STORAGE_STATES).includes(storageState.data.state) ||
         storageState.data.blocking;
 
-    function updateUUIDCallback() {
+    const updateUUIDCallback = () => {
         getDrives();
         getSettings();
         getStorageState();
-    }
+    };
+
     return (
         <>
             <h1>{_("Storage")}</h1>

@@ -1,7 +1,9 @@
-#  Copyright (C) 2019-2020 CZ.NIC z.s.p.o. (https://www.nic.cz/)
+#  Copyright (C) 2019-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
 #
 #  This is free software, licensed under the GNU General Public License v3.
 #  See /LICENSE for more information.
+
+""" reForis Storage Plugin """
 
 from http import HTTPStatus
 from pathlib import Path
@@ -10,7 +12,6 @@ from flask_babel import gettext as _
 
 from reforis.foris_controller_api.utils import APIError, validate_json
 
-# pylint: disable=invalid-name
 blueprint = Blueprint(
     'Storage',
     __name__,
@@ -19,7 +20,6 @@ blueprint = Blueprint(
 
 BASE_DIR = Path(__file__).parent
 
-# pylint: disable=invalid-name
 storage = {
     'blueprint': blueprint,
     # Define {python_module_name}/js/app.min.js
@@ -31,11 +31,13 @@ storage = {
 
 @blueprint.route('/state', methods=['GET'])
 def state():
+    """ Get current state of storage plugin. """
     return jsonify(current_app.backend.perform('storage', 'get_state'))
 
 
 @blueprint.route('/settings', methods=['GET', 'POST'])
 def settings():
+    """ Get or update storage settings. """
     if request.method == 'GET':
         settings = current_app.backend.perform('storage', 'get_settings')
         drives_data = current_app.backend.perform('storage', 'get_drives')
@@ -58,6 +60,7 @@ def settings():
 
 @blueprint.route('/drives', methods=['GET'])
 def drives():
+    """ Get list of drives. """
     return jsonify(current_app.backend.perform('storage', 'get_drives'))
 
 

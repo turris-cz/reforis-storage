@@ -7,11 +7,14 @@
     },
     "license": "GPL-3.0",
     "version": "0.2.2",
-    "description": "reForis storage plugin.",
+    "description": "reForis Storage plugin allows saving large amounts of data on an external storage device.",
     "main": "./src/app.js",
+    "eslintConfig": {
+        "extends": "eslint-config-reforis"
+    },
     "dependencies": {
-        "foris": "^5.1.11",
-        "immutability-helper": "3.0.1"
+        "foris": "^5.6.1",
+        "immutability-helper": "^3.1.1"
     },
     "peerDependencies": {
         "prop-types": "15.7.2",
@@ -19,33 +22,32 @@
         "react-dom": "16.9.0"
     },
     "devDependencies": {
-        "@babel/cli": "^7.7.7",
-        "@babel/core": "^7.7.7",
-        "@babel/plugin-transform-runtime": "^7.7.6",
-        "@babel/preset-env": "^7.7.7",
-        "@babel/preset-react": "^7.7.4",
+        "@babel/cli": "^7.23.9",
+        "@babel/core": "^7.23.9",
+        "@babel/plugin-transform-runtime": "^7.23.9",
+        "@babel/preset-env": "^7.23.9",
+        "@babel/preset-react": "^7.23.3",
         "@testing-library/react": "^8.0.9",
         "babel-loader": "^8.0.6",
         "bootstrap": "^4.4.1",
         "css-loader": "^3.4.1",
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^7.0.0",
-        "eslint-config-reforis": "^1.0.0",
-        "eslint-plugin-prettier": "^3.2.0",
+        "eslint": "^8.56.0",
+        "eslint-config-reforis": "^2.1.0",
         "jest": "^26.4.2",
         "jest-mock-axios": "^3.2.0",
-        "jquery": "^3.5.1",
-        "moment-timezone": "^0.5.27",
+        "jquery": "^3.7.1",
+        "moment-timezone": "^0.5.45",
         "popper.js": "^1.16.1",
-        "prettier": "^2.2.1",
-        "prop-types": "15.7.2",
+        "prettier": "^2.1.1",
+        "process": "^0.11.10",
+        "prop-types": "^15.8.1",
         "react": "16.9.0",
         "react-dom": "16.9.0",
         "react-router-dom": "^5.2.0",
-        "snapshot-diff": "^0.5.1",
+        "snapshot-diff": "^0.10.0",
         "style-loader": "^0.23.1",
-        "webpack": "^4.41.5",
-        "webpack-cli": "^3.3.10"
+        "webpack": "^5.90.1",
+        "webpack-cli": "^5.1.4"
     },
     "scripts": {
         "watch": "webpack --watch --mode=development",

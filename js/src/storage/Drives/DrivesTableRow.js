@@ -6,6 +6,7 @@
  */
 
 import React, { useState } from "react";
+
 import { CheckBox } from "foris";
 import update from "immutability-helper";
 import PropTypes from "prop-types";

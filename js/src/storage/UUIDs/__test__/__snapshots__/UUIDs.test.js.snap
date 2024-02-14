@@ -56,18 +56,24 @@ exports[`<UUIDs /> Should render. 1`] = `
     class="row justify-content-end ml-0 mr-0"
   >
     <button
-      class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
+      class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0 d-inline-flex justify-content-center align-items-center"
+      data-testid="disable-external-storage-btn"
       disabled=""
       type="button"
     >
-      Disable external storage
+      <span>
+        Disable external storage
+      </span>
     </button>
     <button
-      class="btn btn-primary col-sm-12 col-md-4 col-lg-2"
+      class="btn btn-primary col-sm-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
+      data-testid="use-drive-btn"
       disabled=""
       type="button"
     >
-      Use drive
+      <span>
+        Use drive
+      </span>
     </button>
   </div>
 </div>
