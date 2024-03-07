@@ -1,30 +1,30 @@
-# Slovak translations for PROJECT.
-# Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Slovak translations for reForis Storage Plugin.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Storage
+# Plugin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-26 17:44+0200\n"
+"POT-Creation-Date: 2024-03-07 15:20+0100\n"
 "PO-Revision-Date: 2022-03-21 17:57+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
-"reforis-storage-plugin/sk/>\n"
 "Language: sk\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/turris"
+"/reforis-storage-plugin/sk/>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12-dev\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.14.0\n"
 
-#: js/src/app.js:12 js/src/storage/Storage.js:81
+#: js/src/app.js:12 js/src/storage/Storage.js:83
 msgid "Storage"
 msgstr "Úložisko"
 
-#: js/src/storage/DrivesOperations.js:32
+#: js/src/storage/DrivesOperations.js:33
 msgid ""
 "Here you can select which one of the already prepared drives should be\n"
 "used as external storage. If you already have a device that you used\n"
@@ -37,7 +37,8 @@ msgid ""
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
 "Tu môžete zvoliť, ktorý z už pripravených diskov sa použije\n"
-"ako externé úložisko. Ak máte zariadenie, ktoré ste už predtým s routerom\n"
+"ako externé úložisko. Ak máte zariadenie, ktoré ste už predtým s routerom"
+"\n"
 "Turris používali, môžete ho tu nastavit ako externé úložisko. Prípadne,\n"
 "ak disk presúvate na iné zariadenie Turris, môžete ho tu ako externé "
 "úložisko\n"
@@ -48,19 +49,19 @@ msgstr ""
 "To znamená, že služby ako sú MySQL budú mať prázdne databázy\n"
 "a virtuálne stroje LXC nebudú dostupné."
 
-#: js/src/storage/DrivesOperations.js:52
+#: js/src/storage/DrivesOperations.js:53
 msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr "Nie sú pripojené žiadne disky. Pripojte disk a obnovte stránku."
 
-#: js/src/storage/DrivesOperations.js:61
+#: js/src/storage/DrivesOperations.js:62
 msgid "Prepare Drives"
 msgstr "Pripraviť disky"
 
-#: js/src/storage/DrivesOperations.js:64
+#: js/src/storage/DrivesOperations.js:65
 msgid "Drive Selection"
 msgstr "Výber disku"
 
-#: js/src/storage/Storage.js:28
+#: js/src/storage/Storage.js:29
 msgid ""
 "\n"
 "<p>Here you can set up where your persistent data should be stored.\n"
@@ -88,19 +89,20 @@ msgid ""
 msgstr ""
 "\n"
 "<p>Na tomto mieste sa dá nastaviť, kam sa budú ukladať vaše perzistentné\n"
-"dáta. Ak chcete používať Nextcloud, LXC alebo iné aplikácie s intenzívnymi I/"
-"O\n"
+"dáta. Ak chcete používať Nextcloud, LXC alebo iné aplikácie s "
+"intenzívnymi I/O\n"
 "operáciami, neukladajte ich dáta na interné flashové úložisko, ale vždy "
 "použite\n"
-"úložisko externé. Pred zmenou sa tiež presvedčte, či sa vaše dáta na nový\n"
+"úložisko externé. Pred zmenou sa tiež presvedčte, či sa vaše dáta na nový"
+"\n"
 "disk zmestia.</p>\n"
 "<p>Na nastavenie externého úložiska pripojte externý disk – napríklad\n"
 "USB flash disk – a sformátujte ho v súborovom systéme Btrfs. Na to stačí "
 "len\n"
 "vybrať správny disk, požadovanú úroveň RAID a kliknúť na tlačidlo\n"
 "„Formátovať a nastaviť“ v časti „Pripraviť úložisko“. Disk sa sformátuje\n"
-"a vyžiada sa reštart routera. Počas reštartu sa priečinok /srv (kam by si "
-"mali\n"
+"a vyžiada sa reštart routera. Počas reštartu sa priečinok /srv (kam by si"
+" mali\n"
 "aplikácie s intenzívnymi I/O operáciami ukladať dáta) presunie na tento "
 "nový\n"
 "disk.</p>\n"
@@ -124,7 +126,7 @@ msgstr "Zmenšovanie"
 msgid "Balancing"
 msgstr "Vyrovnávanie"
 
-#: js/src/storage/Drives/ConfirmationModal.js:19
+#: js/src/storage/Drives/ConfirmationModal.js:20
 msgid ""
 "\n"
 "You are adding the first drive, then you'll get notification and you will"
@@ -133,16 +135,16 @@ msgid ""
 " reboot will take longer. \n"
 msgstr ""
 "\n"
-"Pridávate prvý disk, dostanete notifikáciu a vyžiada sa reštart. Počas neho "
-"sa dáta\n"
-"presunú zo starého disku na nový. Vyžaduje si to určitý čas, takže reštart "
-"môže trvať dlhšie. \n"
+"Pridávate prvý disk, dostanete notifikáciu a vyžiada sa reštart. Počas "
+"neho sa dáta\n"
+"presunú zo starého disku na nový. Vyžaduje si to určitý čas, takže "
+"reštart môže trvať dlhšie. \n"
 
-#: js/src/storage/Drives/ConfirmationModal.js:33
+#: js/src/storage/Drives/ConfirmationModal.js:34
 msgid "Warning!"
 msgstr "Výstraha!"
 
-#: js/src/storage/Drives/ConfirmationModal.js:36
+#: js/src/storage/Drives/ConfirmationModal.js:37
 msgid ""
 "\n"
 "Are you sure you want to proceed? Newly selected drive(s) will be "
@@ -152,60 +154,60 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"Naozaj chcete pokračovať? Novovybratý disk (disky) sa sformátuje a všetky "
-"dáta sa z neho stratia.\n"
+"Naozaj chcete pokračovať? Novovybratý disk (disky) sa sformátuje a všetky"
+" dáta sa z neho stratia.\n"
 "${firstDriveMessage}\n"
 "Naozaj chcete pokračovať?\n"
 "                    "
 
-#: js/src/storage/Drives/ConfirmationModal.js:44
+#: js/src/storage/Drives/ConfirmationModal.js:45
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: js/src/storage/Drives/ConfirmationModal.js:46
+#: js/src/storage/Drives/ConfirmationModal.js:47
 msgid "Continue"
 msgstr "Pokračovať"
 
-#: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
+#: js/src/storage/Drives/Drives.js:48 reforis_storage/__init__.py:77
 msgid "Device preparation failed."
 msgstr "Príprava zariadenia neúspešná."
 
-#: js/src/storage/Drives/Drives.js:91
+#: js/src/storage/Drives/Drives.js:93
 msgid "Format & Set"
 msgstr "Formátovať a nastaviť"
 
-#: js/src/storage/Drives/DrivesTable.js:40
-#: js/src/storage/currentState/CurrentStateTable.js:74
+#: js/src/storage/Drives/DrivesTable.js:41
+#: js/src/storage/currentState/CurrentStateTable.js:67
 msgid "Device"
 msgstr "Zariadenie"
 
-#: js/src/storage/Drives/DrivesTable.js:41
+#: js/src/storage/Drives/DrivesTable.js:42
 msgid "Description"
 msgstr "Popis"
 
-#: js/src/storage/Drives/DrivesTable.js:42
+#: js/src/storage/Drives/DrivesTable.js:43
 msgid "Filesystem"
 msgstr "Súborový systém"
 
-#: js/src/storage/Drives/DrivesTable.js:43
-#: js/src/storage/UUIDs/UUIDsTable.js:32
-#: js/src/storage/currentState/CurrentStateTable.js:80
+#: js/src/storage/Drives/DrivesTable.js:44
+#: js/src/storage/UUIDs/UUIDsTable.js:33
+#: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "UUID"
 msgstr "UUID"
 
-#: js/src/storage/Drives/RAID.js:13
+#: js/src/storage/Drives/RAID.js:14
 msgid "Not specified"
 msgstr "Nešpecifikované"
 
-#: js/src/storage/Drives/RAID.js:14
+#: js/src/storage/Drives/RAID.js:15
 msgid "JBOD"
 msgstr "JBOD"
 
-#: js/src/storage/Drives/RAID.js:15
+#: js/src/storage/Drives/RAID.js:16
 msgid "RAID1"
 msgstr "RAID1"
 
-#: js/src/storage/Drives/RAID.js:25
+#: js/src/storage/Drives/RAID.js:26
 msgid ""
 "\n"
 "Don't change the RAID level, keeps everything set the way it was. Useful "
@@ -217,7 +219,7 @@ msgstr ""
 "vlastné nastavenie RAID,\n"
 "ktoré tu nie je podporované, a chcete len pridať/odobrať niektorý disk.\n"
 
-#: js/src/storage/Drives/RAID.js:29
+#: js/src/storage/Drives/RAID.js:30
 msgid ""
 "\n"
 "No redundancy, if one drive fails, you loose your data. On the other "
@@ -225,11 +227,11 @@ msgid ""
 "available on all included drives.\n"
 msgstr ""
 "\n"
-"Žiadna redundancia. Ak jeden disk zlyhá, jeho dáta budú stratené. Na druhej "
-"strane poskytuje najviac miesta – súčet kapacít\n"
+"Žiadna redundancia. Ak jeden disk zlyhá, jeho dáta budú stratené. Na "
+"druhej strane poskytuje najviac miesta – súčet kapacít\n"
 "všetkých zahrnutých diskov.\n"
 
-#: js/src/storage/Drives/RAID.js:33
+#: js/src/storage/Drives/RAID.js:34
 msgid ""
 "\n"
 "Everything is redundant and stored at two distinct drives. If you loose "
@@ -238,37 +240,37 @@ msgid ""
 "you would have with JBOD.\n"
 msgstr ""
 "\n"
-"Všetko je redundantné a uložené na dvoch samostatných diskoch. Ak jeden disk "
-"zlyhá, dá sa jednoducho vymeniť\n"
+"Všetko je redundantné a uložené na dvoch samostatných diskoch. Ak jeden "
+"disk zlyhá, dá sa jednoducho vymeniť\n"
 "bez straty dát. Na druhej strane je v porovnaní s JBOD k dispozícii len "
 "polovičná kapacita.\n"
 
-#: js/src/storage/Drives/RAID.js:59
-#: js/src/storage/currentState/CurrentStateTable.js:86
+#: js/src/storage/Drives/RAID.js:60
+#: js/src/storage/currentState/CurrentStateTable.js:76
 msgid "RAID"
 msgstr "RAID"
 
-#: js/src/storage/UUIDs/UUIDs.js:46
+#: js/src/storage/UUIDs/UUIDs.js:47
 msgid "Drive selection failed."
 msgstr "Výber disku neúspešný."
 
-#: js/src/storage/UUIDs/UUIDs.js:65
+#: js/src/storage/UUIDs/UUIDs.js:66
 msgid "There are no prepared drives to be used."
 msgstr "Nie sú pripravené žiadne disky, ktoré by sa dali použiť."
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:31
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:32
 msgid "Disable external storage"
 msgstr "Zakázať externé úložisko"
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:38
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:40
 msgid "Use drive"
 msgstr "Použiť disk"
 
-#: js/src/storage/UUIDs/UUIDsTable.js:31
+#: js/src/storage/UUIDs/UUIDsTable.js:32
 msgid "Devices"
 msgstr "Zariadenia"
 
-#: js/src/storage/currentState/ActiveAlert.js:17
+#: js/src/storage/currentState/ActiveAlert.js:18
 msgid ""
 "\n"
 "Device currently in use is\n"
@@ -276,27 +278,27 @@ msgstr ""
 "\n"
 "Práve používané zariadenie je\n"
 
-#: js/src/storage/currentState/BrokenSetupAlert.js:15
+#: js/src/storage/currentState/BrokenSetupAlert.js:16
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
-"Vaše súčasné nastavenia sú nesprávne a pravdepodobne strácate dáta. Nastavte "
-"nové úložiskové zariadenie čím skôr!"
+"Vaše súčasné nastavenia sú nesprávne a pravdepodobne strácate dáta. "
+"Nastavte nové úložiskové zariadenie čím skôr!"
 
-#: js/src/storage/currentState/CurrentState.js:48
+#: js/src/storage/currentState/CurrentState.js:49
 msgid "Current State"
 msgstr "Aktuálny stav"
 
-#: js/src/storage/currentState/CurrentStateTable.js:47
+#: js/src/storage/currentState/CurrentStateTable.js:46
 msgid "State"
 msgstr "Stav"
 
-#: js/src/storage/currentState/CurrentStateTable.js:82
+#: js/src/storage/currentState/CurrentStateTable.js:73
 msgid "N/A"
 msgstr "N/A"
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:11
+#: js/src/storage/currentState/PendingMigrationAlert.js:12
 msgid ""
 "\n"
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
@@ -306,17 +308,17 @@ msgid ""
 "to be migrated.\n"
 msgstr ""
 "\n"
-"Váš router <b>čaká na reštart</b> nevyhnutný na pokračovanie presunu vašich "
-"dát na vybratý nový disk.\n"
-"Reštartujte router <b>čo najskôr</b> a nezabudnite, že nasledujúci reštart "
-"bude trvať dlhšie, pretože sa budú\n"
+"Váš router <b>čaká na reštart</b> nevyhnutný na pokračovanie presunu "
+"vašich dát na vybratý nový disk.\n"
+"Reštartujte router <b>čo najskôr</b> a nezabudnite, že nasledujúci "
+"reštart bude trvať dlhšie, pretože sa budú\n"
 "presúvať dáta.\n"
 
-#: reforis_storage/__init__.py:54
+#: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
 msgstr "Nedá sa zmeniť nastavenie perzistentného záznamu."
 
-#: reforis_storage/__init__.py:88
+#: reforis_storage/__init__.py:91
 msgid "UUID set failed."
 msgstr "Nastavenie UUID neúspešné."
 
@@ -370,3 +372,4 @@ msgstr "Nastavenie UUID neúspešné."
 
 #~ msgid "Set UUID"
 #~ msgstr ""
+
