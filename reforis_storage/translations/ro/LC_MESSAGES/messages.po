@@ -1,29 +1,30 @@
-# Romanian translations for PROJECT.
-# Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Romanian translations for reForis Storage Plugin.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Storage
+# Plugin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-26 17:44+0200\n"
+"POT-Creation-Date: 2024-03-07 15:20+0100\n"
 "PO-Revision-Date: 2020-01-10 09:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ro\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100"
-" < 20)) ? 1 : 2)\n"
+" < 20)) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.14.0\n"
 
-#: js/src/app.js:12 js/src/storage/Storage.js:81
+#: js/src/app.js:12 js/src/storage/Storage.js:83
 msgid "Storage"
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:32
+#: js/src/storage/DrivesOperations.js:33
 msgid ""
 "Here you can select which one of the already prepared drives should be\n"
 "used as external storage. If you already have a device that you used\n"
@@ -36,19 +37,19 @@ msgid ""
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:52
+#: js/src/storage/DrivesOperations.js:53
 msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:61
+#: js/src/storage/DrivesOperations.js:62
 msgid "Prepare Drives"
 msgstr ""
 
-#: js/src/storage/DrivesOperations.js:64
+#: js/src/storage/DrivesOperations.js:65
 msgid "Drive Selection"
 msgstr ""
 
-#: js/src/storage/Storage.js:28
+#: js/src/storage/Storage.js:29
 msgid ""
 "\n"
 "<p>Here you can set up where your persistent data should be stored.\n"
@@ -91,7 +92,7 @@ msgstr ""
 msgid "Balancing"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:19
+#: js/src/storage/Drives/ConfirmationModal.js:20
 msgid ""
 "\n"
 "You are adding the first drive, then you'll get notification and you will"
@@ -100,11 +101,11 @@ msgid ""
 " reboot will take longer. \n"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:33
+#: js/src/storage/Drives/ConfirmationModal.js:34
 msgid "Warning!"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:36
+#: js/src/storage/Drives/ConfirmationModal.js:37
 msgid ""
 "\n"
 "Are you sure you want to proceed? Newly selected drive(s) will be "
@@ -114,54 +115,54 @@ msgid ""
 "                    "
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:44
+#: js/src/storage/Drives/ConfirmationModal.js:45
 msgid "Cancel"
 msgstr ""
 
-#: js/src/storage/Drives/ConfirmationModal.js:46
+#: js/src/storage/Drives/ConfirmationModal.js:47
 msgid "Continue"
 msgstr ""
 
-#: js/src/storage/Drives/Drives.js:47 reforis_storage/__init__.py:74
+#: js/src/storage/Drives/Drives.js:48 reforis_storage/__init__.py:77
 msgid "Device preparation failed."
 msgstr ""
 
-#: js/src/storage/Drives/Drives.js:91
+#: js/src/storage/Drives/Drives.js:93
 msgid "Format & Set"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:40
-#: js/src/storage/currentState/CurrentStateTable.js:74
+#: js/src/storage/Drives/DrivesTable.js:41
+#: js/src/storage/currentState/CurrentStateTable.js:67
 msgid "Device"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:41
+#: js/src/storage/Drives/DrivesTable.js:42
 msgid "Description"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:42
+#: js/src/storage/Drives/DrivesTable.js:43
 msgid "Filesystem"
 msgstr ""
 
-#: js/src/storage/Drives/DrivesTable.js:43
-#: js/src/storage/UUIDs/UUIDsTable.js:32
-#: js/src/storage/currentState/CurrentStateTable.js:80
+#: js/src/storage/Drives/DrivesTable.js:44
+#: js/src/storage/UUIDs/UUIDsTable.js:33
+#: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "UUID"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:13
+#: js/src/storage/Drives/RAID.js:14
 msgid "Not specified"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:14
+#: js/src/storage/Drives/RAID.js:15
 msgid "JBOD"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:15
+#: js/src/storage/Drives/RAID.js:16
 msgid "RAID1"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:25
+#: js/src/storage/Drives/RAID.js:26
 msgid ""
 "\n"
 "Don't change the RAID level, keeps everything set the way it was. Useful "
@@ -169,7 +170,7 @@ msgid ""
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:29
+#: js/src/storage/Drives/RAID.js:30
 msgid ""
 "\n"
 "No redundancy, if one drive fails, you loose your data. On the other "
@@ -177,7 +178,7 @@ msgid ""
 "available on all included drives.\n"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:33
+#: js/src/storage/Drives/RAID.js:34
 msgid ""
 "\n"
 "Everything is redundant and stored at two distinct drives. If you loose "
@@ -186,56 +187,56 @@ msgid ""
 "you would have with JBOD.\n"
 msgstr ""
 
-#: js/src/storage/Drives/RAID.js:59
-#: js/src/storage/currentState/CurrentStateTable.js:86
+#: js/src/storage/Drives/RAID.js:60
+#: js/src/storage/currentState/CurrentStateTable.js:76
 msgid "RAID"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDs.js:46
+#: js/src/storage/UUIDs/UUIDs.js:47
 msgid "Drive selection failed."
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDs.js:65
+#: js/src/storage/UUIDs/UUIDs.js:66
 msgid "There are no prepared drives to be used."
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:31
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:32
 msgid "Disable external storage"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsActionButtons.js:38
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:40
 msgid "Use drive"
 msgstr ""
 
-#: js/src/storage/UUIDs/UUIDsTable.js:31
+#: js/src/storage/UUIDs/UUIDsTable.js:32
 msgid "Devices"
 msgstr ""
 
-#: js/src/storage/currentState/ActiveAlert.js:17
+#: js/src/storage/currentState/ActiveAlert.js:18
 msgid ""
 "\n"
 "Device currently in use is\n"
 msgstr ""
 
-#: js/src/storage/currentState/BrokenSetupAlert.js:15
+#: js/src/storage/currentState/BrokenSetupAlert.js:16
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
 
-#: js/src/storage/currentState/CurrentState.js:48
+#: js/src/storage/currentState/CurrentState.js:49
 msgid "Current State"
 msgstr ""
 
-#: js/src/storage/currentState/CurrentStateTable.js:47
+#: js/src/storage/currentState/CurrentStateTable.js:46
 msgid "State"
 msgstr ""
 
-#: js/src/storage/currentState/CurrentStateTable.js:82
+#: js/src/storage/currentState/CurrentStateTable.js:73
 msgid "N/A"
 msgstr ""
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:11
+#: js/src/storage/currentState/PendingMigrationAlert.js:12
 msgid ""
 "\n"
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
@@ -245,11 +246,11 @@ msgid ""
 "to be migrated.\n"
 msgstr ""
 
-#: reforis_storage/__init__.py:54
+#: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
 msgstr ""
 
-#: reforis_storage/__init__.py:88
+#: reforis_storage/__init__.py:91
 msgid "UUID set failed."
 msgstr ""
 
