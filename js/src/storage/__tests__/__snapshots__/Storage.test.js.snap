@@ -180,7 +180,7 @@ without losing any data.
       Current State
     </h2>
     <div
-      class="alert  alert-success"
+      class="alert alert-success"
     >
       
 Device currently in use is
@@ -260,15 +260,16 @@ Device currently in use is
       Prepare Drives
     </h2>
     <div
-      class="form-group"
+      class="mb-3"
     >
       <label
+        class="form-label"
         for="1"
       >
         RAID
       </label>
       <select
-        class="custom-select"
+        class="form-select"
         id="1"
       >
         <option
@@ -287,14 +288,16 @@ Device currently in use is
           RAID1
         </option>
       </select>
-      <small
-        class="form-text text-muted"
+      <div
+        class="form-text"
       >
-        Not specified: 
+        <small>
+          Not specified: 
 Don't change the RAID level, keeps everything set the way it was. Useful if you have a really custom setup of your RAID
 we don't support and want to just add/remove some disks.
 
-      </small>
+        </small>
+      </div>
     </div>
     <div
       class="table-responsive"
@@ -334,23 +337,19 @@ we don't support and want to just add/remove some disks.
               class=""
             >
               <div
-                class="form-group"
+                class="mb-3 form-check"
               >
-                <div
-                  class="custom-control custom-checkbox "
+                <input
+                  class="form-check-input"
+                  id="2"
+                  type="checkbox"
+                />
+                <label
+                  class="form-check-label"
+                  for="2"
                 >
-                  <input
-                    class="custom-control-input"
-                    id="2"
-                    type="checkbox"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="2"
-                  >
-                    sdb
-                  </label>
-                </div>
+                  sdb
+                </label>
               </div>
             </td>
             <td>
@@ -366,23 +365,19 @@ we don't support and want to just add/remove some disks.
               class="text-center"
             >
               <div
-                class="form-group"
+                class="mb-3 form-check"
               >
-                <div
-                  class="custom-control custom-checkbox "
+                <input
+                  class="form-check-input"
+                  id="3"
+                  type="checkbox"
+                />
+                <label
+                  class="form-check-label"
+                  for="3"
                 >
-                  <input
-                    class="custom-control-input"
-                    id="3"
-                    type="checkbox"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="3"
-                  >
-                    sdb1
-                  </label>
-                </div>
+                  sdb1
+                </label>
               </div>
             </td>
             <td>
@@ -400,23 +395,19 @@ we don't support and want to just add/remove some disks.
               class=""
             >
               <div
-                class="form-group"
+                class="mb-3 form-check"
               >
-                <div
-                  class="custom-control custom-checkbox "
+                <input
+                  class="form-check-input"
+                  id="4"
+                  type="checkbox"
+                />
+                <label
+                  class="form-check-label"
+                  for="4"
                 >
-                  <input
-                    class="custom-control-input"
-                    id="4"
-                    type="checkbox"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="4"
-                  >
-                    sdc
-                  </label>
-                </div>
+                  sdc
+                </label>
               </div>
             </td>
             <td>
@@ -434,23 +425,19 @@ we don't support and want to just add/remove some disks.
               class="text-center"
             >
               <div
-                class="form-group"
+                class="mb-3 form-check"
               >
-                <div
-                  class="custom-control custom-checkbox "
+                <input
+                  class="form-check-input"
+                  id="5"
+                  type="checkbox"
+                />
+                <label
+                  class="form-check-label"
+                  for="5"
                 >
-                  <input
-                    class="custom-control-input"
-                    id="5"
-                    type="checkbox"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="5"
-                  >
-                    sdc1
-                  </label>
-                </div>
+                  sdc1
+                </label>
               </div>
             </td>
             <td>
@@ -516,17 +503,17 @@ databases and LXC virtual machines will be unavailable.
           <tr>
             <td>
               <div
-                class="custom-control custom-radio"
+                class="mb-2"
               >
                 <input
-                  class="custom-control-input"
+                  class="form-check-input me-2"
                   id="4444"
                   name="uuids"
                   type="radio"
                   value="4444"
                 />
                 <label
-                  class="custom-control-label"
+                  class="form-check-label"
                   for="4444"
                 >
                   sdc

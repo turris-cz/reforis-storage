@@ -6,7 +6,7 @@ exports[`<CurrentState /> Should render. 1`] = `
     Current State
   </h2>
   <div
-    class="alert  alert-success"
+    class="alert alert-success"
   >
     
 Device currently in use is

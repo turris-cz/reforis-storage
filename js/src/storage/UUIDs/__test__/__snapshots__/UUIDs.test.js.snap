@@ -28,17 +28,17 @@ exports[`<UUIDs /> Should render. 1`] = `
         <tr>
           <td>
             <div
-              class="custom-control custom-radio"
+              class="mb-2"
             >
               <input
-                class="custom-control-input"
+                class="form-check-input me-2"
                 id="4444"
                 name="uuids"
                 type="radio"
                 value="4444"
               />
               <label
-                class="custom-control-label"
+                class="form-check-label"
                 for="4444"
               >
                 sdc
