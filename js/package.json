@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-storage.git"
     },
     "license": "GPL-3.0",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "reForis Storage plugin allows saving large amounts of data on an external storage device.",
     "main": "./src/app.js",
     "eslintConfig": {
