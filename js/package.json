@@ -13,7 +13,7 @@
         "extends": "eslint-config-reforis"
     },
     "dependencies": {
-        "foris": "^5.6.1",
+        "foris": "^6.0.2",
         "immutability-helper": "^3.1.1"
     },
     "peerDependencies": {
@@ -30,7 +30,6 @@
         "@babel/preset-react": "^7.24.7",
         "@testing-library/react": "^8.0.9",
         "babel-loader": "^8.0.6",
-        "bootstrap": "^4.4.1",
         "css-loader": "^3.4.1",
         "eslint": "^8.57.0",
         "eslint-config-reforis": "^2.1.1",
