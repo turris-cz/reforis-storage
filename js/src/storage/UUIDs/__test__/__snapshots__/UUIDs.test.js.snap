@@ -28,7 +28,7 @@ exports[`<UUIDs /> Should render. 1`] = `
         <tr>
           <td>
             <div
-              class="mb-2"
+              class="mb-0"
             >
               <input
                 class="form-check-input me-2"
@@ -53,10 +53,10 @@ exports[`<UUIDs /> Should render. 1`] = `
     </table>
   </div>
   <div
-    class="row justify-content-end ml-0 mr-0"
+    class="d-grid gap-2 d-md-flex justify-content-md-end"
   >
     <button
-      class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0 d-inline-flex justify-content-center align-items-center"
+      class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-0 mb-md-0 d-inline-flex justify-content-center align-items-center"
       data-testid="disable-external-storage-btn"
       disabled=""
       type="button"

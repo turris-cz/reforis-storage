@@ -103,7 +103,7 @@ we don't support and want to just add/remove some disks.
             class=""
           >
             <div
-              class="mb-3 form-check"
+              class="mb-0 form-check"
             >
               <input
                 class="form-check-input"
@@ -131,7 +131,7 @@ we don't support and want to just add/remove some disks.
             class="text-center"
           >
             <div
-              class="mb-3 form-check"
+              class="mb-0 form-check"
             >
               <input
                 class="form-check-input"
@@ -161,7 +161,7 @@ we don't support and want to just add/remove some disks.
             class=""
           >
             <div
-              class="mb-3 form-check"
+              class="mb-0 form-check"
             >
               <input
                 class="form-check-input"
@@ -191,7 +191,7 @@ we don't support and want to just add/remove some disks.
             class="text-center"
           >
             <div
-              class="mb-3 form-check"
+              class="mb-0 form-check"
             >
               <input
                 class="form-check-input"
@@ -219,15 +219,19 @@ we don't support and want to just add/remove some disks.
       </tbody>
     </table>
   </div>
-  <button
-    class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
-    data-testid="format-set-btn"
-    disabled=""
-    type="button"
+  <div
+    class="text-end"
   >
-    <span>
-      Format & Set
-    </span>
-  </button>
+    <button
+      class="btn btn-primary mb-2 mb-md-0 mb-lg-3 ml-auto col-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
+      data-testid="format-set-btn"
+      disabled=""
+      type="button"
+    >
+      <span>
+        Format & Set
+      </span>
+    </button>
+  </div>
 </div>
 `;

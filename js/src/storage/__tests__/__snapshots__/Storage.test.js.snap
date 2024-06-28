@@ -337,7 +337,7 @@ we don't support and want to just add/remove some disks.
               class=""
             >
               <div
-                class="mb-3 form-check"
+                class="mb-0 form-check"
               >
                 <input
                   class="form-check-input"
@@ -365,7 +365,7 @@ we don't support and want to just add/remove some disks.
               class="text-center"
             >
               <div
-                class="mb-3 form-check"
+                class="mb-0 form-check"
               >
                 <input
                   class="form-check-input"
@@ -395,7 +395,7 @@ we don't support and want to just add/remove some disks.
               class=""
             >
               <div
-                class="mb-3 form-check"
+                class="mb-0 form-check"
               >
                 <input
                   class="form-check-input"
@@ -425,7 +425,7 @@ we don't support and want to just add/remove some disks.
               class="text-center"
             >
               <div
-                class="mb-3 form-check"
+                class="mb-0 form-check"
               >
                 <input
                   class="form-check-input"
@@ -453,16 +453,20 @@ we don't support and want to just add/remove some disks.
         </tbody>
       </table>
     </div>
-    <button
-      class="btn btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
-      data-testid="format-set-btn"
-      disabled=""
-      type="button"
+    <div
+      class="text-end"
     >
-      <span>
-        Format & Set
-      </span>
-    </button>
+      <button
+        class="btn btn-primary mb-2 mb-md-0 mb-lg-3 ml-auto col-12 col-md-4 col-lg-2 d-inline-flex justify-content-center align-items-center"
+        data-testid="format-set-btn"
+        disabled=""
+        type="button"
+      >
+        <span>
+          Format & Set
+        </span>
+      </button>
+    </div>
     <h2>
       Drive Selection
     </h2>
@@ -503,7 +507,7 @@ databases and LXC virtual machines will be unavailable.
           <tr>
             <td>
               <div
-                class="mb-2"
+                class="mb-0"
               >
                 <input
                   class="form-check-input me-2"
@@ -528,10 +532,10 @@ databases and LXC virtual machines will be unavailable.
       </table>
     </div>
     <div
-      class="row justify-content-end ml-0 mr-0"
+      class="d-grid gap-2 d-md-flex justify-content-md-end"
     >
       <button
-        class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0 d-inline-flex justify-content-center align-items-center"
+        class="btn btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-0 mb-md-0 d-inline-flex justify-content-center align-items-center"
         data-testid="disable-external-storage-btn"
         type="button"
       >
