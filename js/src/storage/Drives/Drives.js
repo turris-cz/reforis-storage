@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -84,14 +84,16 @@ export default function Drives({ drives, currentUUID, storageIsPending }) {
                 currentUUID={currentUUID}
                 storageIsPending={storageIsPending}
             />
-            <Button
-                data-testid="format-set-btn"
-                className="btn-primary mb-2 mb-md-0 ml-auto col-sm-12 col-md-4 col-lg-2"
-                onClick={() => setConfirmationModalShown(true)}
-                disabled={buttonIsDisabled}
-            >
-                {_("Format & Set")}
-            </Button>
+            <div className="text-end">
+                <Button
+                    data-testid="format-set-btn"
+                    className="btn-primary mb-2 mb-md-0 mb-lg-3 ml-auto col-12 col-md-4 col-lg-2"
+                    onClick={() => setConfirmationModalShown(true)}
+                    disabled={buttonIsDisabled}
+                >
+                    {_("Format & Set")}
+                </Button>
+            </div>
         </>
     );
 }

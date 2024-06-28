@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -47,30 +47,11 @@ export default function Storage({ ws }) {
     const [getDrivesResponse, getDrives] = useAPIGet(API_URLs.drives);
     const [getSettingsResponse, getSettings] = useAPIGet(API_URLs.settings);
     const [storageState, getStorageState] = useStorageState(ws, getDrives);
+
     useEffect(() => {
         getDrives();
         getSettings();
     }, [getDrives, getSettings]);
-
-    if (
-        storageState.state === API_STATE.ERROR ||
-        getDrivesResponse.state === API_STATE.ERROR ||
-        getSettingsResponse.state === API_STATE.ERROR
-    ) {
-        return <ErrorMessage />;
-    }
-
-    if (
-        storageState.state !== API_STATE.SUCCESS ||
-        getDrivesResponse.state !== API_STATE.SUCCESS ||
-        getSettingsResponse.state !== API_STATE.SUCCESS
-    ) {
-        return <Spinner />;
-    }
-
-    const storageIsPending =
-        Object.keys(PENDING_STORAGE_STATES).includes(storageState.data.state) ||
-        storageState.data.blocking;
 
     const updateUUIDCallback = () => {
         getDrives();
@@ -78,10 +59,26 @@ export default function Storage({ ws }) {
         getStorageState();
     };
 
-    return (
-        <>
-            <h1>{_("Storage")}</h1>
-            <div dangerouslySetInnerHTML={{ __html: HELP_TEXT }} />
+    let componentContent = null;
+    if (
+        storageState.state === API_STATE.ERROR ||
+        getDrivesResponse.state === API_STATE.ERROR ||
+        getSettingsResponse.state === API_STATE.ERROR
+    ) {
+        componentContent = <ErrorMessage />;
+    } else if (
+        storageState.state !== API_STATE.SUCCESS ||
+        getDrivesResponse.state !== API_STATE.SUCCESS ||
+        getSettingsResponse.state !== API_STATE.SUCCESS
+    ) {
+        componentContent = <Spinner />;
+    } else {
+        const storageIsPending =
+            Object.keys(PENDING_STORAGE_STATES).includes(
+                storageState.data.state
+            ) || storageState.data.blocking;
+
+        componentContent = (
             <div className={`${formFieldsSize}`}>
                 <CurrentState
                     storageIsPending={storageIsPending}
@@ -95,6 +92,14 @@ export default function Storage({ ws }) {
                     updateUUIDCallback={updateUUIDCallback}
                 />
             </div>
+        );
+    }
+
+    return (
+        <>
+            <h1>{_("Storage")}</h1>
+            <div dangerouslySetInnerHTML={{ __html: HELP_TEXT }} />
+            {componentContent}
         </>
     );
 }

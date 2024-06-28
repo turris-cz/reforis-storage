@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -22,10 +22,10 @@ export default function UUIDsActionButtons({
     buttonIsDisabled,
 }) {
     return (
-        <div className="row justify-content-end ml-0 mr-0">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
             <Button
                 data-testid="disable-external-storage-btn"
-                className="btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-2 mb-md-0"
+                className="btn-primary col-sm-12 col-md-4 col-lg-2 mr-md-2 mb-0 mb-md-0"
                 disabled={buttonIsDisabled}
                 onClick={onUnselectSrv}
             >

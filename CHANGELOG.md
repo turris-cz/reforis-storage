@@ -8,6 +8,22 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-06-28
+
+### Added
+
+-   Added .ruff_cache folder to .gitignore
+
+### Changed
+
+-   Refactored displaying of Storage component
+-   Updated dependencies in package.json
+-   Updated Foris JS library to v6.0.2
+
+### Removed
+
+-   Removed redundant .gitkeep file
+
 ## [1.0.0] - 2024-03-07
 
 ### Added
@@ -47,7 +63,6 @@ and this project adheres to
 -   Update Foris JS library to v5.1.8
 -   NPM audit fix
 
-
 ## [0.2.0] - 2020-12-07
 
 -   Add fluid layout support (redesign)
@@ -60,7 +75,8 @@ and this project adheres to
 -   Use Foris JS v5.1.7
 -   Integrate ESLint + Prettier + reForis styleguide
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.0.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.1.0...master
+[1.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.0.0...v1.1.0
 [1.0.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v0.2.2...v1.0.0
 [0.2.2]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v0.2.1...v0.2.2
 [0.2.1]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v0.2.0...v0.2.1
