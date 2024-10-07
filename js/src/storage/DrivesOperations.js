@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2019-2024 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,6 +7,7 @@
 
 import React from "react";
 
+import { formFieldsSize } from "foris";
 import PropTypes from "prop-types";
 
 import Drives from "./Drives/Drives";
@@ -43,28 +44,21 @@ databases and LXC virtual machines will be unavailable.`
 );
 
 export default function DrivesOperations(props) {
-    const { updateUUIDCallback, drives, storageIsPending } = props;
+    const { updateUUIDCallback, storageIsPending } = props;
 
     if (storageIsPending) return null;
 
-    if (drives.length === 0) {
-        return (
-            <p className="text-center text-muted">
-                {_(
-                    "No drives connected. Please connect a drive and refresh the page."
-                )}
-            </p>
-        );
-    }
-
     return (
         <>
-            <h2>{_("Prepare Drives")}</h2>
-            <Drives {...props} />
-
-            <h2>{_("Drive Selection")}</h2>
-            <p>{INTRO_DESCRIPTION}</p>
-            <UUIDs updateUUIDCallback={updateUUIDCallback} {...props} />
+            <div className={formFieldsSize}>
+                <h2>{_("Prepare Drives")}</h2>
+                <Drives {...props} />
+            </div>
+            <div className={formFieldsSize}>
+                <h2>{_("Drive Selection")}</h2>
+                <p>{INTRO_DESCRIPTION}</p>
+                <UUIDs updateUUIDCallback={updateUUIDCallback} {...props} />
+            </div>
         </>
     );
 }
