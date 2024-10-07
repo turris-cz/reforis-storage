@@ -42,94 +42,89 @@ without losing any data.
       Current State
     </h2>
     <div
-      class="mb-3"
+      class="row no-gutters justify-content-center"
     >
       <div
-        class="row no-gutters justify-content-center"
+        class="col-md-6 d-flex flex-column align-items-center justify-content-center"
+      >
+        <i
+          class="fa"
+        />
+        <h5>
+          /dev/sdb
+        </h5>
+      </div>
+      <div
+        class="col-md-6"
       >
         <div
-          class="col-md-6 d-flex flex-column align-items-center justify-content-center"
-        >
-          <i
-            class="fas fa-hdd fa-4x mb-1"
-          />
-          <h5>
-            /dev/sdb
-          </h5>
-        </div>
-        <div
-          class="col-md-6"
+          class="card-body"
         >
           <div
-            class="card-body"
+            class="table-responsive"
           >
-            <div
-              class="table-responsive"
+            <table
+              class="table table-borderless table-hover"
             >
-              <table
-                class="table table-borderless table-hover"
-              >
-                <tbody>
-                  <tr>
-                    <th
-                      scope="row"
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    State
+                  </th>
+                  <td>
+                    <div
+                      class="d-flex flex-row"
                     >
-                      State
-                    </th>
-                    <td>
                       <div
-                        class="d-flex flex-row"
+                        class="spinner-border spinner-border-sm text-primary"
+                        role="status"
                       >
-                        <div
-                          class="spinner-border spinner-border-sm"
-                          role="status"
-                        >
-                          <span
-                            class="sr-only"
-                          />
-                        </div>
-                        <div
-                          class="spinner-text"
-                        >
-                           
-                          Formatting
-                        </div>
+                        <span
+                          class="sr-only"
+                        />
                       </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                    >
-                      Device
-                    </th>
-                    <td>
-                      /dev/sdb
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                    >
-                      UUID
-                    </th>
-                    <td>
-                      1234-1234-1234-1234-1234
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                    >
-                      RAID
-                    </th>
-                    <td>
-                      single
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      <div
+                        class="spinner-text"
+                      >
+                        Formatting
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Device
+                  </th>
+                  <td>
+                    /dev/sdb
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    UUID
+                  </th>
+                  <td>
+                    1234-1234-1234-1234-1234
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    RAID
+                  </th>
+                  <td>
+                    single
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -180,7 +175,8 @@ without losing any data.
       Current State
     </h2>
     <div
-      class="alert alert-success"
+      class="alert alert-success alert-fade-in"
+      role="alert"
     >
       
 Device currently in use is
@@ -191,71 +187,71 @@ Device currently in use is
        (UUID: 1234-1234-1234-1234-1234).
     </div>
     <div
-      class="mb-3"
+      class="row no-gutters justify-content-center"
     >
       <div
-        class="row no-gutters justify-content-center"
+        class="col-md-6 d-flex flex-column align-items-center justify-content-center"
+      >
+        <i
+          class="fa"
+        />
+        <h5>
+          /dev/sdb
+        </h5>
+      </div>
+      <div
+        class="col-md-6"
       >
         <div
-          class="col-md-6 d-flex flex-column align-items-center justify-content-center"
-        >
-          <i
-            class="fas fa-hdd fa-4x mb-1"
-          />
-          <h5>
-            /dev/sdb
-          </h5>
-        </div>
-        <div
-          class="col-md-6"
+          class="card-body"
         >
           <div
-            class="card-body"
+            class="table-responsive"
           >
-            <div
-              class="table-responsive"
+            <table
+              class="table table-borderless table-hover"
             >
-              <table
-                class="table table-borderless table-hover"
-              >
-                <tbody>
-                  <tr>
-                    <th
-                      scope="row"
-                    >
-                      Device
-                    </th>
-                    <td>
-                      /dev/sdb
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                    >
-                      UUID
-                    </th>
-                    <td>
-                      1234-1234-1234-1234-1234
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                    >
-                      RAID
-                    </th>
-                    <td>
-                      single
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    Device
+                  </th>
+                  <td>
+                    /dev/sdb
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    UUID
+                  </th>
+                  <td>
+                    1234-1234-1234-1234-1234
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                  >
+                    RAID
+                  </th>
+                  <td>
+                    single
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
     <h2>
       Prepare Drives
     </h2>
@@ -333,9 +329,7 @@ we don't support and want to just add/remove some disks.
         </thead>
         <tbody>
           <tr>
-            <td
-              class=""
-            >
+            <td>
               <div
                 class="mb-0 form-check"
               >
@@ -361,11 +355,9 @@ we don't support and want to just add/remove some disks.
             </td>
           </tr>
           <tr>
-            <td
-              class="text-center"
-            >
+            <td>
               <div
-                class="mb-0 form-check"
+                class="mb-0 ms-4 form-check"
               >
                 <input
                   class="form-check-input"
@@ -391,9 +383,7 @@ we don't support and want to just add/remove some disks.
             </td>
           </tr>
           <tr>
-            <td
-              class=""
-            >
+            <td>
               <div
                 class="mb-0 form-check"
               >
@@ -421,11 +411,9 @@ we don't support and want to just add/remove some disks.
             </td>
           </tr>
           <tr>
-            <td
-              class="text-center"
-            >
+            <td>
               <div
-                class="mb-0 form-check"
+                class="mb-0 ms-4 form-check"
               >
                 <input
                   class="form-check-input"
@@ -467,6 +455,10 @@ we don't support and want to just add/remove some disks.
         </span>
       </button>
     </div>
+  </div>
+  <div
+    class="card p-4 col-sm-12 col-lg-12 p-0 mb-4"
+  >
     <h2>
       Drive Selection
     </h2>

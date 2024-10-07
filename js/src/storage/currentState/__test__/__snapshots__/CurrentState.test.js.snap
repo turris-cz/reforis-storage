@@ -6,7 +6,8 @@ exports[`<CurrentState /> Should render. 1`] = `
     Current State
   </h2>
   <div
-    class="alert alert-success"
+    class="alert alert-success alert-fade-in"
+    role="alert"
   >
     
 Device currently in use is
@@ -17,67 +18,63 @@ Device currently in use is
      (UUID: 1234-1234-1234-1234-1234).
   </div>
   <div
-    class="mb-3"
+    class="row no-gutters justify-content-center"
   >
     <div
-      class="row no-gutters justify-content-center"
+      class="col-md-6 d-flex flex-column align-items-center justify-content-center"
+    >
+      <i
+        class="fa"
+      />
+      <h5>
+        /dev/sdb
+      </h5>
+    </div>
+    <div
+      class="col-md-6"
     >
       <div
-        class="col-md-6 d-flex flex-column align-items-center justify-content-center"
-      >
-        <i
-          class="fas fa-hdd fa-4x mb-1"
-        />
-        <h5>
-          /dev/sdb
-        </h5>
-      </div>
-      <div
-        class="col-md-6"
+        class="card-body"
       >
         <div
-          class="card-body"
+          class="table-responsive"
         >
-          <div
-            class="table-responsive"
+          <table
+            class="table table-borderless table-hover"
           >
-            <table
-              class="table table-borderless table-hover"
-            >
-              <tbody>
-                <tr>
-                  <th
-                    scope="row"
-                  >
-                    Device
-                  </th>
-                  <td>
-                    /dev/sdb
-                  </td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                  >
-                    UUID
-                  </th>
-                  <td>
-                    1234-1234-1234-1234-1234
-                  </td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                  >
-                    RAID
-                  </th>
-                  <td>
-                    single
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <tbody>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  Device
+                </th>
+                <td>
+                  /dev/sdb
+                </td>
+              </tr>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  UUID
+                </th>
+                <td>
+                  1234-1234-1234-1234-1234
+                </td>
+              </tr>
+              <tr>
+                <th
+                  scope="row"
+                >
+                  RAID
+                </th>
+                <td>
+                  single
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
