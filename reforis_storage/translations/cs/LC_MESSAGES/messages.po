@@ -8,23 +8,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-07 15:20+0100\n"
-"PO-Revision-Date: 2021-04-29 12:31+0000\n"
+"POT-Creation-Date: 2024-10-08 12:19+0200\n"
+"PO-Revision-Date: 2024-06-25 10:09+0000\n"
 "Last-Translator: Lukas Jelinek <lukas.jelinek@nic.cz>\n"
 "Language: cs\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
 "storage-plugin/cs/>\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: js/src/app.js:12 js/src/storage/Storage.js:83
+#: js/src/app.js:12 js/src/storage/Storage.js:106
 msgid "Storage"
 msgstr "Uložiště"
 
-#: js/src/storage/DrivesOperations.js:33
+#: js/src/storage/DrivesOperations.js:34
 msgid ""
 "Here you can select which one of the already prepared drives should be\n"
 "used as external storage. If you already have a device that you used\n"
@@ -46,15 +46,11 @@ msgstr ""
 "znamená, že služby jako MySQL skončí s prázdnými databázemi\n"
 "a virtuální stroje LXC nebudou dostupné."
 
-#: js/src/storage/DrivesOperations.js:53
-msgid "No drives connected. Please connect a drive and refresh the page."
-msgstr "Nejsou připojeny žádné disky. Připojte prosím nějaký a obnovte stránku."
-
-#: js/src/storage/DrivesOperations.js:62
+#: js/src/storage/DrivesOperations.js:54
 msgid "Prepare Drives"
 msgstr "Připravit disky"
 
-#: js/src/storage/DrivesOperations.js:65
+#: js/src/storage/DrivesOperations.js:58
 msgid "Drive Selection"
 msgstr "Výběr disku"
 
@@ -159,11 +155,11 @@ msgstr ""
 "Opravdu chcete pokračovat?\n"
 "                    "
 
-#: js/src/storage/Drives/ConfirmationModal.js:45
+#: js/src/storage/Drives/ConfirmationModal.js:49
 msgid "Cancel"
-msgstr "Storno"
+msgstr "Zrušit"
 
-#: js/src/storage/Drives/ConfirmationModal.js:47
+#: js/src/storage/Drives/ConfirmationModal.js:52
 msgid "Continue"
 msgstr "Pokračovat"
 
@@ -171,12 +167,12 @@ msgstr "Pokračovat"
 msgid "Device preparation failed."
 msgstr "Příprava zařízení selhala."
 
-#: js/src/storage/Drives/Drives.js:93
+#: js/src/storage/Drives/Drives.js:94
 msgid "Format & Set"
 msgstr "Zformátovat a nastavit"
 
 #: js/src/storage/Drives/DrivesTable.js:41
-#: js/src/storage/currentState/CurrentStateTable.js:67
+#: js/src/storage/currentState/CurrentStateTable.js:66
 msgid "Device"
 msgstr "Zařízení"
 
@@ -190,7 +186,7 @@ msgstr "Souborový systém"
 
 #: js/src/storage/Drives/DrivesTable.js:44
 #: js/src/storage/UUIDs/UUIDsTable.js:33
-#: js/src/storage/currentState/CurrentStateTable.js:72
+#: js/src/storage/currentState/CurrentStateTable.js:71
 msgid "UUID"
 msgstr "UUID"
 
@@ -245,7 +241,7 @@ msgstr ""
 "místa oproti celkovému prostoru na discích.\n"
 
 #: js/src/storage/Drives/RAID.js:60
-#: js/src/storage/currentState/CurrentStateTable.js:76
+#: js/src/storage/currentState/CurrentStateTable.js:75
 msgid "RAID"
 msgstr "RAID"
 
@@ -285,33 +281,27 @@ msgstr ""
 "Vaše nastavení je aktuálně chybné a pravděpodobně ztrácíte data, nastavte"
 " nové úložné zařízení, jak nejdříve je to možné!"
 
-#: js/src/storage/currentState/CurrentState.js:49
+#: js/src/storage/currentState/CurrentState.js:51
 msgid "Current State"
 msgstr "Aktuální stav"
 
-#: js/src/storage/currentState/CurrentStateTable.js:46
+#: js/src/storage/currentState/CurrentState.js:54
+msgid "No drives connected. Please connect a drive and refresh the page."
+msgstr "Nejsou připojeny žádné disky. Připojte prosím nějaký a obnovte stránku."
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
 msgstr "Stav"
 
-#: js/src/storage/currentState/CurrentStateTable.js:73
+#: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "N/A"
 msgstr "N/A"
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:12
+#: js/src/storage/currentState/PendingMigrationAlert.js:20
 msgid ""
-"\n"
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
-"data to the newly selected drive. Please\n"
-"restart your router <b>as soon as possible</b> but bear in mind that the "
-"next reboot will take longer as all data need\n"
-"to be migrated.\n"
+"data to the newly selected drive."
 msgstr ""
-"\n"
-"Váš router <b>čeká na restart</b>, aby mohl přesunout vaše data na nově "
-"vybraný disk. Restartujte prosím router\n"
-" <b>co nejdříve je to možné</b>, mějte však na paměti, že příští restart "
-"bude trvat déle, protože je potřeba\n"
-"přesunout všechna data.\n"
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
@@ -374,4 +364,27 @@ msgstr "Nastavení UUID selhalo."
 
 #~ msgid "Set UUID"
 #~ msgstr "Nastavit UUID"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your router is <b>waiting for "
+#~ "restart</b> to proceed with migrating "
+#~ "your data to the newly selected "
+#~ "drive. Please\n"
+#~ "restart your router <b>as soon as "
+#~ "possible</b> but bear in mind that "
+#~ "the next reboot will take longer "
+#~ "as all data need\n"
+#~ "to be migrated.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Váš router <b>čeká na restart</b>, aby"
+#~ " mohl přesunout vaše data na nově "
+#~ "vybraný disk. Restartujte prosím router\n"
+#~ ""
+#~ " <b>co nejdříve je to možné</b>, "
+#~ "mějte však na paměti, že příští "
+#~ "restart bude trvat déle, protože je "
+#~ "potřeba\n"
+#~ "přesunout všechna data.\n"
 

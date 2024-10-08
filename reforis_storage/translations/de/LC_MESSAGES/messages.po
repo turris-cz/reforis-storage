@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-07 15:20+0100\n"
+"POT-Creation-Date: 2024-10-08 12:19+0200\n"
 "PO-Revision-Date: 2024-01-04 21:07+0000\n"
 "Last-Translator: Erik Pfannenstein <debianignatz@gmx.de>\n"
 "Language: de\n"
@@ -18,13 +18,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: js/src/app.js:12 js/src/storage/Storage.js:83
+#: js/src/app.js:12 js/src/storage/Storage.js:106
 msgid "Storage"
 msgstr "Speicher"
 
-#: js/src/storage/DrivesOperations.js:33
+#: js/src/storage/DrivesOperations.js:34
 msgid ""
 "Here you can select which one of the already prepared drives should be\n"
 "used as external storage. If you already have a device that you used\n"
@@ -49,17 +49,11 @@ msgstr ""
 "Das bedeutet, dass Dienste wie MySQL mit leeren Datenbanken \n"
 "dastehen und virtuelle LXC-Maschinen nicht verfügbar sein werden."
 
-#: js/src/storage/DrivesOperations.js:53
-msgid "No drives connected. Please connect a drive and refresh the page."
-msgstr ""
-"Kein Laufwerk erkannt. Bitte schließen Sie ein Laufwerk an und laden Sie "
-"die Seite neu."
-
-#: js/src/storage/DrivesOperations.js:62
+#: js/src/storage/DrivesOperations.js:54
 msgid "Prepare Drives"
 msgstr "Laufwerk vorbereiten"
 
-#: js/src/storage/DrivesOperations.js:65
+#: js/src/storage/DrivesOperations.js:58
 msgid "Drive Selection"
 msgstr "Laufwerksauswahl"
 
@@ -163,11 +157,11 @@ msgstr ""
 "Möchten Sie weitermachen?\n"
 "                    "
 
-#: js/src/storage/Drives/ConfirmationModal.js:45
+#: js/src/storage/Drives/ConfirmationModal.js:49
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: js/src/storage/Drives/ConfirmationModal.js:47
+#: js/src/storage/Drives/ConfirmationModal.js:52
 msgid "Continue"
 msgstr "Weiter"
 
@@ -175,12 +169,12 @@ msgstr "Weiter"
 msgid "Device preparation failed."
 msgstr "Gerätevorbereitung fehlgeschlagen."
 
-#: js/src/storage/Drives/Drives.js:93
+#: js/src/storage/Drives/Drives.js:94
 msgid "Format & Set"
 msgstr "Formatieren & Festlegen"
 
 #: js/src/storage/Drives/DrivesTable.js:41
-#: js/src/storage/currentState/CurrentStateTable.js:67
+#: js/src/storage/currentState/CurrentStateTable.js:66
 msgid "Device"
 msgstr "Gerät"
 
@@ -194,7 +188,7 @@ msgstr "Dateisystem"
 
 #: js/src/storage/Drives/DrivesTable.js:44
 #: js/src/storage/UUIDs/UUIDsTable.js:33
-#: js/src/storage/currentState/CurrentStateTable.js:72
+#: js/src/storage/currentState/CurrentStateTable.js:71
 msgid "UUID"
 msgstr "UUID"
 
@@ -250,7 +244,7 @@ msgstr ""
 "halb so viel Speicherplatz wie bei JBOD.\n"
 
 #: js/src/storage/Drives/RAID.js:60
-#: js/src/storage/currentState/CurrentStateTable.js:76
+#: js/src/storage/currentState/CurrentStateTable.js:75
 msgid "RAID"
 msgstr "RAID"
 
@@ -290,33 +284,29 @@ msgstr ""
 "Ihr Aufbau ist zur Zeit defekt und Sie verlieren möglicherweise Daten, "
 "richten Sie schnellstmöglich ein Speichergerät ein!"
 
-#: js/src/storage/currentState/CurrentState.js:49
+#: js/src/storage/currentState/CurrentState.js:51
 msgid "Current State"
 msgstr "Derzeitiger Status"
 
-#: js/src/storage/currentState/CurrentStateTable.js:46
+#: js/src/storage/currentState/CurrentState.js:54
+msgid "No drives connected. Please connect a drive and refresh the page."
+msgstr ""
+"Kein Laufwerk erkannt. Bitte schließen Sie ein Laufwerk an und laden Sie "
+"die Seite neu."
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
 msgstr "Zustand"
 
-#: js/src/storage/currentState/CurrentStateTable.js:73
+#: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "N/A"
 msgstr "n. v."
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:12
+#: js/src/storage/currentState/PendingMigrationAlert.js:20
 msgid ""
-"\n"
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
-"data to the newly selected drive. Please\n"
-"restart your router <b>as soon as possible</b> but bear in mind that the "
-"next reboot will take longer as all data need\n"
-"to be migrated.\n"
+"data to the newly selected drive."
 msgstr ""
-"\n"
-"Ihr Router <b>wartet auf einen Neustart,</b> um dann mit der Migration "
-"Ihrer Daten auf das neue Laufwerk \n"
-"anzufangen. Bitte lösen Sie den Neustart <b>so bald wie möglich</b> aus, "
-"aber bedenken Sie, dass er länger \n"
-"dauern wird als üblich, weil die gesamten Daten migriert werden müssen.\n"
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
@@ -376,4 +366,27 @@ msgstr "Festlegen der UUID fehlgeschlagen."
 
 #~ msgid "Set UUID"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "Your router is <b>waiting for "
+#~ "restart</b> to proceed with migrating "
+#~ "your data to the newly selected "
+#~ "drive. Please\n"
+#~ "restart your router <b>as soon as "
+#~ "possible</b> but bear in mind that "
+#~ "the next reboot will take longer "
+#~ "as all data need\n"
+#~ "to be migrated.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Ihr Router <b>wartet auf einen "
+#~ "Neustart,</b> um dann mit der Migration"
+#~ " Ihrer Daten auf das neue Laufwerk"
+#~ " \n"
+#~ "anzufangen. Bitte lösen Sie den Neustart"
+#~ " <b>so bald wie möglich</b> aus, aber"
+#~ " bedenken Sie, dass er länger \n"
+#~ "dauern wird als üblich, weil die "
+#~ "gesamten Daten migriert werden müssen.\n"
 
