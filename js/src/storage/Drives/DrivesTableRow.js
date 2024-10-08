@@ -44,7 +44,7 @@ export default function DriveTableRow({
     }
     return (
         <tr>
-            <td className={drive.dev.length > 3 ? "text-center" : "".trim()}>
+            <td>
                 <CheckBox
                     checked={isActiveAndSelected || isSelected}
                     label={drive.dev}
@@ -54,7 +54,7 @@ export default function DriveTableRow({
                             : select()
                     }
                     disabled={disabled}
-                    className="mb-0"
+                    className={`mb-0 ${drive.dev.length > 3 ? "ms-4" : ""}`.trim()}
                 />
             </td>
             <td>{drive.description}</td>

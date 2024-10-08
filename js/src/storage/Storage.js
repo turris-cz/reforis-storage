@@ -77,21 +77,27 @@ export default function Storage({ ws }) {
             Object.keys(PENDING_STORAGE_STATES).includes(
                 storageState.data.state
             ) || storageState.data.blocking;
+        const noDrives = getDrivesResponse.data.drives.length === 0;
 
         componentContent = (
-            <div className={`${formFieldsSize}`}>
-                <CurrentState
-                    storageIsPending={storageIsPending}
-                    {...storageState.data}
-                    disk_mounted={getSettingsResponse.data.disk_mounted}
-                />
-                <DrivesOperations
-                    drives={getDrivesResponse.data.drives}
-                    currentUUID={storageState.data.uuid}
-                    storageIsPending={storageIsPending}
-                    updateUUIDCallback={updateUUIDCallback}
-                />
-            </div>
+            <>
+                <div className={`${formFieldsSize}`}>
+                    <CurrentState
+                        noDrives={noDrives}
+                        storageIsPending={storageIsPending}
+                        {...storageState.data}
+                        disk_mounted={getSettingsResponse.data.disk_mounted}
+                    />
+                </div>
+                {!noDrives && (
+                    <DrivesOperations
+                        drives={getDrivesResponse.data.drives}
+                        currentUUID={storageState.data.uuid}
+                        storageIsPending={storageIsPending}
+                        updateUUIDCallback={updateUUIDCallback}
+                    />
+                )}
+            </>
         );
     }
 

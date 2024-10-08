@@ -5,12 +5,12 @@ exports[`<Drives /> Should render modal on Format&Set click. 1`] = `
 - First value
 + Second value
 
-@@ -1,11 +1,11 @@
-  <DocumentFragment>
-    <div
+@@ -3,11 +3,11 @@
       id=\\"modal-container\\"
     >
       <div
+        aria-labelledby=\\"modal-title\\"
+        aria-modal=\\"true\\"
 -       class=\\"modal fade\\"
 +       class=\\"modal fade show\\"
         role=\\"dialog\\"
@@ -99,9 +99,7 @@ we don't support and want to just add/remove some disks.
       </thead>
       <tbody>
         <tr>
-          <td
-            class=""
-          >
+          <td>
             <div
               class="mb-0 form-check"
             >
@@ -127,11 +125,9 @@ we don't support and want to just add/remove some disks.
           </td>
         </tr>
         <tr>
-          <td
-            class="text-center"
-          >
+          <td>
             <div
-              class="mb-0 form-check"
+              class="mb-0 ms-4 form-check"
             >
               <input
                 class="form-check-input"
@@ -157,9 +153,7 @@ we don't support and want to just add/remove some disks.
           </td>
         </tr>
         <tr>
-          <td
-            class=""
-          >
+          <td>
             <div
               class="mb-0 form-check"
             >
@@ -187,11 +181,9 @@ we don't support and want to just add/remove some disks.
           </td>
         </tr>
         <tr>
-          <td
-            class="text-center"
-          >
+          <td>
             <div
-              class="mb-0 form-check"
+              class="mb-0 ms-4 form-check"
             >
               <input
                 class="form-check-input"

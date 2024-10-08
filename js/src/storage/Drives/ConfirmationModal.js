@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2024 CZ.NIC z.s.p.o. (http://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -42,8 +42,13 @@ Are you sure you want to continue?
                 </p>
             </ModalBody>
             <ModalFooter>
-                <Button onClick={() => setShown(false)}>{_("Cancel")}</Button>
-                <Button className="btn-danger" onClick={onConfirm}>
+                <Button
+                    className="btn-secondary"
+                    onClick={() => setShown(false)}
+                >
+                    {_("Cancel")}
+                </Button>
+                <Button className="btn-primary" onClick={onConfirm}>
                     {_("Continue")}
                 </Button>
             </ModalFooter>

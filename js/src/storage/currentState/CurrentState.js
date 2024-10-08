@@ -15,6 +15,7 @@ import CurrentStateTable from "./CurrentStateTable";
 import PendingMigrationAlert from "./PendingMigrationAlert";
 
 CurrentState.propTypes = {
+    noDrives: PropTypes.bool.isRequired,
     state: PropTypes.string.isRequired,
     raid: PropTypes.string.isRequired,
     uuid: PropTypes.string.isRequired,
@@ -31,6 +32,7 @@ CurrentState.defaultProps = {
 };
 
 export default function CurrentState({
+    noDrives,
     state,
     raid,
     uuid,
@@ -47,6 +49,13 @@ export default function CurrentState({
     return (
         <>
             <h2>{_("Current State")}</h2>
+            {noDrives && (
+                <p className="text-center text-muted">
+                    {_(
+                        "No drives connected. Please connect a drive and refresh the page."
+                    )}
+                </p>
+            )}
             {disk_mounted &&
                 !is_broken &&
                 !storageIsPending &&
@@ -54,7 +63,7 @@ export default function CurrentState({
 
             {is_broken && <BrokenSetupAlert />}
 
-            {!is_broken && (
+            {!noDrives && !is_broken && (
                 <>
                     {using_external && !unsetUuid && !pendingMigration && (
                         <ActiveAlert uuid={uuid} device={current_device} />
