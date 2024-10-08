@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-07 15:20+0100\n"
+"POT-Creation-Date: 2024-10-08 12:19+0200\n"
 "PO-Revision-Date: 2021-04-29 12:31+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language: nb_NO\n"
@@ -19,13 +19,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: js/src/app.js:12 js/src/storage/Storage.js:83
+#: js/src/app.js:12 js/src/storage/Storage.js:106
 msgid "Storage"
 msgstr "Lagring"
 
-#: js/src/storage/DrivesOperations.js:33
+#: js/src/storage/DrivesOperations.js:34
 msgid ""
 "Here you can select which one of the already prepared drives should be\n"
 "used as external storage. If you already have a device that you used\n"
@@ -50,17 +50,12 @@ msgstr ""
 "som MySQL vil ende opp med tomme databaser, og virtuelle LXC-\n"
 "maskiner vil bli utilgjengelige."
 
-#: js/src/storage/DrivesOperations.js:53
-#, fuzzy
-msgid "No drives connected. Please connect a drive and refresh the page."
-msgstr "Ingen enheter tilkoblet. Koble til en enhet og gjenoppfrisk siden."
-
-#: js/src/storage/DrivesOperations.js:62
+#: js/src/storage/DrivesOperations.js:54
 #, fuzzy
 msgid "Prepare Drives"
 msgstr "Forbered lagringsenheter"
 
-#: js/src/storage/DrivesOperations.js:65
+#: js/src/storage/DrivesOperations.js:58
 msgid "Drive Selection"
 msgstr "Stasjonsvalg"
 
@@ -163,11 +158,11 @@ msgstr ""
 "Er du sikker på at du vil fortsette?\n"
 "                    "
 
-#: js/src/storage/Drives/ConfirmationModal.js:45
+#: js/src/storage/Drives/ConfirmationModal.js:49
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: js/src/storage/Drives/ConfirmationModal.js:47
+#: js/src/storage/Drives/ConfirmationModal.js:52
 msgid "Continue"
 msgstr "Fortsett"
 
@@ -175,13 +170,13 @@ msgstr "Fortsett"
 msgid "Device preparation failed."
 msgstr "Enhetsforberedelse mislyktes"
 
-#: js/src/storage/Drives/Drives.js:93
+#: js/src/storage/Drives/Drives.js:94
 #, fuzzy
 msgid "Format & Set"
 msgstr "Formater og sett"
 
 #: js/src/storage/Drives/DrivesTable.js:41
-#: js/src/storage/currentState/CurrentStateTable.js:67
+#: js/src/storage/currentState/CurrentStateTable.js:66
 msgid "Device"
 msgstr "Enhet"
 
@@ -195,7 +190,7 @@ msgstr "Filsystem"
 
 #: js/src/storage/Drives/DrivesTable.js:44
 #: js/src/storage/UUIDs/UUIDsTable.js:33
-#: js/src/storage/currentState/CurrentStateTable.js:72
+#: js/src/storage/currentState/CurrentStateTable.js:71
 msgid "UUID"
 msgstr "UUID"
 
@@ -251,7 +246,7 @@ msgstr ""
 "JBOD.\n"
 
 #: js/src/storage/Drives/RAID.js:60
-#: js/src/storage/currentState/CurrentStateTable.js:76
+#: js/src/storage/currentState/CurrentStateTable.js:75
 msgid "RAID"
 msgstr "RAID"
 
@@ -294,34 +289,29 @@ msgstr ""
 "Oppsettet ditt er skadet og du mister antagelig data. Sett en ny "
 "lagringsenhet så snart du kan!"
 
-#: js/src/storage/currentState/CurrentState.js:49
+#: js/src/storage/currentState/CurrentState.js:51
 #, fuzzy
 msgid "Current State"
 msgstr "Nåværende tilstand"
 
-#: js/src/storage/currentState/CurrentStateTable.js:46
+#: js/src/storage/currentState/CurrentState.js:54
+#, fuzzy
+msgid "No drives connected. Please connect a drive and refresh the page."
+msgstr "Ingen enheter tilkoblet. Koble til en enhet og gjenoppfrisk siden."
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
 msgstr "Tilstand"
 
-#: js/src/storage/currentState/CurrentStateTable.js:73
+#: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "N/A"
 msgstr "I/T"
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:12
+#: js/src/storage/currentState/PendingMigrationAlert.js:20
 msgid ""
-"\n"
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
-"data to the newly selected drive. Please\n"
-"restart your router <b>as soon as possible</b> but bear in mind that the "
-"next reboot will take longer as all data need\n"
-"to be migrated.\n"
+"data to the newly selected drive."
 msgstr ""
-"\n"
-"Din ruter venter på å bli <b>startet på nytt</b> for å fortsette "
-"migreringen av dataen din til den nylig valgte disken.\n"
-"Start ruteren på nytt <b>så snart som mulig</b>, men ha i minnet at neste"
-" omstart vil ta lengre tid siden all dataen\n"
-"må migreres.\n"
 
 #: reforis_storage/__init__.py:56
 #, fuzzy
@@ -386,4 +376,27 @@ msgstr "Kunne ikke sette UUID."
 
 #~ msgid "Set UUID"
 #~ msgstr "Sett UUID"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your router is <b>waiting for "
+#~ "restart</b> to proceed with migrating "
+#~ "your data to the newly selected "
+#~ "drive. Please\n"
+#~ "restart your router <b>as soon as "
+#~ "possible</b> but bear in mind that "
+#~ "the next reboot will take longer "
+#~ "as all data need\n"
+#~ "to be migrated.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Din ruter venter på å bli "
+#~ "<b>startet på nytt</b> for å fortsette"
+#~ " migreringen av dataen din til den"
+#~ " nylig valgte disken.\n"
+#~ "Start ruteren på nytt <b>så snart "
+#~ "som mulig</b>, men ha i minnet at"
+#~ " neste omstart vil ta lengre tid "
+#~ "siden all dataen\n"
+#~ "må migreres.\n"
 
