@@ -8,6 +8,21 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-10-08
+
+### Added
+
+-   Added & updated Weblate translations
+
+### Changed
+
+-   Updated Foris JS library to v6.4.0
+-   Migrated to FontAwesome v6
+-   Refactored to separate visually CurrentState and DrivesOperations sections
+-   Refactored PendingMigrationAlert component to separate text content and improve layout
+-   Refactored DriveTableRow component to improve checkbox alignment
+-   Refactored ConfirmationModal component to improve button styling
+
 ## [1.1.0] - 2024-06-28
 
 ### Added
@@ -75,7 +90,8 @@ and this project adheres to
 -   Use Foris JS v5.1.7
 -   Integrate ESLint + Prettier + reForis styleguide
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.1.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.2.0...master
+[1.2.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.1.0...v1.2.0
 [1.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.0.0...v1.1.0
 [1.0.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v0.2.2...v1.0.0
 [0.2.2]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v0.2.1...v0.2.2
