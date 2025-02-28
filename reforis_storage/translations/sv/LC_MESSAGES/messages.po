@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-10-08 12:19+0200\n"
-"PO-Revision-Date: 2023-09-22 20:59+0000\n"
-"Last-Translator: Kristoffer Grundström "
-"<swedishsailfishosuser@tutanota.com>\n"
+"PO-Revision-Date: 2025-03-01 03:02+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/sv/>\n"
 "Language: sv\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/turris"
-"/reforis-storage-plugin/sv/>\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 "Generated-By: Babel 2.16.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:106
@@ -135,7 +135,7 @@ msgstr "Enhet"
 
 #: js/src/storage/Drives/DrivesTable.js:42
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #: js/src/storage/Drives/DrivesTable.js:43
 msgid "Filesystem"
@@ -231,7 +231,7 @@ msgstr ""
 
 #: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
-msgstr ""
+msgstr "Tillstånd"
 
 #: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "N/A"
@@ -314,4 +314,3 @@ msgstr ""
 #~ "as all data need\n"
 #~ "to be migrated.\n"
 #~ msgstr ""
-
