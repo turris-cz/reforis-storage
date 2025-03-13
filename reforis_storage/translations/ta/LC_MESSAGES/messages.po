@@ -1,0 +1,249 @@
+# Translations template for reForis Storage Plugin.
+# Copyright (C) 2024 CZ.NIC, z.s.p.o. (https://www.nic.cz/)
+# This file is distributed under the same license as the reForis Storage
+# Plugin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: reForis Storage Plugin 1.1.0\n"
+"Report-Msgid-Bugs-To: tech.support@turris.cz\n"
+"POT-Creation-Date: 2024-10-08 12:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: js/src/app.js:12 js/src/storage/Storage.js:106
+msgid "Storage"
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:34
+msgid ""
+"Here you can select which one of the already prepared drives should be\n"
+"used as external storage. If you already have a device that you used\n"
+"with the Turris router before, you can set it to be used as external\n"
+"storage here. Alternatively, if you are migrating your drive to another\n"
+"Turris device, you can disable external storage here. In such a case,\n"
+"all your data will remain on the external drive that you can connect\n"
+"elsewhere. Your /srv will use internal storage again but no data will\n"
+"be migrated. That means that services like MySQL will end up with empty\n"
+"databases and LXC virtual machines will be unavailable."
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:54
+msgid "Prepare Drives"
+msgstr ""
+
+#: js/src/storage/DrivesOperations.js:58
+msgid "Drive Selection"
+msgstr ""
+
+#: js/src/storage/Storage.js:29
+msgid ""
+"\n"
+"<p>Here you can set up where your persistent data should be stored.\n"
+"If you want to use Nextcloud, LXC or other IO-intensive applications,\n"
+"don't put them on internal flash, but always use external storage.\n"
+"Also, make sure that your data will fit on the new drive before "
+"switching.</p>\n"
+"<p>To set up external storage, you have to connect an external drive - "
+"like\n"
+"an USB flash drive - and format it to Btrfs filesystem. All you have to "
+"do is\n"
+"select the correct drive, the desired RAID level and click \"Format & "
+"Set\"\n"
+"button in \"Prepare storage\" section. This will format the drive and "
+"will\n"
+"ask you to reboot the router. During the reboot your /srv (directory\n"
+"where all IO-intensive applications should reside) will get moved to this"
+"\n"
+"new drive.</p>\n"
+"<p>If you already have a device that you used with the Turris router "
+"before,\n"
+"you can set it to be used as external storage in \"Drive selection\" "
+"section\n"
+"without losing any data.</p>\n"
+msgstr ""
+
+#: js/src/storage/constants.js:15
+msgid "Formatting"
+msgstr ""
+
+#: js/src/storage/constants.js:16
+msgid "Growing"
+msgstr ""
+
+#: js/src/storage/constants.js:17
+msgid "Shrinking"
+msgstr ""
+
+#: js/src/storage/constants.js:18
+msgid "Balancing"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:20
+msgid ""
+"\n"
+"You are adding the first drive, then you'll get notification and you will"
+" be asked to reboot. On the reboot data will be\n"
+"moved from old drive to the new one. This can take some time so your next"
+" reboot will take longer. \n"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:34
+msgid "Warning!"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:37
+msgid ""
+"\n"
+"Are you sure you want to proceed? Newly selected drive(s) will be "
+"formatted and you will loose all the data on it.\n"
+"${firstDriveMessage}\n"
+"Are you sure you want to continue?\n"
+"                    "
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:49
+msgid "Cancel"
+msgstr ""
+
+#: js/src/storage/Drives/ConfirmationModal.js:52
+msgid "Continue"
+msgstr ""
+
+#: js/src/storage/Drives/Drives.js:48 reforis_storage/__init__.py:77
+msgid "Device preparation failed."
+msgstr ""
+
+#: js/src/storage/Drives/Drives.js:94
+msgid "Format & Set"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:41
+#: js/src/storage/currentState/CurrentStateTable.js:66
+msgid "Device"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:42
+msgid "Description"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:43
+msgid "Filesystem"
+msgstr ""
+
+#: js/src/storage/Drives/DrivesTable.js:44
+#: js/src/storage/UUIDs/UUIDsTable.js:33
+#: js/src/storage/currentState/CurrentStateTable.js:71
+msgid "UUID"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:14
+msgid "Not specified"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:15
+msgid "JBOD"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:16
+msgid "RAID1"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:26
+msgid ""
+"\n"
+"Don't change the RAID level, keeps everything set the way it was. Useful "
+"if you have a really custom setup of your RAID\n"
+"we don't support and want to just add/remove some disks.\n"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:30
+msgid ""
+"\n"
+"No redundancy, if one drive fails, you loose your data. On the other "
+"hand, provides the most space - sum of the space\n"
+"available on all included drives.\n"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:34
+msgid ""
+"\n"
+"Everything is redundant and stored at two distinct drives. If you loose "
+"one drive, you can easily replace it without\n"
+"loosing any data. On the other hand, you have a half of the disk space "
+"you would have with JBOD.\n"
+msgstr ""
+
+#: js/src/storage/Drives/RAID.js:60
+#: js/src/storage/currentState/CurrentStateTable.js:75
+msgid "RAID"
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDs.js:47
+msgid "Drive selection failed."
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDs.js:66
+msgid "There are no prepared drives to be used."
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:32
+msgid "Disable external storage"
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDsActionButtons.js:40
+msgid "Use drive"
+msgstr ""
+
+#: js/src/storage/UUIDs/UUIDsTable.js:32
+msgid "Devices"
+msgstr ""
+
+#: js/src/storage/currentState/ActiveAlert.js:18
+msgid ""
+"\n"
+"Device currently in use is\n"
+msgstr ""
+
+#: js/src/storage/currentState/BrokenSetupAlert.js:16
+msgid ""
+"Your setup is currently broken and you are probably loosing data, set a "
+"new storage device as soon as you can!"
+msgstr ""
+
+#: js/src/storage/currentState/CurrentState.js:51
+msgid "Current State"
+msgstr ""
+
+#: js/src/storage/currentState/CurrentState.js:54
+msgid "No drives connected. Please connect a drive and refresh the page."
+msgstr ""
+
+#: js/src/storage/currentState/CurrentStateTable.js:47
+msgid "State"
+msgstr ""
+
+#: js/src/storage/currentState/CurrentStateTable.js:72
+msgid "N/A"
+msgstr ""
+
+#: js/src/storage/currentState/PendingMigrationAlert.js:20
+msgid ""
+"Your router is <b>waiting for restart</b> to proceed with migrating your "
+"data to the newly selected drive."
+msgstr ""
+
+#: reforis_storage/__init__.py:56
+msgid "Cannot change persistent log setting."
+msgstr ""
+
+#: reforis_storage/__init__.py:91
+msgid "UUID set failed."
+msgstr ""
