@@ -9,18 +9,21 @@ msgstr ""
 "Project-Id-Version: reForis Storage Plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: tech.support@turris.cz\n"
 "POT-Creation-Date: 2024-10-08 12:19+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-13 21:38+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 "Generated-By: Babel 2.16.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:106
 msgid "Storage"
-msgstr ""
+msgstr "சேமிப்பு"
 
 #: js/src/storage/DrivesOperations.js:34
 msgid ""
@@ -34,14 +37,25 @@ msgid ""
 "be migrated. That means that services like MySQL will end up with empty\n"
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
+"ஏற்கனவே தயாரிக்கப்பட்ட இயக்கிகளில் எது இருக்க வேண்டும் என்பதை இங்கே நீங்கள் தேர்ந்தெடுக்கலாம்\n"
+" வெளிப்புற சேமிப்பகமாக பயன்படுத்தப்படுகிறது. நீங்கள் ஏற்கனவே பயன்படுத்திய சாதனம் இருந்தால்"
+"\n"
+" இதற்கு முன்பு டர்ரிச் திசைவி மூலம், நீங்கள் அதை வெளிப்புறமாகப் பயன்படுத்தலாம்\n"
+" இங்கே சேமிப்பு. மாற்றாக, நீங்கள் உங்கள் இயக்ககத்தை இன்னொருவருக்கு மாற்றினால்\n"
+" டர்ரிச் சாதனம், நீங்கள் இங்கே வெளிப்புற சேமிப்பிடத்தை முடக்கலாம். அத்தகைய சந்தர்ப்பத்தில்,\n"
+" உங்கள் எல்லா தரவும் நீங்கள் இணைக்கக்கூடிய வெளிப்புற இயக்ககத்தில் இருக்கும்\n"
+" வேறு இடங்களில். உங்கள் /எச்.ஆர்.வி மீண்டும் உள் சேமிப்பிடத்தைப் பயன்படுத்தும், ஆனால் தரவு "
+"எதுவும் இருக்காது\n"
+" இடம்பெயர வேண்டும். அதாவது MySQL போன்ற சேவைகள் காலியாக முடிவடையும்\n"
+" தரவுத்தளங்கள் மற்றும் எல்.எக்ச்.சி மெய்நிகர் இயந்திரங்கள் கிடைக்காது."
 
 #: js/src/storage/DrivesOperations.js:54
 msgid "Prepare Drives"
-msgstr ""
+msgstr "டிரைவ்களைத் தயாரிக்கவும்"
 
 #: js/src/storage/DrivesOperations.js:58
 msgid "Drive Selection"
-msgstr ""
+msgstr "இயக்கி தேர்வு"
 
 #: js/src/storage/Storage.js:29
 msgid ""
@@ -69,22 +83,44 @@ msgid ""
 "section\n"
 "without losing any data.</p>\n"
 msgstr ""
+"\n"
+"<p> உங்கள் தொடர்ச்சியான தரவு சேமிக்கப்பட வேண்டிய இடத்தில் இங்கே நீங்கள் அமைக்கலாம்.\n"
+" நீங்கள் நெக்ச்ட் முகில், எல்.எக்ச்.சி அல்லது பிற ஐ.ஓ-தீவிர பயன்பாடுகளைப் பயன்படுத்த "
+"விரும்பினால்,\n"
+" அவற்றை உள் ஃபிளாச் மீது வைக்க வேண்டாம், ஆனால் எப்போதும் வெளிப்புற சேமிப்பிடத்தைப் "
+"பயன்படுத்துங்கள்.\n"
+" மேலும், மாறுவதற்கு முன் உங்கள் தரவு புதிய இயக்ககத்தில் பொருந்தும் என்பதை உறுதிப்படுத்திக் "
+"கொள்ளுங்கள். </P>\n"
+" <p> வெளிப்புற சேமிப்பிடத்தை அமைக்க, நீங்கள் வெளிப்புற இயக்ககத்தை இணைக்க வேண்டும் - போன்றது"
+"\n"
+" ஒரு யூ.எச்.பி ஃபிளாச் இயக்கி - அதை BTRFS கோப்பு முறைமைக்கு வடிவமைக்கவும். நீங்கள் செய்"
+"ய வேண்டியது எல்லாம்\n"
+" சரியான இயக்கி, விரும்பிய RAID நிலை என்பதைத் தேர்ந்தெடுத்து \"வடிவமைப்பு & தொகுப்பு\" "
+"என்பதைக் சொடுக்கு செய்க\n"
+" \"சேமிப்பிடத்தைத் தயாரிக்கவும்\" பிரிவில் பொத்தான். இது இயக்கி மற்றும் விருப்பத்தை "
+"வடிவமைக்கும்\n"
+" திசைவியை மீண்டும் துவக்கச் சொல்லுங்கள். உங்கள் /SRV (அடைவு\n"
+" எல்லா அயோ-தீவிர பயன்பாடுகளும் வசிக்க வேண்டும்) இதற்கு நகர்த்தப்படும்\n"
+" புதிய இயக்கி. </p>\n"
+" <p> நீங்கள் ஏற்கனவே டர்ரிச் திசைவியுடன் பயன்படுத்திய ஒரு சாதனம் உங்களிடம் இருந்தால்,\n"
+" \"இயக்கி தேர்வு\" பிரிவில் வெளிப்புற சேமிப்பகமாக இதைப் பயன்படுத்தலாம்\n"
+" எந்த தரவையும் இழக்காமல். </p>\n"
 
 #: js/src/storage/constants.js:15
 msgid "Formatting"
-msgstr ""
+msgstr "வடிவமைப்பு"
 
 #: js/src/storage/constants.js:16
 msgid "Growing"
-msgstr ""
+msgstr "வளரும்"
 
 #: js/src/storage/constants.js:17
 msgid "Shrinking"
-msgstr ""
+msgstr "சுருங்கிக்கொண்டிருக்கும்"
 
 #: js/src/storage/constants.js:18
 msgid "Balancing"
-msgstr ""
+msgstr "சமநிலைப்படுத்துதல்"
 
 #: js/src/storage/Drives/ConfirmationModal.js:20
 msgid ""
@@ -94,10 +130,15 @@ msgid ""
 "moved from old drive to the new one. This can take some time so your next"
 " reboot will take longer. \n"
 msgstr ""
+"\n"
+"நீங்கள் முதல் இயக்ககத்தை சேர்க்கிறீர்கள், பின்னர் நீங்கள் அறிவிப்பைப் பெறுவீர்கள், மேலும் மறுதொடக்கம்"
+" செய்யும்படி கேட்கப்படுவீர்கள். மறுதொடக்கத்தில் தரவு இருக்கும்\n"
+" பழைய டிரைவிலிருந்து புதிய இடத்திற்கு நகர்த்தப்பட்டது. இதற்கு சிறிது நேரம் ஆகலாம், எனவே"
+" உங்கள் அடுத்த மறுதொடக்கம் அதிக நேரம் எடுக்கும். \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:34
 msgid "Warning!"
-msgstr ""
+msgstr "எச்சரிக்கை!"
 
 #: js/src/storage/Drives/ConfirmationModal.js:37
 msgid ""
@@ -108,53 +149,59 @@ msgid ""
 "Are you sure you want to continue?\n"
 "                    "
 msgstr ""
+"\n"
+"நீங்கள் தொடர விரும்புகிறீர்களா? புதிதாக தேர்ந்தெடுக்கப்பட்ட இயக்கி (கள்) வடிவமைக்கப்படும், "
+"மேலும் அதில் உள்ள எல்லா தரவையும் நீங்கள் இழக்க நேரிடும்.\n"
+" $ {firstDriveMessage}\n"
+" நீங்கள் தொடர விரும்புகிறீர்களா?\n"
+"                    "
 
 #: js/src/storage/Drives/ConfirmationModal.js:49
 msgid "Cancel"
-msgstr ""
+msgstr "ரத்துசெய்"
 
 #: js/src/storage/Drives/ConfirmationModal.js:52
 msgid "Continue"
-msgstr ""
+msgstr "தொடரவும்"
 
 #: js/src/storage/Drives/Drives.js:48 reforis_storage/__init__.py:77
 msgid "Device preparation failed."
-msgstr ""
+msgstr "சாதன தயாரிப்பு தோல்வியடைந்தது."
 
 #: js/src/storage/Drives/Drives.js:94
 msgid "Format & Set"
-msgstr ""
+msgstr "வடிவமைப்பு & தொகுப்பு"
 
 #: js/src/storage/Drives/DrivesTable.js:41
 #: js/src/storage/currentState/CurrentStateTable.js:66
 msgid "Device"
-msgstr ""
+msgstr "சாதனம்"
 
 #: js/src/storage/Drives/DrivesTable.js:42
 msgid "Description"
-msgstr ""
+msgstr "விவரம்"
 
 #: js/src/storage/Drives/DrivesTable.js:43
 msgid "Filesystem"
-msgstr ""
+msgstr "கோப்பு முறைமை"
 
 #: js/src/storage/Drives/DrivesTable.js:44
 #: js/src/storage/UUIDs/UUIDsTable.js:33
 #: js/src/storage/currentState/CurrentStateTable.js:71
 msgid "UUID"
-msgstr ""
+msgstr "Uuid"
 
 #: js/src/storage/Drives/RAID.js:14
 msgid "Not specified"
-msgstr ""
+msgstr "குறிப்பிடப்படவில்லை"
 
 #: js/src/storage/Drives/RAID.js:15
 msgid "JBOD"
-msgstr ""
+msgstr "Jbood"
 
 #: js/src/storage/Drives/RAID.js:16
 msgid "RAID1"
-msgstr ""
+msgstr "சவாரி 1"
 
 #: js/src/storage/Drives/RAID.js:26
 msgid ""
@@ -163,6 +210,10 @@ msgid ""
 "if you have a really custom setup of your RAID\n"
 "we don't support and want to just add/remove some disks.\n"
 msgstr ""
+"\n"
+"RAID அளவை மாற்ற வேண்டாம், எல்லாவற்றையும் அப்படியே அமைத்துக்கொள்கிறது. உங்கள் RAID இன் "
+"தனிப்பயன் அமைப்பு இருந்தால் பயனுள்ளதாக இருக்கும்\n"
+" நாங்கள் ஆதரிக்கவில்லை, சில வட்டுகளைச் சேர்க்க/அகற்ற விரும்புகிறோம்.\n"
 
 #: js/src/storage/Drives/RAID.js:30
 msgid ""
@@ -171,6 +222,10 @@ msgid ""
 "hand, provides the most space - sum of the space\n"
 "available on all included drives.\n"
 msgstr ""
+"\n"
+"பணிநீக்கம் இல்லை, ஒரு இயக்கி தோல்வியுற்றால், உங்கள் தரவை இழக்க நேரிடும். மறுபுறம், அதிக "
+"இடத்தை வழங்குகிறது - இடத்தின் தொகை\n"
+" சேர்க்கப்பட்ட அனைத்து டிரைவ்களிலும் கிடைக்கிறது.\n"
 
 #: js/src/storage/Drives/RAID.js:34
 msgid ""
@@ -180,70 +235,83 @@ msgid ""
 "loosing any data. On the other hand, you have a half of the disk space "
 "you would have with JBOD.\n"
 msgstr ""
+"\n"
+"எல்லாம் தேவையற்றது மற்றும் இரண்டு தனித்துவமான இயக்கிகளில் சேமிக்கப்படுகிறது. நீங்கள் ஒரு "
+"இயக்ககத்தை அவிழ்த்துவிட்டால், அதை இல்லாமல் எளிதாக மாற்றலாம்\n"
+" எந்த தரவையும் இழக்கிறது. மறுபுறம், JBOD உடன் நீங்கள் வைத்திருக்கும் வட்டு இடத்தின் பாதி "
+"உங்களிடம் உள்ளது.\n"
 
 #: js/src/storage/Drives/RAID.js:60
 #: js/src/storage/currentState/CurrentStateTable.js:75
 msgid "RAID"
-msgstr ""
+msgstr "சோதனை"
 
 #: js/src/storage/UUIDs/UUIDs.js:47
 msgid "Drive selection failed."
-msgstr ""
+msgstr "இயக்கி தேர்வு தோல்வியடைந்தது."
 
 #: js/src/storage/UUIDs/UUIDs.js:66
 msgid "There are no prepared drives to be used."
-msgstr ""
+msgstr "பயன்படுத்த தயாரிக்கப்பட்ட டிரைவ்கள் எதுவும் இல்லை."
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:32
 msgid "Disable external storage"
-msgstr ""
+msgstr "வெளிப்புற சேமிப்பிடத்தை முடக்கு"
 
 #: js/src/storage/UUIDs/UUIDsActionButtons.js:40
 msgid "Use drive"
-msgstr ""
+msgstr "டிரைவைப் பயன்படுத்தவும்"
 
 #: js/src/storage/UUIDs/UUIDsTable.js:32
 msgid "Devices"
-msgstr ""
+msgstr "சாதனங்கள்"
 
 #: js/src/storage/currentState/ActiveAlert.js:18
 msgid ""
 "\n"
 "Device currently in use is\n"
 msgstr ""
+"\n"
+"தற்போது பயன்பாட்டில் உள்ள சாதனம்\n"
 
 #: js/src/storage/currentState/BrokenSetupAlert.js:16
 msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
+"உங்கள் அமைப்பு தற்போது உடைந்துவிட்டது, நீங்கள் தரவை இழக்கிறீர்கள், உங்களால் முடிந்தவரை புதிய "
+"சேமிப்பக சாதனத்தை அமைக்கவும்!"
 
 #: js/src/storage/currentState/CurrentState.js:51
 msgid "Current State"
-msgstr ""
+msgstr "தற்போதைய நிலை"
 
 #: js/src/storage/currentState/CurrentState.js:54
 msgid "No drives connected. Please connect a drive and refresh the page."
 msgstr ""
+"இயக்கிகள் எதுவும் இணைக்கப்படவில்லை. தயவுசெய்து ஒரு இயக்ககத்தை இணைத்து பக்கத்தைப் "
+"புதுப்பிக்கவும்."
 
 #: js/src/storage/currentState/CurrentStateTable.js:47
 msgid "State"
-msgstr ""
+msgstr "மாநிலம்"
 
 #: js/src/storage/currentState/CurrentStateTable.js:72
 msgid "N/A"
-msgstr ""
+msgstr "இதற்கில்லை"
 
 #: js/src/storage/currentState/PendingMigrationAlert.js:20
 msgid ""
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
 "data to the newly selected drive."
 msgstr ""
+"உங்கள் திசைவி <b> மறுதொடக்கத்திற்காக காத்திருக்கிறது </b> உங்கள் தரவை புதிதாக "
+"தேர்ந்தெடுக்கப்பட்ட இயக்ககத்திற்கு நகர்த்துவதைத் தொடரவும்."
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
-msgstr ""
+msgstr "தொடர்ச்சியான பதிவு அமைப்பை மாற்ற முடியாது."
 
 #: reforis_storage/__init__.py:91
 msgid "UUID set failed."
-msgstr ""
+msgstr "UUID தொகுப்பு தோல்வியடைந்தது."
