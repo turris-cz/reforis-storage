@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 CZ.NIC z.s.p.o. (http://www.nic.cz/)
+ * Copyright (C) 2020-2025 CZ.NIC z.s.p.o. (https://www.nic.cz/)
  *
  * This is free software, licensed under the GNU General Public License v3.
  * See /LICENSE for more information.
@@ -7,7 +7,9 @@
 
 import React from "react";
 
-import { Alert, ALERT_TYPES, RebootButton } from "foris";
+import { Alert, ALERT_TYPES } from "foris";
+
+import RebootButton from "./RebootButton";
 
 export default function PendingMigrationAlert() {
     return (
@@ -33,7 +35,7 @@ export default function PendingMigrationAlert() {
                         }}
                     />
                 </div>
-                <RebootButton className="col-12 col-md-4 col-lg-2 btn btn-danger" />
+                <RebootButton className="btn-danger col-12 col-md-4 col-lg-2" />
             </div>
         </Alert>
     );
