@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-04-30 13:27+0200\n"
-"PO-Revision-Date: 2025-05-14 20:02+0000\n"
+"PO-Revision-Date: 2025-05-18 08:03+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
 "reforis-storage-plugin/cs/>\n"
@@ -280,7 +280,7 @@ msgid ""
 "Your setup is currently broken and you are probably loosing data, set a "
 "new storage device as soon as you can!"
 msgstr ""
-"Vaše uspořádání je v tuto chvíli chybné a pravděpodobně ztrácíte data – "
+"Vaše uspořádání je v tuto chvíli rozbité a pravděpodobně ztrácíte data – "
 "nastavte nové úložné zařízení, jak nejdříve je to možné!"
 
 #: js/src/storage/currentState/CurrentState.js:51
@@ -306,12 +306,12 @@ msgid ""
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
 "data to the newly selected drive."
 msgstr ""
-"Váš směrovač <b>čeká na restart</b>, aby proběhla migrace vašich dat na "
+"Váš směrovač <b>čeká na restart</b>, aby proběhlo přestěhování vašich dat na "
 "nově vybrané úložiště."
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
-msgstr "Nelze změnit nastavení trvalého systémového záznamu."
+msgstr "Nebylo možné změnit nastavení trvalejšího ukládání záznamu událostí."
 
 #: reforis_storage/__init__.py:91
 msgid "UUID set failed."
