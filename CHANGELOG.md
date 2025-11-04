@@ -8,6 +8,16 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.4.0] - 2025-11-04
+
+### Added
+
+- Added & updated Weblate translations
+
+### Changed
+
+- Updated several dependencies in package.json
+
 ## [1.3.0] - 2025-04-30
 
 ### Added
@@ -103,7 +113,8 @@ and this project adheres to
 - Use Foris JS v5.1.7
 - Integrate ESLint + Prettier + reForis styleguide
 
-[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.3.0...master
+[unreleased]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.4.0...master
+[1.4.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.3.0...v1.4.0
 [1.3.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.2.0...v1.3.0
 [1.2.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.1.0...v1.2.0
 [1.1.0]: https://gitlab.nic.cz/turris/reforis/reforis-storage/-/compare/v1.0.0...v1.1.0
