@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-30 13:27+0200\n"
+"POT-Creation-Date: 2025-11-04 14:41+0300\n"
 "PO-Revision-Date: 2025-05-18 08:03+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/turris/"
-"reforis-storage-plugin/cs/>\n"
 "Language: cs\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/turris/reforis-"
+"storage-plugin/cs/>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:106
@@ -38,7 +37,8 @@ msgid ""
 "databases and LXC virtual machines will be unavailable."
 msgstr ""
 "Zde je možné vybrat, která z už připravených jednotek má být použita\n"
-"jako externí úložiště. Pokud máte zařízení, které jste už dříve používali\n"
+"jako externí úložiště. Pokud máte zařízení, které jste už dříve používali"
+"\n"
 "se směrovačem Turris, je možné ho zde nastavit jako externí úložiště.\n"
 "Případně, pokud jednotku chcete přesunout na jiné zařízení Turris, je\n"
 "zde také možné externí zařízení deaktivovat. V takovém případě všechna\n"
@@ -137,6 +137,7 @@ msgstr ""
 " bude příští restart delší než obvykle. \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:34
+#: js/src/storage/currentState/RebootButton.js:28
 msgid "Warning!"
 msgstr "Varování!"
 
@@ -301,13 +302,30 @@ msgstr "Stav"
 msgid "N/A"
 msgstr "N/A"
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:20
+#: js/src/storage/currentState/PendingMigrationAlert.js:22
 msgid ""
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
 "data to the newly selected drive."
 msgstr ""
-"Váš směrovač <b>čeká na restart</b>, aby proběhlo přestěhování vašich dat na "
-"nově vybrané úložiště."
+"Váš směrovač <b>čeká na restart</b>, aby proběhlo přestěhování vašich dat"
+" na nově vybrané úložiště."
+
+#: js/src/storage/currentState/RebootButton.js:20
+#: js/src/storage/currentState/RebootButton.js:30
+msgid "Reboot"
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:29
+msgid "Are you sure you want to reboot the router?"
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:32
+msgid "The router has been rebooted successfully."
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:33
+msgid "An error occurred while rebooting the router."
+msgstr ""
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
@@ -393,3 +411,4 @@ msgstr "Nastavení UUID se nezdařilo."
 #~ "restart bude trvat déle, protože je "
 #~ "potřeba\n"
 #~ "přesunout všechna data.\n"
+

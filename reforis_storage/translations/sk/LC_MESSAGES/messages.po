@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-30 13:27+0200\n"
+"POT-Creation-Date: 2025-11-04 14:41+0300\n"
 "PO-Revision-Date: 2024-10-30 19:08+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
 "Language: sk\n"
@@ -137,6 +137,7 @@ msgstr ""
 "reštart môže trvať dlhšie. \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:34
+#: js/src/storage/currentState/RebootButton.js:28
 msgid "Warning!"
 msgstr "Výstraha!"
 
@@ -299,13 +300,30 @@ msgstr "Stav"
 msgid "N/A"
 msgstr "N/A"
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:20
+#: js/src/storage/currentState/PendingMigrationAlert.js:22
 msgid ""
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
 "data to the newly selected drive."
 msgstr ""
 "Váš router <b>čaká na reštart</b>, aby mohol pokračovať v migrácii vašich"
 " údajov na novo vybraté úložisko."
+
+#: js/src/storage/currentState/RebootButton.js:20
+#: js/src/storage/currentState/RebootButton.js:30
+msgid "Reboot"
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:29
+msgid "Are you sure you want to reboot the router?"
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:32
+msgid "The router has been rebooted successfully."
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:33
+msgid "An error occurred while rebooting the router."
+msgstr ""
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."

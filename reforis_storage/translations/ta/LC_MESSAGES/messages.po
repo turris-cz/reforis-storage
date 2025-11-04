@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reForis Storage Plugin 1.1.0\n"
 "Report-Msgid-Bugs-To: tech.support@turris.cz\n"
-"POT-Creation-Date: 2025-04-30 13:27+0200\n"
+"POT-Creation-Date: 2025-11-04 14:41+0300\n"
 "PO-Revision-Date: 2025-03-13 21:38+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language: ta\n"
@@ -144,6 +144,7 @@ msgstr ""
 "நேரம் ஆகலாம், எனவே உங்கள் அடுத்த மறுதொடக்கம் அதிக நேரம் எடுக்கும். \n"
 
 #: js/src/storage/Drives/ConfirmationModal.js:34
+#: js/src/storage/currentState/RebootButton.js:28
 msgid "Warning!"
 msgstr "எச்சரிக்கை!"
 
@@ -310,13 +311,30 @@ msgstr "மாநிலம்"
 msgid "N/A"
 msgstr "இதற்கில்லை"
 
-#: js/src/storage/currentState/PendingMigrationAlert.js:20
+#: js/src/storage/currentState/PendingMigrationAlert.js:22
 msgid ""
 "Your router is <b>waiting for restart</b> to proceed with migrating your "
 "data to the newly selected drive."
 msgstr ""
 "உங்கள் திசைவி <b> மறுதொடக்கத்திற்காக காத்திருக்கிறது </b> உங்கள் தரவை "
 "புதிதாக தேர்ந்தெடுக்கப்பட்ட இயக்ககத்திற்கு நகர்த்துவதைத் தொடரவும்."
+
+#: js/src/storage/currentState/RebootButton.js:20
+#: js/src/storage/currentState/RebootButton.js:30
+msgid "Reboot"
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:29
+msgid "Are you sure you want to reboot the router?"
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:32
+msgid "The router has been rebooted successfully."
+msgstr ""
+
+#: js/src/storage/currentState/RebootButton.js:33
+msgid "An error occurred while rebooting the router."
+msgstr ""
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
