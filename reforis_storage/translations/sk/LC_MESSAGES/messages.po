@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-11-04 14:41+0300\n"
-"PO-Revision-Date: 2024-10-30 19:08+0000\n"
+"PO-Revision-Date: 2025-11-05 13:51+0000\n"
 "Last-Translator: Atec <dr.atec@gmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/turris/"
+"reforis-storage-plugin/sk/>\n"
 "Language: sk\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/turris"
-"/reforis-storage-plugin/sk/>\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: js/src/app.js:12 js/src/storage/Storage.js:106
@@ -311,19 +312,19 @@ msgstr ""
 #: js/src/storage/currentState/RebootButton.js:20
 #: js/src/storage/currentState/RebootButton.js:30
 msgid "Reboot"
-msgstr ""
+msgstr "Reštart"
 
 #: js/src/storage/currentState/RebootButton.js:29
 msgid "Are you sure you want to reboot the router?"
-msgstr ""
+msgstr "Naozaj sa má router reštartovať?"
 
 #: js/src/storage/currentState/RebootButton.js:32
 msgid "The router has been rebooted successfully."
-msgstr ""
+msgstr "Router sa úspešne reštartoval."
 
 #: js/src/storage/currentState/RebootButton.js:33
 msgid "An error occurred while rebooting the router."
-msgstr ""
+msgstr "Počas reštartu routera nastala chyba."
 
 #: reforis_storage/__init__.py:56
 msgid "Cannot change persistent log setting."
@@ -404,4 +405,3 @@ msgstr "Nastavenie UUID neúspešné."
 #~ "nezabudnite, že nasledujúci reštart bude "
 #~ "trvať dlhšie, pretože sa budú\n"
 #~ "presúvať dáta.\n"
-
