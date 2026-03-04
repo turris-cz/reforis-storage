@@ -6,7 +6,7 @@
         "url": "https://gitlab.nic.cz/turris/reforis/reforis-storage.git"
     },
     "license": "GPL-3.0",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "reForis Storage plugin allows saving large amounts of data on an external storage device.",
     "main": "./src/app.js",
     "eslintConfig": {
@@ -15,7 +15,7 @@
     "dependencies": {
         "@fortawesome/free-solid-svg-icons": "^6.7.2",
         "@fortawesome/react-fontawesome": "^0.2.2",
-        "foris": "^6.8.0",
+        "foris": "^6.10.0",
         "immutability-helper": "^3.1.1"
     },
     "peerDependencies": {
@@ -25,10 +25,10 @@
         "react-router-dom": "5.1.2"
     },
     "devDependencies": {
-        "@babel/cli": "^7.28.3",
-        "@babel/core": "^7.28.5",
-        "@babel/plugin-transform-runtime": "^7.28.5",
-        "@babel/preset-env": "^7.28.5",
+        "@babel/cli": "^7.28.6",
+        "@babel/core": "^7.29.0",
+        "@babel/plugin-transform-runtime": "^7.29.0",
+        "@babel/preset-env": "^7.29.0",
         "@babel/preset-react": "^7.28.5",
         "@testing-library/react": "^8.0.9",
         "babel-loader": "^8.0.6",
@@ -38,9 +38,9 @@
         "jest": "^26.4.2",
         "jest-mock-axios": "^3.2.0",
         "jquery": "^3.7.1",
-        "moment-timezone": "^0.5.48",
+        "moment-timezone": "^0.6.0",
         "popper.js": "^1.16.1",
-        "prettier": "^3.6.2",
+        "prettier": "^3.8.1",
         "process": "^0.11.10",
         "prop-types": "^15.8.1",
         "react": "16.9.0",
@@ -48,7 +48,7 @@
         "react-router-dom": "^5.2.0",
         "snapshot-diff": "^0.10.0",
         "style-loader": "^0.23.1",
-        "webpack": "^5.102.1",
+        "webpack": "^5.105.4",
         "webpack-cli": "^5.1.4"
     },
     "scripts": {
