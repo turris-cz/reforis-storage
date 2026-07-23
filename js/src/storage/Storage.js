@@ -45,39 +45,37 @@ without losing any data.</p>
 
 export default function Storage({ ws }) {
     const [getDrivesResponse, getDrives] = useAPIGet(API_URLs.drives);
-    const [getSettingsResponse, getSettings] = useAPIGet(API_URLs.settings);
     const [storageState, getStorageState] = useStorageState(ws, getDrives);
 
     useEffect(() => {
         getDrives();
-        getSettings();
-    }, [getDrives, getSettings]);
+    }, [getDrives]);
 
     const updateUUIDCallback = () => {
         getDrives();
-        getSettings();
         getStorageState();
     };
 
     let componentContent = null;
     if (
         storageState.state === API_STATE.ERROR ||
-        getDrivesResponse.state === API_STATE.ERROR ||
-        getSettingsResponse.state === API_STATE.ERROR
+        getDrivesResponse.state === API_STATE.ERROR
     ) {
         componentContent = <ErrorMessage />;
     } else if (
         storageState.state !== API_STATE.SUCCESS ||
-        getDrivesResponse.state !== API_STATE.SUCCESS ||
-        getSettingsResponse.state !== API_STATE.SUCCESS
+        getDrivesResponse.state !== API_STATE.SUCCESS
     ) {
         componentContent = <Spinner />;
     } else {
+        const { drives } = getDrivesResponse.data;
         const storageIsPending =
             Object.keys(PENDING_STORAGE_STATES).includes(
                 storageState.data.state
-            ) || storageState.data.blocking;
-        const noDrives = getDrivesResponse.data.drives.length === 0;
+            ) || storageState.data.blocked;
+        const noDrives = drives.length === 0;
+        // A disk is mounted if any connected drive already has a UUID assigned.
+        const diskMounted = drives.some((drive) => drive.uuid !== "");
 
         componentContent = (
             <>
@@ -86,12 +84,12 @@ export default function Storage({ ws }) {
                         noDrives={noDrives}
                         storageIsPending={storageIsPending}
                         {...storageState.data}
-                        disk_mounted={getSettingsResponse.data.disk_mounted}
+                        disk_mounted={diskMounted}
                     />
                 </div>
                 {!noDrives && (
                     <DrivesOperations
-                        drives={getDrivesResponse.data.drives}
+                        drives={drives}
                         currentUUID={storageState.data.uuid}
                         storageIsPending={storageIsPending}
                         updateUUIDCallback={updateUUIDCallback}

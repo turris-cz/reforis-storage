@@ -25,14 +25,14 @@ Drives.propTypes = {
         })
     ).isRequired,
     currentUUID: PropTypes.string.isRequired,
-    storageIsPending: PropTypes.bool.isRequired,
+    storageIsPending: PropTypes.bool,
 };
 
-Drives.defaultProps = {
-    storageIsPending: false,
-};
-
-export default function Drives({ drives, currentUUID, storageIsPending }) {
+export default function Drives({
+    drives,
+    currentUUID,
+    storageIsPending = false,
+}) {
     const [selectedDrives, setSelectedDrives] = useState([]);
     const [selectedRAID, setSelectedRAID] = useState(
         Object.keys(RAID_CHOICES)[0]

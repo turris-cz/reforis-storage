@@ -4,13 +4,10 @@
 #  See /LICENSE for more information.
 
 from http import HTTPStatus
-import copy
 import pytest
 
 
 from reforis.test_utils import _test_api_endpoint_foris_controller_call, mock_backend_response
-
-_MOCK_RESPONSE = {"storage": {"get_drives": {"drives": [{"uuid": "52b52844-307d-11eb-adc1-0242ac120002"}]}}}
 
 
 @pytest.mark.parametrize(
@@ -22,38 +19,6 @@ _MOCK_RESPONSE = {"storage": {"get_drives": {"drives": [{"uuid": "52b52844-307d-
 )
 def test_api_get_endpoint_foris_controller_calls(client, endpoint, module, action):
     _test_api_endpoint_foris_controller_call(client, f"storage/api/{endpoint}", "get", module, action)
-
-
-@mock_backend_response(_MOCK_RESPONSE)
-def test_api_get_settings(client):
-    response = client.get("/storage/api/settings")
-    assert response.status_code == HTTPStatus.OK
-    assert response.json["disk_mounted"] is True
-
-
-_ADDED_DRIVE_RESPONSE = copy.deepcopy(_MOCK_RESPONSE)
-_ADDED_DRIVE_RESPONSE["storage"]["get_drives"]["drives"].insert(0, {"uuid": ""})
-
-
-@mock_backend_response(_ADDED_DRIVE_RESPONSE)
-def test_api_get_settings_second_valid(client):
-    response = client.get("/storage/api/settings")
-    assert response.status_code == HTTPStatus.OK
-    assert response.json["disk_mounted"] is True
-
-
-@mock_backend_response({"storage": {"get_drives": {"drives": []}}})
-def test_api_get_settings_without_drive(client):
-    response = client.get("/storage/api/settings")
-    assert response.status_code == HTTPStatus.OK
-    assert response.json["disk_mounted"] is False
-
-
-@mock_backend_response({"storage": {"get_drives": {"errors": ["some error"]}}})
-def test_api_get_settings_bad_drives_data(client):
-    response = client.get("/storage/api/settings")
-    assert response.status_code == HTTPStatus.OK
-    assert response.json["disk_mounted"] is False
 
 
 @pytest.mark.parametrize(

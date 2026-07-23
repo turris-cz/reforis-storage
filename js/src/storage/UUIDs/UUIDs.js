@@ -25,18 +25,14 @@ UUIDs.propTypes = {
         })
     ).isRequired,
     currentUUID: PropTypes.string.isRequired,
-    storageIsPending: PropTypes.bool.isRequired,
+    storageIsPending: PropTypes.bool,
     updateUUIDCallback: PropTypes.func.isRequired,
-};
-
-UUIDs.defaultProps = {
-    storageIsPending: false,
 };
 
 export default function UUIDs({
     drives,
     currentUUID,
-    storageIsPending,
+    storageIsPending = false,
     updateUUIDCallback,
 }) {
     const [selectedUUID, setSelectedUUID] = useState(currentUUID);

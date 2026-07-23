@@ -23,12 +23,8 @@ CurrentState.propTypes = {
     current_device: PropTypes.string.isRequired,
     is_broken: PropTypes.bool.isRequired,
     using_external: PropTypes.bool.isRequired,
-    storageIsPending: PropTypes.bool.isRequired,
+    storageIsPending: PropTypes.bool,
     disk_mounted: PropTypes.bool.isRequired,
-};
-
-CurrentState.defaultProps = {
-    storageIsPending: false,
 };
 
 export default function CurrentState({
@@ -40,7 +36,7 @@ export default function CurrentState({
     current_device,
     is_broken,
     using_external,
-    storageIsPending,
+    storageIsPending = false,
     disk_mounted,
 }) {
     const unsetUuid = uuid === "";
