@@ -28,9 +28,7 @@ export default function PendingMigrationAlert() {
                         className="mb-0"
                         dangerouslySetInnerHTML={{
                             __html: _(
-                                _(
-                                    "Please restart your router <b>as soon as possible</b>, but bear in mind that the next reboot will take longer as all the data need to be migrated."
-                                )
+                                "Please restart your router <b>as soon as possible</b>, but bear in mind that the next reboot will take longer as all the data need to be migrated."
                             ),
                         }}
                     />

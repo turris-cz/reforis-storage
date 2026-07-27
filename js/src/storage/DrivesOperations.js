@@ -23,12 +23,8 @@ DrivesOperations.propTypes = {
         })
     ).isRequired,
     currentUUID: PropTypes.string.isRequired,
-    storageIsPending: PropTypes.bool.isRequired,
+    storageIsPending: PropTypes.bool,
     updateUUIDCallback: PropTypes.func.isRequired,
-};
-
-DrivesOperations.defaultProps = {
-    storageIsPending: false,
 };
 
 const INTRO_DESCRIPTION = _(
@@ -44,7 +40,7 @@ databases and LXC virtual machines will be unavailable.`
 );
 
 export default function DrivesOperations(props) {
-    const { updateUUIDCallback, storageIsPending } = props;
+    const { updateUUIDCallback, storageIsPending = false } = props;
 
     if (storageIsPending) return null;
 

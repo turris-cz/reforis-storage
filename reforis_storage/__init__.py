@@ -35,22 +35,9 @@ def state():
     return jsonify(current_app.backend.perform("storage", "get_state"))
 
 
-@blueprint.route("/settings", methods=["GET", "POST"])
+@blueprint.route("/settings", methods=["POST"])
 def settings():
-    """Get or update storage settings."""
-    if request.method == "GET":
-        settings = current_app.backend.perform("storage", "get_settings")
-        drives_data = current_app.backend.perform("storage", "get_drives")
-        drives = drives_data.get("drives")
-        settings["disk_mounted"] = False
-
-        if drives:
-            for drive in drives:
-                if drive["uuid"] != "":
-                    settings["disk_mounted"] = True
-                    break
-        return jsonify(settings)
-
+    """Update storage settings (e.g. persistent log setting)."""
     response = current_app.backend.perform("storage", "update_settings", request.json)
     if response.get("result") is not True:
         raise APIError(_("Cannot change persistent log setting."), HTTPStatus.INTERNAL_SERVER_ERROR)
